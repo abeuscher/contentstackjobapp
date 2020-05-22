@@ -1,0 +1,449 @@
+[
+  {
+    "id": 789,
+    "date": "2020-05-22T05:09:55",
+    "date_gmt": "2020-05-22T05:09:55",
+    "guid": {
+      "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
+    },
+    "modified": "2020-05-22T12:29:59",
+    "modified_gmt": "2020-05-22T12:29:59",
+    "slug": "789",
+    "status": "publish",
+    "type": "cshomepage",
+    "link": "https://beuscher.net/cshomepage/789/",
+    "title": {
+      "rendered": "Default Page"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "featured_media": 0,
+    "template": "",
+    "acf": {
+      "hero": {
+        "hero_images": [
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/download.png"
+          },
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/download0.png"
+          },
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/banner-2.png"
+          }
+        ],
+        "header": " Finally, A Modern Content Management System",
+        "subhead": "Contentstack brings business and technology teams together to deliver personalized, omnichannel digital experiences.",
+        "top_cta_text": "Try For Free",
+        "top_cta_target": "#",
+        "bottom_cta_text": "Request a Demo",
+        "bottom_cta_target": "#"
+      },
+      "logo_line": [
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/chase.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/cisco.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/shell.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/walmart.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/express.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/riot-games.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/berlitz-2.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/8x8.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/american-airlines-arena.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/derk-touristik-full-logo.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/elastic-logo.png",
+          "alt_text": ""
+        },
+        {
+          "logo": "https://beuscher.net/wp-content/uploads/2020/05/ellie-mae.png",
+          "alt_text": ""
+        }
+      ],
+      "why_section": {
+        "header": "Why Choose Contentstack?",
+        "buckets": [
+          {
+            "header": "Idea-to-Deployment in Record Time",
+            "content": "Accelerate the delivery of digital content, sites, and apps to bring new experiences to life in days, not months, with a modern CMS.",
+            "class": ""
+          },
+          {
+            "header": "Improve ROI and ‘Return on Experience’",
+            "content": "Reap greater returns on investments – both past and future – in digital content and digital experiences.",
+            "class": ""
+          },
+          {
+            "header": "Better Collaboration, Better Control",
+            "content": "Bring business and technology teams into harmony with our headless CMS, and unleash the full potential of your marketers, editors, designers, and developers.",
+            "class": ""
+          }
+        ]
+      },
+      "silhouette_section": {
+        "left_section_header": "For IT & Developers",
+        "left_section_copy": "Easy to maintain, front-end framework agnostic, and extensible integrations — empowering business users and freeing developers.",
+        "left_section_cta_text": "Learn More",
+        "left_section_cta_target": "#",
+        "right_section_header": "For Business",
+        "right_section_copy": "Build pages with a rich visual editor, along with scheduling and publishing management tools — all without developer intervention.",
+        "right_section_cta_text": "Learn More",
+        "right_section_cta_target": "#",
+        "bg_image": "https://beuscher.net/wp-content/uploads/2020/05/business.png"
+      },
+      "animated_tabs": {
+        "more_features_text": "More Features",
+        "more_features_target": "#",
+        "tabs": [
+          {
+            "tab_label": "Workflows",
+            "tab_header": "Workflows",
+            "tab_content": "Set up and define workflows and approvals with our modern CMS that map to your business processes for content management and publishing.",
+            "tab_image_static": false,
+            "tab_image_animated": "https://beuscher.net/wp-content/uploads/2020/05/cms-workflows.gif"
+          },
+          {
+            "tab_label": "Experience Extensions",
+            "tab_header": "Experience Extensions",
+            "tab_content": "Easily integrate with your preferred marketing technologies (Brightcove, Marketo, Salesforce, Optimizely, etc.) without being bound to built-in preset tools.",
+            "tab_image_static": false,
+            "tab_image_animated": "https://beuscher.net/wp-content/uploads/2020/05/cms-integrations.gif"
+          },
+          {
+            "tab_label": "Modular Blocks",
+            "tab_header": "Modular Blocks",
+            "tab_content": "Allow content editors to build and edit dynamic pages within our headless CMS without needing a developer’s help.",
+            "tab_image_static": false,
+            "tab_image_animated": "https://beuscher.net/wp-content/uploads/2020/05/cms-modular-blocks.gif"
+          },
+          {
+            "tab_label": "Multiple Environments",
+            "tab_header": "Multiple Environments",
+            "tab_content": "Create unlimited content management system, such as development, testing, staging, and production, to map to your content production process.",
+            "tab_image_static": false,
+            "tab_image_animated": "https://beuscher.net/wp-content/uploads/2020/05/cms-environments.gif"
+          }
+        ]
+      },
+      "delivery_section": {
+        "header": "",
+        "icon_line": [
+          {
+            "icon": "https://beuscher.net/wp-content/uploads/2020/05/desktop-icon.png"
+          },
+          {
+            "icon": "https://beuscher.net/wp-content/uploads/2020/05/mobile-icon.png"
+          },
+          {
+            "icon": "https://beuscher.net/wp-content/uploads/2020/05/smart-home-icon.png"
+          },
+          {
+            "icon": "https://beuscher.net/wp-content/uploads/2020/05/smartwatch-icon.png"
+          },
+          {
+            "icon": "https://beuscher.net/wp-content/uploads/2020/05/vr-icon.png"
+          }
+        ],
+        "sections": [
+          {
+            "section_label": "OMNICHANNEL DELIVERY",
+            "section_header": "OMNICHANNEL DELIVERY",
+            "section_description": "Enable your brands to deliver an integrated and continuous omnichannel digital experience across all touchpoints and devices."
+          },
+          {
+            "section_label": "Powerful Integrations",
+            "section_header": "Powerful Integrations",
+            "section_description": "Quality APIs let you easily connect your content management system with your technology ecosystem and best-of-breed microservices."
+          },
+          {
+            "section_label": "Flexible UI/UX",
+            "section_header": "Flexible UI/UX",
+            "section_description": "Give your content editors and marketers the ability to easily create and deliver content, and free your developers from the limitation of a single CMS framework."
+          },
+          {
+            "section_label": "Accelerate Go-To-Market",
+            "section_header": "Accelerate Go-To-Market",
+            "section_description": "The agility of our headless CMS gets your projects up and running quickly so you can spend more time on expanding and growing the business."
+          },
+          {
+            "section_label": "Enterprise-Grade",
+            "section_header": "Enterprise-Grade",
+            "section_description": "Our secure and scalable omnichannel content management system is designed for enterprises and large-scale deployments."
+          }
+        ]
+      },
+      "recommended_resources": {
+        "header": "Recommended Content Management Resources",
+        "ebook_image": "https://beuscher.net/wp-content/uploads/2020/05/desktop-keyboard0.png",
+        "ebook_title": "The Ultimate Guide to CMS: CMS Comparison and Architectures",
+        "ebook_description": "This 3 volume ebook compares headless CMS, decoupled CMS, and traditional CMS, as well as CMS architectural differences.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+        "gartner_image": "https://beuscher.net/wp-content/uploads/2020/05/rec-cont-2.png",
+        "gartner_title": "Headless Paves Way for Personalization",
+        "gartner_category_text": "Gartner Report",
+        "ebook_category_text": "#",
+        "blog_image": "https://beuscher.net/wp-content/uploads/2020/05/new-york-times-square.jpeg",
+        "blog_category_text": "Blog",
+        "blog_title": "10 Tips - How to Choose the Right Content Management System",
+        "blog_description": "Read these comprehensive tips to guide you in your CMS research and to help you make the best choice for your team.",
+        "blog_link": "#"
+      },
+      "bottom_cta": {
+        "header": "TRY IT TO BELIEVE IT",
+        "top_cta_text": "Request a Demo",
+        "top_cta_target": "#",
+        "bottom_cta_text": "Try For Free",
+        "bottom_cta_target": "#"
+      },
+      "footer": {
+        "logo": "https://beuscher.net/wp-content/uploads/2020/05/contentstack-footer-logo.png",
+        "columns": [
+          {
+            "column_header_text": "Product",
+            "column_header_target": "#",
+            "links": [
+              {
+                "text": "Features",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "For IT & Developers",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "For Business",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Integrations",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Pricing",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "ROI Calculator",
+                "link": "#",
+                "class": ""
+              }
+            ]
+          },
+          {
+            "column_header_text": "Users",
+            "column_header_target": "#",
+            "links": [
+              {
+                "text": "Supported Platforms",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "FAQs",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Trust",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "System Status",
+                "link": "#",
+                "class": ""
+              }
+            ]
+          },
+          {
+            "column_header_text": "Education",
+            "column_header_target": "#",
+            "links": [
+              {
+                "text": "Customer Resources",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "CMS Guides",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Blog",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Docs",
+                "link": "#",
+                "class": ""
+              }
+            ]
+          },
+          {
+            "column_header_text": "Company",
+            "column_header_target": "#",
+            "links": [
+              {
+                "text": "About",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "News",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Press",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Careers",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Join Our Team",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Contact Us",
+                "link": "#",
+                "class": ""
+              }
+            ]
+          },
+          {
+            "column_header_text": "Social",
+            "column_header_target": "#",
+            "links": [
+              {
+                "text": "Twitter",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "LinkedIn",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Facebook",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Youtube",
+                "link": "#",
+                "class": ""
+              },
+              {
+                "text": "Github",
+                "link": "#",
+                "class": ""
+              }
+            ]
+          }
+        ]
+      },
+      "top_nav": {
+        "logo": "https://beuscher.net/wp-content/uploads/2020/05/Contentstack-full-logo-white_800x133.png",
+        "menu_items": [
+          {
+            "label": "Product",
+            "target": "#",
+            "class": ""
+          },
+          {
+            "label": "Education",
+            "target": "#",
+            "class": ""
+          },
+          {
+            "label": "Company",
+            "target": "#",
+            "class": ""
+          },
+          {
+            "label": "Pricing",
+            "target": "#",
+            "class": ""
+          },
+          {
+            "label": "Try it for Free",
+            "target": "#",
+            "class": "cta"
+          }
+        ]
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://beuscher.net/wp-json/wp/v2/cshomepage/789"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://beuscher.net/wp-json/wp/v2/cshomepage"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://beuscher.net/wp-json/wp/v2/types/cshomepage"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://beuscher.net/wp-json/wp/v2/media?parent=789"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
