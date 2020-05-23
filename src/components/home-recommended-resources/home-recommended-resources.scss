@@ -1,0 +1,67 @@
+
+@import "../../common-sass/styles.scss";
+.recommended-resources {
+    padding-top:50px;
+    .max-width {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        .ebook, .gartner, .blog {
+            display:flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 29px 0 rgba(0,0,0,.25);
+            font-size:.8em;
+            @include nice-transition();
+            &:hover {
+                transform:scale(1.03);
+            }
+            .image-pane {
+                background-size: cover;
+                background-position:center;
+                background-repeat: no-repeat;
+            }
+        }
+        .ebook {
+            flex-basis:50%;
+            display:flex;
+            .image-pane {
+                flex-basis:42.5%;
+                &:after {
+                    content:'';
+                    display: block;
+                    padding-bottom: 100%;
+                }
+            }
+            .text-pane {
+                flex-basis:52.5%;
+                h2, p {
+                    padding-right:1em;
+                }
+            }
+        }
+        .gartner {
+            flex-basis:45%;
+            color:$white;
+            text-align:center;
+            justify-content: center;
+            align-items: center;
+            h2 {
+                flex-basis:80%;
+            }
+            &:hover {
+                color:$gray;
+            }
+        }
+        .blog {
+            margin-top:2.5%;
+            flex-basis:97.5%;
+            .image-pane {
+                flex-basis:70%;
+            }
+            .text-pane {
+                flex-basis:27.5%;
+            }
+        }        
+    }
+
+}

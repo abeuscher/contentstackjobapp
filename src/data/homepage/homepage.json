@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
     },
-    "modified": "2020-05-23T10:09:10",
-    "modified_gmt": "2020-05-23T10:09:10",
+    "modified": "2020-05-23T12:18:46",
+    "modified_gmt": "2020-05-23T12:18:46",
     "slug": "789",
     "status": "publish",
     "type": "cshomepage",
@@ -227,7 +227,8 @@
         "top_cta_text": "Request a Demo",
         "top_cta_target": "/demo/",
         "bottom_cta_text": "Try For Free",
-        "bottom_cta_target": "/demo/"
+        "bottom_cta_target": "/demo/",
+        "bg_image": "https://beuscher.net/wp-content/uploads/2020/05/trial-sec.png"
       },
       "footer": {
         "logo": "https://beuscher.net/wp-content/uploads/2020/05/contentstack-footer-logo.png",

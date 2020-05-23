@@ -41,14 +41,16 @@ class Tabs extends Component {
     render() {
         return (
             <div className="anim-tab-block">
-                <div className="tabs">
-                    {this.props.tabs.map((tab, idx) => (
-                        <label key={"tab-label-" + idx} htmlFor={"anim-panel-" + idx}>{tab.tab_label}</label>
-                    ))}
-                    {this.props.extraLink}
-                </div>
-                <div className="panels">
-                    {this.props.tabs.map((tab, idx) => (<Panel key={"panel-"+idx} tab={tab} idx={idx} selected={this.state.currentTab===idx} swapTab={this.swapTab} />))}
+                <div class="max-width">
+                    <div className="tabs">
+                        {this.props.tabs.map((tab, idx) => (
+                            <label className={idx===this.state.currentTab?"active":""} key={"tab-label-" + idx} htmlFor={"anim-panel-" + idx}>{tab.tab_label}</label>
+                        ))}
+                        {this.props.extraLink}
+                    </div>
+                    <div className="panels">
+                        {this.props.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} idx={idx} selected={this.state.currentTab === idx} swapTab={this.swapTab} />))}
+                    </div>
                 </div>
             </div>
         )

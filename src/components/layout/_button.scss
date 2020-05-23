@@ -1,4 +1,4 @@
-.button, a.button, button { 
+.button, a.button { 
     display:inline-block;
     border-radius:3px;
     background:linear-gradient(270deg,$pink,$orange);
@@ -8,10 +8,15 @@
     text-transform:uppercase;
     font-weight:bold;
     letter-spacing:1.1px;
-    min-width: 350px;
+    min-width: 300px;
     text-align: center;
     font-size:.75em;
     @include nice-transition();
+    outline:none;
+    border:none;
+    &:focus {
+        outline:none;
+    }
     &:hover {
         background:linear-gradient(270deg,$orange,$orange);
         color:$white;

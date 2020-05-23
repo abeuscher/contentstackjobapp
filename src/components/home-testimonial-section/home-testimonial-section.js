@@ -24,7 +24,7 @@ export default function HomeTestimonialSection() {
     }
   `)
     return (
-        <div className="home-animated-tabs">
+        <div className="home-animated-tabs testimonial">
             <Tabs
                 tabs={data.homepage.acf.testimonial_section.testimonials}
                 text={{
@@ -49,21 +49,23 @@ class Tabs extends Component {
     render() {
         return (
             <div className="testimonial-tab-block">
-                <div className="panels">
-                    <div className="left-pane">
-                        <h2>{this.props.text.header}</h2>
-                        <p>{this.props.text.copy}</p>
-                        <a className="button" href={this.props.text.ctaTarget}>{this.props.text.ctaText}</a>
+                <div class="max-width">
+                    <div className="panels">
+                        <div className="left-pane">
+                            <h2>{this.props.text.header}</h2>
+                            <p>{this.props.text.copy}</p>
+                            <a className="button" href={this.props.text.ctaTarget}>{this.props.text.ctaText}</a>
+                        </div>
+                        <div className="right-pane">
+                            {this.props.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} idx={idx} selected={this.state.currentTab === idx} swapTab={this.swapTab} />))}
+                        </div>
                     </div>
-                    <div className="right-pane">
-                        {this.props.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} idx={idx} selected={this.state.currentTab === idx} swapTab={this.swapTab} />))}
+                    <div className="tabs">
+                        {this.props.tabs.map((tab, idx) => (
+                            <label className={idx === parseInt(this.state.currentTab) ? "active" : ""} key={"test-label-" + idx} htmlFor={"test-panel-" + idx} style={{ backgroundImage: "url('" + tab.logo + "'" }}>{tab.tab_label}</label>
+                        ))}
+                        {this.props.extraLink}
                     </div>
-                </div>
-                <div className="tabs">
-                    {this.props.tabs.map((tab, idx) => (
-                        <label key={"test-label-" + idx} htmlFor={"test-panel-" + idx} style={{backgroundImage:"url('"+tab.logo+"'"}}>{tab.tab_label}</label>
-                    ))}
-                    {this.props.extraLink}
                 </div>
             </div>
         )

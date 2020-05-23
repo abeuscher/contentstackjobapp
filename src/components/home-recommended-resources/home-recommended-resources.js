@@ -29,23 +29,25 @@ export default function RRSection() {
   `)
     return (
         <div className="recommended-resources">
-            <a className="ebook" href={data.homepage.acf.recommended_resources.ebook_link}>
-                <div className="image-pane" style={{ backgroundImage: "url('" + data.homepage.acf.recommended_resources.ebook_image + "')" }}></div>
-                <div className="text-pane">
-                    <h2>{data.homepage.acf.recommended_resources.ebook_title}</h2>
-                    <p>{data.homepage.acf.recommended_resources.ebook_description}</p>
-                </div>
-            </a>
-            <a className="gartner" href={data.homepage.acf.recommended_resources.gartner_link} style={{ backgroundImage: "url('" + data.homepage.acf.recommended_resources.gartner_image + "')" }}>
-                <h2>{data.homepage.acf.recommended_resources.gartner_title}</h2>
-            </a>
-            <a className="blog" href={data.homepage.acf.recommended_resources.blog_link}>
-                <div className="image-pane" style={{ backgroundImage: "url('" + data.homepage.acf.recommended_resources.blog_image + "')" }}></div>
-                <div className="text-pane">
-                    <h2>{data.homepage.acf.recommended_resources.blog_title}</h2>
-                    <p>{data.homepage.acf.recommended_resources.blog_description}</p>
-                </div>
-            </a>
+            <div className="max-width">
+                <a className="ebook" href={data.homepage.acf.recommended_resources.ebook_link}>
+                    <div className="image-pane" style={{ backgroundImage: "url('" + data.homepage.acf.recommended_resources.ebook_image + "')" }}></div>
+                    <div className="text-pane">
+                        <h2>{data.homepage.acf.recommended_resources.ebook_title}</h2>
+                        <p>{data.homepage.acf.recommended_resources.ebook_description}</p>
+                    </div>
+                </a>
+                <a className="gartner" href={data.homepage.acf.recommended_resources.gartner_link} style={{ backgroundImage: "url('" + data.homepage.acf.recommended_resources.gartner_image + "')" }}>
+                    <h2>{data.homepage.acf.recommended_resources.gartner_title}</h2>
+                </a>
+                <a className="blog" href={data.homepage.acf.recommended_resources.blog_link}>
+                    <div className="image-pane" style={{ backgroundImage: "url('" + data.homepage.acf.recommended_resources.blog_image + "')" }}></div>
+                    <div className="text-pane">
+                        <h2>{data.homepage.acf.recommended_resources.blog_title}</h2>
+                        <p>{data.homepage.acf.recommended_resources.blog_description}</p>
+                    </div>
+                </a>
+            </div>
         </div>
     )
 }

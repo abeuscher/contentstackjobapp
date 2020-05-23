@@ -1,9 +1,31 @@
-.testimonial-tab-block {
-    label {
-        width:100px;
-        height:40px;
-        background-size:contain;
-        background-repeat:no-repeat;
-        background-position: center center;
+@import "../../common-sass/styles.scss";
+
+.home-animated-tabs.testimonial {
+    .testimonial-tab-block {
+        label {
+            width: 100px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            &.active {
+                border-bottom: 3px solid $purple;
+            }
+        }
+        .panels {
+            display: flex;
+            min-height: 400px;
+            .left-pane,
+            .right-pane {
+                flex-basis: 50%;
+            }
+            .right-pane {
+                .inner {
+                    box-shadow:5px 5px 15px rgba(0,0,0,0.5);
+                    flex-direction:column;
+                    padding:25px;
+                }
+            }
+        }
     }
 }

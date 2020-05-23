@@ -25,8 +25,8 @@ export default function Footer() {
   `)
   return (
     <footer className="page-footer">
-        <div className="inner">
-            <div className="column"><img src={data.homepage.acf.footer.logo} alt='' /></div>
+        <div className="inner max-width">
+            <div className="column logo"><img src={data.homepage.acf.footer.logo} alt='' /></div>
             {data.homepage.acf.footer.columns.map((column,idx)=>(
                 <Column key={"footer-nav-col-"+idx} columnData={column} />
             ))}
