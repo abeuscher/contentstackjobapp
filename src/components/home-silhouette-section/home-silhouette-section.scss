@@ -1,0 +1,7 @@
+.home-silhouette {
+    display:flex;
+    .left-pane, .right-pane{
+        flex-basis:45%;
+        justify-content: space-between;
+    }
+}

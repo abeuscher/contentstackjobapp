@@ -1,0 +1,11 @@
+.why-section {
+    display:flex;
+    flex-wrap:wrap;
+    h2 {
+        flex-basis:100%;
+    }
+    .why-bucket {
+        flex-basis:30%;
+        justify-content: space-between;
+    }
+}

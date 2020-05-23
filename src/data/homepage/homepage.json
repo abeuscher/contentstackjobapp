@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
     },
-    "modified": "2020-05-22T12:29:59",
-    "modified_gmt": "2020-05-22T12:29:59",
+    "modified": "2020-05-23T00:37:08",
+    "modified_gmt": "2020-05-23T00:37:08",
     "slug": "789",
     "status": "publish",
     "type": "cshomepage",
@@ -412,6 +412,44 @@
             "label": "Try it for Free",
             "target": "#",
             "class": "cta"
+          }
+        ]
+      },
+      "testimonial_section": {
+        "header": "You’re in Good Company",
+        "copy": "Discover the many ways Contentstack has helped its customers speed up omnichannel development and deployment.",
+        "cta_text": "See Case Studies",
+        "cta_target": "#",
+        "testimonials": [
+          {
+            "logo": "https://beuscher.net/wp-content/uploads/2020/05/icelandair.png",
+            "quote": "With Contentstack, the Iclelandair content team is able to push content with a much higher frequency than ever before and we've cut the time it takes to push out promotions by over 90%!",
+            "speaker": "Hallur Þór Halldórsson, UX Writer and Content Designer",
+            "company_name": "Icelandair"
+          },
+          {
+            "logo": "https://beuscher.net/wp-content/uploads/2020/05/ellie-mae.png",
+            "quote": "Contentstack isn't just a CMS of today. It's the CMS of the future. I don't know how we operated without Contentstack.",
+            "speaker": "Auden Hinton, Sr. Manager, Web Services",
+            "company_name": "EllieMae"
+          },
+          {
+            "logo": "https://beuscher.net/wp-content/uploads/2020/05/berlitz-2.png",
+            "quote": "By using Contentstack to build API-first, mobile-friendly content infrastructure, Berlitz saw total revenue grow 40% YoY, lead conversions increase by 126%, and pages that load 133% faster!",
+            "speaker": "Peter Gorman, Global VP of Product and Technology",
+            "company_name": "Berlitz Corporation"
+          },
+          {
+            "logo": "https://beuscher.net/wp-content/uploads/2020/05/elastic-logo.png",
+            "quote": "Before implementing Contentstack, the simplest requests took days and creating a new page took up to a week to complete. Now, changes take minutes and putting together a new page can be done within the day – without the help of a skilled developer!",
+            "speaker": "Sylvie Shimizu, Webmaster",
+            "company_name": "Elastic"
+          },
+          {
+            "logo": "https://beuscher.net/wp-content/uploads/2020/05/photobox.png",
+            "quote": "Some of our e-commerce requirements were quite unique and advanced, but with Contentstack we were able to implement a solution that worked seamlessly around our platform and was still easy to use.",
+            "speaker": "Director of eCommerce Platforms",
+            "company_name": "Photobox"
           }
         ]
       }

@@ -20,8 +20,8 @@ export default function LogoFlipper() {
     }
     return (
         <div className="logo-flipper">
-            {thumbPairs.map(pair => (
-                <LogoBlock logo_one={pair[0].logo} logo_two={pair[1].logo} />
+            {thumbPairs.map((pair,idx) => (
+                <LogoBlock key={"logo-block-"+idx} logo_one={pair[0].logo} logo_two={pair[1].logo} />
             ))}
         </div>
     )

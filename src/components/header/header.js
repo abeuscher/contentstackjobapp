@@ -1,6 +1,6 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
-
+import "./header.scss"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -20,15 +20,15 @@ export default function Header() {
     }
   `)
   return (
-    <header>
+    <header className="page-header">
       <div className="logo">
         <img src={data.homepage.acf.top_nav.logo} alt='' />
       </div>
       <nav>
         <ul>
-          {data.homepage.acf.top_nav.menu_items.map(item => (
-            <li>
-              <Link to={item.target} className={item.class}>{item.label}</Link>
+          {data.homepage.acf.top_nav.menu_items.map((item,idx) => (
+            <li key={"header-list-item-"+idx}>
+              <a key={"header-link-"+idx} href={item.target} className={item.class}>{item.label}</a>
             </li>
           ))}
         </ul>

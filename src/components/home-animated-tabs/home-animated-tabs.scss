@@ -1,0 +1,27 @@
+.home-animated-tabs {
+    .tabs {
+        display:flex;
+        label, a {
+            font-weight:bold;
+            display:inline-block;
+            padding:1em;
+            margin-right:1em;
+            cursor:pointer;
+            color:black;
+            text-decoration: none;
+        }
+    }
+    .panels {
+        .inner {
+            display:none;
+        }
+        input[type="radio"] {
+            display:none;
+            &:checked {
+                + .inner {
+                    display:block;
+                }
+            }
+        }
+    }
+}

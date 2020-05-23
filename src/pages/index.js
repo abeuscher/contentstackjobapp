@@ -1,56 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
 import { graphql } from 'gatsby'
 
 import Layout from "../components/layout/layout.js"
 import SEO from "../components/seo"
 import Hero from "../components/home-hero/home-hero"
 import LogoFlipper from "../components/logo-flipper/logo-flipper"
+import WhySection from "../components/home-why-section/home-why-section"
+import SilhouetteSection from "../components/home-silhouette-section/home-silhouette-section"
+import HomeAnimatedTabs from "../components/home-animated-tabs/home-animated-tabs"
+import HomeDeliverSection from "../components/home-delivery-section/home-deliver-section"
 
 export const result = graphql`
   query hp {
     homepage {
       acf {
-        why_section {
-          header,
-          buckets {
-            header
-            content
-            class
-          },
-        },
-        silhouette_section {
-          left_section_header,
-          left_section_copy,
-          left_section_cta_text,
-          left_section_cta_target,
-          right_section_header,
-          right_section_copy,
-          right_section_cta_text,
-          right_section_cta_target 
-        },
-        animated_tabs {
-          more_features_text,
-          more_features_target,
-          tabs {
-            tab_label
-            tab_header
-            tab_content
-            tab_image_static
-            tab_image_animated
-          },
-        },
-        delivery_section {
-          header,
-          icon_line {
-            icon
-          },
-          sections {
-            section_label
-            section_header
-            section_description
-          }
-        },
         recommended_resources {
           ebook_image,
           ebook_title,
@@ -94,10 +57,11 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <Hero/>
     <LogoFlipper />
+    <WhySection/>
+    <SilhouetteSection />
+    <HomeAnimatedTabs />
+    <HomeDeliverSection />
     <p>{JSON.stringify(data)}</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Link to="/blog/">Blog</Link>
   </Layout>
 )
 
