@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "../../common-sass/styles.scss";
+
+body {
+    font-family: $body-font;
+    background: $body-bg-color;
+    color: $body-text-color;
+    position: relative;
+    min-height: 100vh;
+    @include bp(s) {
+      font-size:.8em;
+    }
+    @include bp(m) {
+      font-size:1.2em;
+    }
+    @include bp(l) {
+      font-size:1.4em;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $body-link-color;
+    &:hover {
+      color: $body-link-hover-color;
+    }
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $header-font;
+  }
+p {
+  font-size:1.1em;
+  line-height:1.8;
+}
+main {
+    display:block;
+}
+.max-width {
+    width:90%;
+    margin:0 auto;
+    @each $bp-name, $bp-value in $bps {
+        @include bp($bp-name) {
+            width:$bp-value;
+        }
+      }
+}
+.interior {
+    padding-top:200px;
+    text-align:center;
+    background:black;
+    color:white;
+    padding-bottom:50px;
+    margin-bottom:30vh;
+}

@@ -15,7 +15,10 @@ export default function SilhouetteSection() {
                 right_section_header,
                 right_section_copy,
                 right_section_cta_text,
-                right_section_cta_target 
+                right_section_cta_target,
+                bg_image,
+                profile_left,
+                profile_right 
               }
         }
       }
@@ -23,16 +26,25 @@ export default function SilhouetteSection() {
   `)
   return (
     <div className="home-silhouette">
+      <div className="hover left"></div>
+      <div className="hover right"></div>
+      <div class="bg-images">
+        <div class="bg-main" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.bg_image + "'" }}></div>
+        <div class="profile-left silhouette" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.profile_left + "'" }}></div>
+        <div class="profile-right silhouette" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.profile_right + "'" }}></div>
+      </div>
+      <div class="max-width">
         <div className="left-pane">
-            <h2>{data.homepage.acf.silhouette_section.left_section_header}</h2>
-            <p>{data.homepage.acf.silhouette_section.left_section_copy}</p>
-            <a className="button" href={data.homepage.acf.silhouette_section.left_section_cta_target}>{data.homepage.acf.silhouette_section.left_section_cta_text}</a>
+          <h2>{data.homepage.acf.silhouette_section.left_section_header}</h2>
+          <p>{data.homepage.acf.silhouette_section.left_section_copy}</p>
+          <a className="button" href={data.homepage.acf.silhouette_section.left_section_cta_target}>{data.homepage.acf.silhouette_section.left_section_cta_text}</a>
         </div>
         <div className="right-pane">
-            <h2>{data.homepage.acf.silhouette_section.right_section_header}</h2>
-            <p>{data.homepage.acf.silhouette_section.right_section_copy}</p>
-            <a className="button" href={data.homepage.acf.silhouette_section.right_section_cta_target}>{data.homepage.acf.silhouette_section.right_section_cta_text}</a>
+          <h2>{data.homepage.acf.silhouette_section.right_section_header}</h2>
+          <p>{data.homepage.acf.silhouette_section.right_section_copy}</p>
+          <a className="button" href={data.homepage.acf.silhouette_section.right_section_cta_target}>{data.homepage.acf.silhouette_section.right_section_cta_text}</a>
         </div>
+      </div>
     </div>
   )
 }

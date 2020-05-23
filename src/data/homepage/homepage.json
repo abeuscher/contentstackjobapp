@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
     },
-    "modified": "2020-05-23T06:44:03",
-    "modified_gmt": "2020-05-23T06:44:03",
+    "modified": "2020-05-23T10:09:10",
+    "modified_gmt": "2020-05-23T10:09:10",
     "slug": "789",
     "status": "publish",
     "type": "cshomepage",
@@ -120,7 +120,9 @@
         "right_section_copy": "Build pages with a rich visual editor, along with scheduling and publishing management tools — all without developer intervention.",
         "right_section_cta_text": "Learn More",
         "right_section_cta_target": "#",
-        "bg_image": "https://beuscher.net/wp-content/uploads/2020/05/business.png"
+        "bg_image": "https://beuscher.net/wp-content/uploads/2020/05/business.png",
+        "profile_left": "https://beuscher.net/wp-content/uploads/2020/05/tech-default.png",
+        "profile_right": "https://beuscher.net/wp-content/uploads/2020/05/business-default.png"
       },
       "animated_tabs": {
         "more_features_text": "More Features",
@@ -413,7 +415,7 @@
           {
             "label": "Try it for Free",
             "target": "/demo/",
-            "class": "cta"
+            "class": "cta button"
           }
         ]
       },

@@ -7,19 +7,23 @@
     z-index:0;
     overflow:hidden;
     &.fade-in {
-        animation:8s fadeIn ease-in;
+        animation:1s fadeIn ease-in;
     }
     &.fade-out {
-        animation:8s fadeOut ease-out;
+        animation:1s fadeOut ease-out;
     }
-    img {
+    .bg-image {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
+        bottom:0;
         opacity: 0;
         z-index: 0;
         width:100%;
+        background-size:cover;
+        background-position:center top;
+        background-repeat:no-repeat;
         &.incoming_slide {
           opacity: 1;
           z-index: 2;

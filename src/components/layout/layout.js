@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import Header from "../header/header.js"
 import Footer from "../footer/footer.js"
 
-import "./layout.css"
+import "normalize.css"
+import "./layout.scss"
 
 
 const Layout = ({ children }) => {

@@ -19,7 +19,7 @@ export default function LogoFlipper() {
         thumbPairs.push(data.homepage.acf.logo_line.slice(i,i+2))
     }
     return (
-        <div className="logo-flipper">
+        <div className="logo-flipper max-width">
             {thumbPairs.map((pair,idx) => (
                 <LogoBlock key={"logo-block-"+idx} logo_one={pair[0].logo} logo_two={pair[1].logo} />
             ))}

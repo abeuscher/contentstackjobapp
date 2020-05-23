@@ -1,0 +1,26 @@
+.button, a.button, button { 
+    display:inline-block;
+    border-radius:3px;
+    background:linear-gradient(270deg,$pink,$orange);
+    color:$white;
+    padding:0 32px;
+    line-height:2.5;
+    text-transform:uppercase;
+    font-weight:bold;
+    letter-spacing:1.1px;
+    min-width: 350px;
+    text-align: center;
+    font-size:.75em;
+    @include nice-transition();
+    &:hover {
+        background:linear-gradient(270deg,$orange,$orange);
+        color:$white;
+        text-decoration: none;
+    }
+}
+.cta-link {
+    color:$pink;
+    &:hover {
+        color:$white;
+    }
+}

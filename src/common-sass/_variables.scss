@@ -1,0 +1,23 @@
+$bps:(xs: 320px, s:640px, m:1024px, l:1320px);
+
+//colors
+$black:#000;
+$white:#fff;
+$off-white:#f6f6f6;
+$off-black:#031921;
+$gray:#cccccc;
+$pink:#b64d71;
+$orange:#eb5646;
+
+$body-bg-color:$white;
+
+$body-text-color:$off-black;
+$body-link-color:$black;
+$body-link-hover-color:$off-black;
+
+//fonts
+$body-font:'Roboto',sans-serif;
+$nav-font:'Roboto',sans-serif;
+$header-font:'Roboto', sans-serif;
+
+$gutter-width:50px;

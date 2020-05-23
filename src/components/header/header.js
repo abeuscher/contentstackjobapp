@@ -20,7 +20,7 @@ export default function Header() {
     }
   `)
   return (
-    <header className="page-header">
+    <header className="page-header max-width">
       <div className="logo">
         <Link to="/">
           <img src={data.homepage.acf.top_nav.logo} alt='' />

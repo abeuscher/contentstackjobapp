@@ -1,12 +1,16 @@
 header.page-header {
     position:absolute;
-    top:0;
+    top:20px;
     left:0;
     right:0;
     display:flex;
     align-items:center;
+    z-index:1;
     .logo {
         flex-basis:25%;
+        img {
+            max-width:170px;
+        }
     }
     nav {
         flex-basis:75%;
@@ -20,6 +24,21 @@ header.page-header {
                 display:inline-block;
                 a {
                     padding:1em;
+                    margin:0 1em;
+                    text-decoration:none;
+                    color:white;
+                    font-size:.8em;
+                    &:hover {
+                        text-decoration:underline;
+                    }
+                    &.button {
+                        padding:0 32px;
+                        min-width:0px;
+                        font-size:.75em;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
         }
