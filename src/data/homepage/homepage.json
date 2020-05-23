@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
     },
-    "modified": "2020-05-23T00:37:08",
-    "modified_gmt": "2020-05-23T00:37:08",
+    "modified": "2020-05-23T04:33:16",
+    "modified_gmt": "2020-05-23T04:33:16",
     "slug": "789",
     "status": "publish",
     "type": "cshomepage",
@@ -207,15 +207,17 @@
         "header": "Recommended Content Management Resources",
         "ebook_image": "https://beuscher.net/wp-content/uploads/2020/05/desktop-keyboard0.png",
         "ebook_title": "The Ultimate Guide to CMS: CMS Comparison and Architectures",
-        "ebook_description": "This 3 volume ebook compares headless CMS, decoupled CMS, and traditional CMS, as well as CMS architectural differences.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+        "ebook_description": "This 3 volume ebook compares headless CMS, decoupled CMS, and traditional CMS, as well as CMS architectural differences.",
+        "ebook_category_text": "eBook",
+        "ebook_link": "#",
         "gartner_image": "https://beuscher.net/wp-content/uploads/2020/05/rec-cont-2.png",
         "gartner_title": "Headless Paves Way for Personalization",
         "gartner_category_text": "Gartner Report",
-        "ebook_category_text": "#",
+        "gartner_link": "#",
         "blog_image": "https://beuscher.net/wp-content/uploads/2020/05/new-york-times-square.jpeg",
-        "blog_category_text": "Blog",
         "blog_title": "10 Tips - How to Choose the Right Content Management System",
         "blog_description": "Read these comprehensive tips to guide you in your CMS research and to help you make the best choice for your team.",
+        "blog_category_text": "Blog",
         "blog_link": "#"
       },
       "bottom_cta": {

@@ -28,8 +28,8 @@ class DeliveryFlipper extends Component {
         super(props);
         this.state = {
             currentTabIndex:0,
-            currentHeader: this.props.tabs[0].section_label,
-            currentCopy: this.props.tabs[0].section_description,
+            templateHeader: this.props.tabs[0].section_label,
+            templateCopy: this.props.tabs[0].section_description,
             formHeader:this.props.tabs[0].section_label,
             formCopy:this.props.tabs[0].section_description
         }

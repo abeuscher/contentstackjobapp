@@ -9,25 +9,13 @@ import WhySection from "../components/home-why-section/home-why-section"
 import SilhouetteSection from "../components/home-silhouette-section/home-silhouette-section"
 import HomeAnimatedTabs from "../components/home-animated-tabs/home-animated-tabs"
 import HomeDeliverSection from "../components/home-delivery-section/home-deliver-section"
+import HomeTestimonialSection from "../components/home-testimonial-section/home-testimonial-section"
+import RecommendedResourcesSection from "../components/home-recommended-resources/home-recommended-resources"
 
 export const result = graphql`
   query hp {
     homepage {
       acf {
-        recommended_resources {
-          ebook_image,
-          ebook_title,
-          ebook_description,
-          gartner_image,
-          gartner_title,
-          gartner_category_text,
-          ebook_category_text,
-          blog_image,
-          blog_category_text,
-          blog_title,
-          blog_description,
-          blog_link 
-        },
         bottom_cta {
           header,
           top_cta_text,
@@ -61,6 +49,8 @@ const IndexPage = ({ data }) => (
     <SilhouetteSection />
     <HomeAnimatedTabs />
     <HomeDeliverSection />
+    <HomeTestimonialSection />
+    <RecommendedResourcesSection />
     <p>{JSON.stringify(data)}</p>
   </Layout>
 )
