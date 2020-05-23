@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
     },
-    "modified": "2020-05-23T04:33:16",
-    "modified_gmt": "2020-05-23T04:33:16",
+    "modified": "2020-05-23T06:44:03",
+    "modified_gmt": "2020-05-23T06:44:03",
     "slug": "789",
     "status": "publish",
     "type": "cshomepage",
@@ -37,9 +37,9 @@
         "header": " Finally, A Modern Content Management System",
         "subhead": "Contentstack brings business and technology teams together to deliver personalized, omnichannel digital experiences.",
         "top_cta_text": "Try For Free",
-        "top_cta_target": "#",
+        "top_cta_target": "/demo/",
         "bottom_cta_text": "Request a Demo",
-        "bottom_cta_target": "#"
+        "bottom_cta_target": "/demo/"
       },
       "logo_line": [
         {
@@ -223,9 +223,9 @@
       "bottom_cta": {
         "header": "TRY IT TO BELIEVE IT",
         "top_cta_text": "Request a Demo",
-        "top_cta_target": "#",
+        "top_cta_target": "/demo/",
         "bottom_cta_text": "Try For Free",
-        "bottom_cta_target": "#"
+        "bottom_cta_target": "/demo/"
       },
       "footer": {
         "logo": "https://beuscher.net/wp-content/uploads/2020/05/contentstack-footer-logo.png",
@@ -236,7 +236,7 @@
             "links": [
               {
                 "text": "Features",
-                "link": "#",
+                "link": "/features/",
                 "class": ""
               },
               {
@@ -272,7 +272,7 @@
             "links": [
               {
                 "text": "Supported Platforms",
-                "link": "#",
+                "link": "/supported-platforms/",
                 "class": ""
               },
               {
@@ -324,12 +324,12 @@
             "links": [
               {
                 "text": "About",
-                "link": "#",
+                "link": "/about/",
                 "class": ""
               },
               {
                 "text": "News",
-                "link": "#",
+                "link": "/news/",
                 "class": ""
               },
               {
@@ -392,27 +392,27 @@
         "menu_items": [
           {
             "label": "Product",
-            "target": "#",
+            "target": "/product/",
             "class": ""
           },
           {
             "label": "Education",
-            "target": "#",
+            "target": "/education/",
             "class": ""
           },
           {
             "label": "Company",
-            "target": "#",
+            "target": "/company/",
             "class": ""
           },
           {
             "label": "Pricing",
-            "target": "#",
+            "target": "/pricing/",
             "class": ""
           },
           {
             "label": "Try it for Free",
-            "target": "#",
+            "target": "/demo/",
             "class": "cta"
           }
         ]

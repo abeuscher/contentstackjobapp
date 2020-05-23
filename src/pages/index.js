@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from 'gatsby'
 
 import Layout from "../components/layout/layout.js"
 import SEO from "../components/seo"
@@ -10,37 +9,12 @@ import SilhouetteSection from "../components/home-silhouette-section/home-silhou
 import HomeAnimatedTabs from "../components/home-animated-tabs/home-animated-tabs"
 import HomeDeliverSection from "../components/home-delivery-section/home-deliver-section"
 import HomeTestimonialSection from "../components/home-testimonial-section/home-testimonial-section"
+import HomeBottomCTA from "../components/home-bottom-cta/home-bottom-cta"
 import RecommendedResourcesSection from "../components/home-recommended-resources/home-recommended-resources"
 
-export const result = graphql`
-  query hp {
-    homepage {
-      acf {
-        bottom_cta {
-          header,
-          top_cta_text,
-          top_cta_target,
-          bottom_cta_text,
-          bottom_cta_target 
-        },
-        footer {
-          logo,
-          columns {
-            column_header_text
-            column_header_target
-            links {
-              text
-              link
-              class              
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
-const IndexPage = ({ data }) => (
+
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Hero/>
@@ -51,7 +25,7 @@ const IndexPage = ({ data }) => (
     <HomeDeliverSection />
     <HomeTestimonialSection />
     <RecommendedResourcesSection />
-    <p>{JSON.stringify(data)}</p>
+    <HomeBottomCTA/>
   </Layout>
 )
 

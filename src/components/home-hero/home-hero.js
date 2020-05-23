@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import React from "react"
 import "./home-hero.scss"
 
@@ -28,8 +28,8 @@ export default function Hero() {
             <div id="bg"></div>
             <h1>{data.homepage.acf.hero.header}</h1>
             <p>{data.homepage.acf.hero.subhead}</p>
-            <a className="button" href={data.homepage.acf.hero.top_cta_target}>{data.homepage.acf.hero.top_cta_text}</a>
-            <a href={data.homepage.acf.hero.bottom_cta_target}>{data.homepage.acf.hero.bottom_cta_text}</a>
+            <Link className="button" href={data.homepage.acf.hero.top_cta_target}>{data.homepage.acf.hero.top_cta_text}</Link>
+            <Link href={data.homepage.acf.hero.bottom_cta_target}>{data.homepage.acf.hero.bottom_cta_text}</Link>
         </div>
     )
 }

@@ -1,0 +1,14 @@
+footer.page-footer {
+    .inner {
+        display:flex;
+        justify-content: space-between;
+        .column {
+            flex-basis:15%;
+            a {
+                display:block;
+                text-decoration:none;
+                padding:.5em 0;
+            }
+        }
+    }
+}
