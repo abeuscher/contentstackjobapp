@@ -49,7 +49,7 @@ class Tabs extends Component {
     render() {
         return (
             <div className="testimonial-tab-block">
-                <div class="max-width">
+                <div className="max-width">
                     <div className="panels">
                         <div className="left-pane">
                             <h2>{this.props.text.header}</h2>

@@ -28,12 +28,12 @@ export default function SilhouetteSection() {
     <div className="home-silhouette">
       <div className="hover left"></div>
       <div className="hover right"></div>
-      <div class="bg-images">
-        <div class="bg-main" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.bg_image + "'" }}></div>
-        <div class="profile-left silhouette" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.profile_left + "'" }}></div>
-        <div class="profile-right silhouette" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.profile_right + "'" }}></div>
+      <div className="bg-images">
+        <div className="bg-main" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.bg_image + "'" }}></div>
+        <div className="profile-left silhouette" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.profile_left + "'" }}></div>
+        <div className="profile-right silhouette" style={{ backgroundImage: "url('" + data.homepage.acf.silhouette_section.profile_right + "'" }}></div>
       </div>
-      <div class="max-width">
+      <div className="max-width">
         <div className="left-pane">
           <h2>{data.homepage.acf.silhouette_section.left_section_header}</h2>
           <p>{data.homepage.acf.silhouette_section.left_section_copy}</p>

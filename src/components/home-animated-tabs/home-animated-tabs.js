@@ -41,7 +41,7 @@ class Tabs extends Component {
     render() {
         return (
             <div className="anim-tab-block">
-                <div class="max-width">
+                <div className="max-width">
                     <div className="tabs">
                         {this.props.tabs.map((tab, idx) => (
                             <label className={idx===this.state.currentTab?"active":""} key={"tab-label-" + idx} htmlFor={"anim-panel-" + idx}>{tab.tab_label}</label>

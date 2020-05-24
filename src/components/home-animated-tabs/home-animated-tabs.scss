@@ -43,6 +43,14 @@
             .panel-text, .panel-image {
                 flex-basis:40%;
             }
+            .panel-text {
+                h2, p {
+                    padding:0 1em 0 0;
+                }
+                h2 {
+                    margin-top:0;
+                }
+            }
             .panel-image {
                 flex-basis:60%;
                 position:relative;

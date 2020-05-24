@@ -22,7 +22,7 @@ export default function HomeWhySection() {
   return (
     <div className="why-section">
       <h2>{data.homepage.acf.why_section.header}</h2>
-      <div class="buckets max-width">
+      <div className="buckets max-width">
         {data.homepage.acf.why_section.buckets.map((bucket, idx) => (
           <WhyBucket key={"why-bucket-" + idx} bucket={bucket} />
         ))}

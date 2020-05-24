@@ -26,11 +26,11 @@ export default function Hero() {
   return (
     <div className="home-hero">
       <BgFader images={data.homepage.acf.hero.hero_images} />
-      <div class="hero-content">
+      <div className="hero-content">
         <h1>{data.homepage.acf.hero.header}</h1>
         <p>{data.homepage.acf.hero.subhead}</p>
-        <Link className="button" href={data.homepage.acf.hero.top_cta_target}>{data.homepage.acf.hero.top_cta_text}</Link>
-        <Link className="cta-link" href={data.homepage.acf.hero.bottom_cta_target}>{data.homepage.acf.hero.bottom_cta_text}</Link>
+        <Link className="button" to={data.homepage.acf.hero.top_cta_target}>{data.homepage.acf.hero.top_cta_text}</Link>
+        <Link className="cta-link" to={data.homepage.acf.hero.bottom_cta_target}>{data.homepage.acf.hero.bottom_cta_text}</Link>
       </div>
     </div>
   )

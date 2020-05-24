@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `ContentStack`,
     description: `Application for job. I used Gatsby starter for base.`,
-    author: `Al Beuscher`,
+    author: `Al Beuscher`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

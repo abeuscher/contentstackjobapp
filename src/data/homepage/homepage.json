@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "https://beuscher.net/?post_type=cshomepage&#038;p=789"
     },
-    "modified": "2020-05-23T12:18:46",
-    "modified_gmt": "2020-05-23T12:18:46",
+    "modified": "2020-05-23T12:53:59",
+    "modified_gmt": "2020-05-23T12:53:59",
     "slug": "789",
     "status": "publish",
     "type": "cshomepage",
@@ -177,6 +177,8 @@
             "icon": "https://beuscher.net/wp-content/uploads/2020/05/vr-icon.png"
           }
         ],
+        "title_label": "Title",
+        "description_label": "Description",
         "sections": [
           {
             "section_label": "OMNICHANNEL DELIVERY",
@@ -202,6 +204,20 @@
             "section_label": "Enterprise-Grade",
             "section_header": "Enterprise-Grade",
             "section_description": "Our secure and scalable omnichannel content management system is designed for enterprises and large-scale deployments."
+          }
+        ],
+        "bg_images": [
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/connected-digital-devices.png"
+          },
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/playstation-game-controller.jpeg"
+          },
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/track-cross-country-running-althete.jpeg"
+          },
+          {
+            "image": "https://beuscher.net/wp-content/uploads/2020/05/girl-retail-shopping.jpg"
           }
         ]
       },
@@ -387,6 +403,20 @@
                 "class": ""
               }
             ]
+          }
+        ],
+        "legal_menu": [
+          {
+            "link": "Site Map",
+            "label": "/sitemap.xml"
+          },
+          {
+            "link": "Terms",
+            "label": "/terms/"
+          },
+          {
+            "link": "Privacy",
+            "label": "/privacy/"
           }
         ]
       },

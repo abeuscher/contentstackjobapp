@@ -63,7 +63,7 @@ class DeliveryFlipper extends Component {
     render() {
         return (
             <div className="home-delivery-section">
-                <div class="max-width">
+                <div className="max-width">
                     <div className="left-pane header">
                         <h2>{this.props.tabs[this.state.currentTabIndex].section_label}</h2>
                     </div>
