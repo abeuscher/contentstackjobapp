@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  reverse:
+    container_name: reverse
+    image: 'nginx'
+    hostname: ${SERVER_HOSTNAME}
+    networks:
+      - csnetwork
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - "appclient:appclient"
+    volumes:
+      - ${PATH_TO_CONF}:/etc/nginx/nginx.conf
+      - ${PATH_TO_CERTS}:/etc/letsencrypt
+  appclient:
+    build: 
+      context: ./
+    container_name: appclient
+    restart: 'always'
+    volumes: 
+      - ./public:/usr/local/apache2/htdocs/       
+    networks:
+      - csnetwork      
+networks:
+  csnetwork:
