@@ -3,7 +3,7 @@ module.exports = {
     title: `ContentStack`,
     description: `Application for job. I used Gatsby starter for base.`,
     author: `Al Beuscher`,
-    url:`applicationforcontentstack.xyz/`
+    siteUrl:`applicationforcontentstack.xyz/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
