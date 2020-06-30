@@ -1,0 +1,74 @@
+@import "../../common-sass/variables";
+@import "../../common-sass/mixins";
+.arrow {
+    position:relative;
+    border-bottom:1px solid $orange;
+    height:0px;
+    width:25px;
+    vertical-align: middle;
+    display:inline-block;
+    margin-left:.25em;
+    &:after {
+      content:'';
+      position:absolute;
+      border:1px solid $orange;
+      transform:rotate(45deg);
+      right:0;
+      width:10px;
+      height:10px;
+      border-left-color:transparent;
+      border-bottom-color:transparent;
+      transform-origin:11px 0 0;
+    }
+  }
+.notification-bar {
+    
+    background:$cta-bar-bg;
+    .cta {
+        color:$white;
+        display:inline-block;
+        line-height:40px;
+        padding-left:1em;
+        font-size:.8em;
+    }
+    a {
+        font-size:.8em;
+        padding-left:.5em;
+        position:relative;
+        color:$orange;
+        line-height:40px;
+        &:hover {
+            color:$white;
+            .arrow {
+                border-bottom-color:$white;
+                &:after {
+                    border-right-color:$white;
+                    border-top-color:$white;
+                }
+            }
+        }
+    }
+    .admin-menu {
+        @include list-to-menu();
+        display:none;
+        @include bp(m) {
+            display:inline-block;
+            float:right;
+            padding-right:1em;
+            li {
+                a {
+                    color:$white;
+                    font-size:.8em;
+                    padding:0 0 0 1em;
+                    &:hover {
+                        color:$orange;
+                    }
+                }
+            }
+        }
+        
+    }
+    @include bp(m) {
+        height:$cta-bar-height;
+    }
+}

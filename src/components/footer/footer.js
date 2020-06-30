@@ -40,7 +40,7 @@ class Column extends Component {
     render() {
         return(
             <div className="column">
-                <h2>{this.props.columnData.column_header_text}</h2>
+                <h2>{this.props.columnData.title}</h2>
                 {this.props.columnData.links.map((column,idx)=>(
                     <a key={"footer-link-"+idx} className={column.class} href={column.link}>{column.text}</a>
                 ))}

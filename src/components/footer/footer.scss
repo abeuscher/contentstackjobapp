@@ -1,3 +1,6 @@
+@import "../../common-sass/variables";
+@import "../../common-sass/mixins";
+
 footer.page-footer {
     padding:100px 0;
     position:relative;
@@ -5,8 +8,9 @@ footer.page-footer {
         font-size:.8em;
         display:flex;
         justify-content: space-between;
+        flex-wrap:wrap;
         .column {
-            flex-basis:14%;
+            flex-basis:100%;
             &.logo {
                 img {
 
@@ -16,10 +20,16 @@ footer.page-footer {
                 display:block;
                 text-decoration:none;
                 padding:.5em 0;
+                &:hover {
+                    text-decoration:underline;
+                }
             }
             h2 {
                 font-size:1em;
                 margin-top:.5em;
+            }
+            @include bp(m) {
+                flex-basis:14%;
             }
         }
     }

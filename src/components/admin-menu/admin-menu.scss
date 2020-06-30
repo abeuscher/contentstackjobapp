@@ -1,0 +1,8 @@
+@import "../../common-sass/variables";
+@import "../../common-sass/mixins";
+
+.admin-menu {
+    ul {
+        @include list-to-menu();
+    }
+}
