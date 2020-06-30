@@ -5,20 +5,22 @@ import "./footer.scss"
 export default function Footer() {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      homepage {
-        acf {
-            footer {
-                logo,
-                columns {
-                  column_header_text
-                  column_header_target
-                  links {
-                    text
-                    link
-                    class              
-                  }
-                }
-              }
+      csFooter {
+        logo {
+          url
+        }
+        columns {
+          title
+          links {
+            text
+            link
+            classname
+          }
+        }
+        bottom_links {
+          text
+          link
+          classname
         }
       }
     }

@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const EducationPage = () => (
   <Layout>
-    <SEO title="About" />
+    <SEO title="Education" />
     <div className="interior">
         <h1>Education</h1>
     </div>

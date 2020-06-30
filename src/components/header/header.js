@@ -5,25 +5,43 @@ import "./header.scss"
 export default function Header() {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      homepage {
-        acf {
-          top_nav {
-            logo
-            menu_items {
-              label
-              target
-              class
+      csHeader {
+          logo {
+            url
+          }
+          items {
+            title
+            link
+            dropdown {
+              left_text
+              left_image {
+                url
+              }
+              left_cta {
+                text
+                link
+                classname
+              }
+              links {
+                text
+                link
+                classname
+              }
             }
+          }          
+          demo_button {
+            text
+            link
+            classname
           }
         }
-      }
     }
   `)
   return (
     <header className="page-header max-width">
       <div className="logo">
         <Link to="/">
-          <img src={data.homepage.acf.top_nav.logo} alt='' />
+          <img src={data.header.entry.logo} alt='' />
         </Link>
       </div>
       <nav>

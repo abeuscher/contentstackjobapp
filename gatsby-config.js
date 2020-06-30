@@ -10,16 +10,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-apiserver",
+      resolve: "gatsby-source-contentstack",
       options: {
-        url: `https://beuscher.net/wp-json/wp/v2/cshomepage`,
-        method: "get",
-        name: `homepage`,
-        allowCache: false,
-        localSave: true,
-        path: `${__dirname}/src/data/homepage/`,
-        verboseOutput: false
-  
+        'api_key': 'blt7ef002f7ea3b43f1',
+        'delivery_token': 'cs30a96efed683013e4297e173',
+        'environment':'development',
+        'expediteBuild':false,
+        'type_prefix': `cs`
       }
     },
     `gatsby-plugin-sass`,
