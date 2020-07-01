@@ -24,6 +24,7 @@ export default function Header() {
   `)
     const flickityOptions = {
         wrapAround: true,
+        lazyLoad:true,
         pageDots: false,
         autoPlay: 1500
     }
