@@ -56,6 +56,7 @@ class Tabs extends Component {
 }
 class Panel extends Component {
     render() {
+        let bgStyle = this.props.selected ? { backgroundImage: "url('" + this.props.tab.animated_image.url + "')" } : {}
         return (
             <div className="anim-tab-panel">
                 <input type="radio" name="home-anim-tabs" id={"anim-panel-" + this.props.idx} data-idx={this.props.idx} onChange={this.props.swapTab} checked={this.props.selected} />
@@ -65,7 +66,7 @@ class Panel extends Component {
                         <p>{this.props.tab.copy}</p>
                     </div>
                     <div className="panel-image">
-                        <div className="animated" style={{ backgroundImage: "url('" + this.props.tab.animated_image.url + "')" }}></div>
+                        <div className="animated" style={bgStyle}></div>
                     </div>
                 </div>
             </div>
