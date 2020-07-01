@@ -1,0 +1,72 @@
+@import "../../common-sass/variables";
+@import "../../common-sass/mixins";
+
+.home-silhouette {
+    background:$black;
+    color:$white;
+    position:relative;
+    padding:150px 0;
+    .max-width {
+        justify-content: space-between;
+        
+        display:flex;
+        position: relative;
+    }
+    .left-pane, .right-pane{
+        flex-basis:25%;
+        z-index:3;
+    }
+    .bg-images {
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        div {
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background-size:contain;
+            background-position:center center;
+            background-repeat: no-repeat;    
+            &.profile-left, &.profile-right {
+                opacity:.5;
+                margin:50px 20%;
+                background-size:contain;
+            }      
+        }
+    }
+    .hover {
+        position:absolute;
+        top:0;
+        left:50%;
+        bottom:0;
+        right:0; 
+        z-index:10; 
+        &.left {
+            left:0;
+            right:50%;
+        } 
+        @include nice-transition();
+        &:hover {
+            &.left {
+                ~ .bg-images {
+                    .profile-left {
+                        z-index:2;
+                        opacity:1;
+                    }
+                }
+            }
+            &.right {
+                ~ .bg-images {
+                    .profile-right {
+                        z-index:2;
+                        opacity:1;
+                    }
+                }
+            }
+        }     
+    }
+}

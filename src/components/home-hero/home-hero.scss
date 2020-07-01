@@ -1,0 +1,34 @@
+.home-hero {
+    min-height:700px;
+    position:relative;
+    .hero-content {
+        padding:150px 0;
+        position:relative;
+        color:white;
+        text-align: center;
+        width:80%;
+        margin:0 auto;
+        h1, p {
+            text-shadow: 0 2px 2px rgba(0,0,0,.5);
+        }
+        h1 {
+            max-width: 620px;
+            margin:0 auto;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: 2.8px;
+        }
+        p {
+            max-width: 560px;
+            margin: 20px auto 42px; 
+        }
+        a {
+            display:block;
+            margin:0 0 1em;
+            &.button {
+                display:inline-block;
+            }
+        }
+    }
+    
+}

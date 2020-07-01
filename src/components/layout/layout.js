@@ -11,6 +11,7 @@ import "./layout.scss"
 const Layout = ({ children }) => {
   return (
     <>
+      <div id="overlay"></div>
       <NotificationBar/>
       <Header />
       <main>{children}</main>

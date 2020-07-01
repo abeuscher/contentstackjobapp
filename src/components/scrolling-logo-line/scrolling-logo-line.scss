@@ -1,0 +1,16 @@
+@import "../../../node_modules/flickity/dist/flickity.css";
+
+.carousel {
+    min-height:150px;
+    .thumb {   
+        width:16.6%;     
+        background-size:70%;
+        background-repeat:no-repeat;
+        background-position:center center;
+        &:after {
+            content:'';
+            display:block;
+            padding-bottom:56.25%;
+        }
+    }
+}

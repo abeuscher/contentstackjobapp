@@ -71,6 +71,7 @@ class MainMenu extends Component {
           <span className="line"></span>
         </button>
         <nav>
+          <AdminMenu />
           <ul>
             {this.props.data.items.map((item, idx) => (
               <li key={"header-list-item-" + idx}>
@@ -79,8 +80,7 @@ class MainMenu extends Component {
               </li>
             ))}
             <li><Link className={"demo-button " + this.props.data.demo_button.classname} to={this.props.data.demo_button.link}>{this.props.data.demo_button.text}</Link></li>
-          </ul>
-          <AdminMenu />
+          </ul>    
         </nav>
       </div>)
   }

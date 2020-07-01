@@ -3,8 +3,10 @@
 
 header.page-header {
     display: flex;
+    position: absolute;
     z-index: 1;
-
+    left: 0;
+    right: 0;
     .logo {
         flex-basis: 80%;
         a {
@@ -20,18 +22,19 @@ header.page-header {
         position: fixed;
         top: 0;
         bottom: 0;
-        width: 100%;
+        right: 0;
         left: 100%;
         z-index: 98;
         background: $dark-gray;
         color: $white;
-        padding-top: 100px;
-        overflow-y: scroll;
+
         a {
             color: $white;
         }
         .col-left {
             display: none;
+        }
+        .admin-menu {
         }
         button {
             background: transparent;
@@ -47,7 +50,11 @@ header.page-header {
         ul {
             list-style: none;
             margin: 0;
-            padding: 0 0 0 1em;
+            padding: 0 2em 50px;
+            &.admin-menu {
+                margin: 0;
+                padding-top: 25px;
+            }
             li {
                 margin: 0;
                 padding: 0;
@@ -58,6 +65,7 @@ header.page-header {
                 a {
                     line-height: 2;
                     font-size: 1.2em;
+                    white-space: nowrap;
                 }
             }
         }
@@ -78,24 +86,21 @@ header.page-header {
         &:focus {
             outline: none;
         }
+        &:hover {
+            cursor: pointer;
+        }
         .line {
             width: 50px;
             height: 5px;
-            background-color: #ecf0f1;
+            background-color: $off-white;
             display: block;
             margin: 8px auto;
             transition: all 0.3s ease-in-out;
         }
 
-        &:hover {
-            cursor: pointer;
-        }
-
         &:before {
             content: "";
             position: absolute;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
             box-sizing: border-box;
             width: 70px;
             height: 70px;
@@ -103,12 +108,10 @@ header.page-header {
             top: calc(50% - 35px);
             left: calc(50% - 35px);
             border-radius: 100%;
-            -webkit-transition: all 0.3s ease-in-out;
-            -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
         }
         &.is-active {
-            transform: rotate(45deg);
+            transform: rotate(45deg) translateY(1em);
             .line {
                 width: 35px;
                 &:nth-child(2) {
@@ -127,16 +130,14 @@ header.page-header {
         }
     }
     @include bp(m) {
+        top: $cta-bar-height;
         .logo {
             flex-basis: 20%;
         }
         .nav-box {
             flex-basis: 80%;
         }
-        position: absolute;
-        top: $cta-bar-height;
-        left: 0;
-        right: 0;
+
         .admin-menu {
             display: none;
         }
@@ -164,7 +165,6 @@ header.page-header {
             overflow-y: visible;
             a,
             button {
-                color: $black;
                 padding: 0.25em 0.5em;
                 margin: 0;
                 line-height: 1.5;
@@ -230,6 +230,7 @@ header.page-header {
                                         display: block;
                                         line-height: 1.5;
                                         font-size: 0.8em;
+                                        color: $black;
                                         &:hover {
                                             background: $purple;
                                             color: $white;
@@ -251,11 +252,32 @@ header.page-header {
         }
     }
 }
-body.menu-open {
-    overflow: hidden;
-    header.page-header {
-        nav {
-            left: 10%;
+//This may not belong here, as overlay can be triggered for other reasons. Should probably move to layout at some point.
+#overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+// This is in a reverse media query so that the menu open state will not affect appearance when the control for it disappears.
+@media only screen and (max-width: 1023px) {
+    body.menu-open {
+        overflow: hidden;
+        #overlay {
+            display: block;
+        }
+        .logo {
+            opacity: 0;
+        }
+        header.page-header {
+            nav {
+                left: 10%;
+                overflow-y: scroll;
+            }
         }
     }
 }

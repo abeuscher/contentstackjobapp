@@ -9,11 +9,11 @@ export default class BgFader extends Component {
             currentIndex: 0,
             image_top: {
                 class: "starting_slide",
-                src: this.props.images[0].image
+                src: this.props.images[0].url
             },
             image_bottom: {
                 class: "old_slide",
-                src: this.props.images[1].image
+                src: this.props.images[1].url
             }
         }
     }
@@ -26,7 +26,7 @@ export default class BgFader extends Component {
         let newIndex = this.state.currentIndex === this.props.images.length - 1 ? 0 : this.state.currentIndex + 1
         let newImage = {
             class: "",
-            src: this.props.images[newIndex].image
+            src: this.props.images[newIndex].url
         }
         let newState = {}
         let timerFunc = null;
