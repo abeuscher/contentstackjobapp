@@ -1,5 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
+import LazyThumb from "../helpers/lazy-thumb"
+
 import "./home-animated-tabs.scss"
 
 export default function HomeAnimatedTabs() {
@@ -56,7 +58,6 @@ class Tabs extends Component {
 }
 class Panel extends Component {
     render() {
-        let bgStyle = this.props.selected ? { backgroundImage: "url('" + this.props.tab.animated_image.url + "')" } : {}
         return (
             <div className="anim-tab-panel">
                 <input type="radio" name="home-anim-tabs" id={"anim-panel-" + this.props.idx} data-idx={this.props.idx} onChange={this.props.swapTab} checked={this.props.selected} />
@@ -66,7 +67,7 @@ class Panel extends Component {
                         <p>{this.props.tab.copy}</p>
                     </div>
                     <div className="panel-image">
-                        <div className="animated" style={bgStyle}></div>
+                        <LazyThumb classname="animated" src={this.props.tab.animated_image.url} />
                     </div>
                 </div>
             </div>

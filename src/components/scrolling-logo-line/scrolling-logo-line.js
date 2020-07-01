@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import Flickity from "react-flickity-component"
+import LazyThumb from "../helpers/lazy-thumb"
 
 import "./scrolling-logo-line.scss"
 
@@ -40,7 +41,7 @@ export default function Header() {
             {data.csHomepage.logo_garden.logos.map((logo, idx) => {
                 if (logo.black_and_white_logo) {
                     return (
-                        <div key={"logo-thumb-"+idx} className="thumb" style={{ "backgroundImage": "url('" + logo.black_and_white_logo.url + "')" }} title={logo.title}></div>
+                        <LazyThumb key={"logo-thumb-"+idx} alt={logo.title} src={logo.black_and_white_logo.url} />
                     )
                 }
                 return null

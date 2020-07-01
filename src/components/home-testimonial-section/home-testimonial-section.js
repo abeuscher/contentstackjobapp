@@ -65,7 +65,7 @@ class Tabs extends Component {
                     </div>
                     <div className="tabs">
                         {this.props.tabs.map((tab, idx) => (
-                            <label className={idx === parseInt(this.state.currentTab) ? "active" : ""} key={"test-label-" + idx} htmlFor={"test-panel-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }}></label>
+                            <p className={idx === parseInt(this.state.currentTab) ? "active" : ""} key={"test-label-" + idx} htmlFor={"test-panel-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }}></p>
                         ))}
                         {this.props.extraLink}
                     </div>
@@ -78,7 +78,6 @@ class Panel extends Component {
     render() {
         return (
             <div className="testimonial-tab-panel">
-                <input type="radio" name="home-test-tabs" id={"test-panel-" + this.props.idx} data-idx={this.props.idx} onChange={this.props.swapTab} checked={this.props.selected} />
                 <div className="inner">
                     <p>{this.props.tab.quote}</p>
                     <cite>{this.props.tab.speaker}{this.props.tab.company_name}</cite>
