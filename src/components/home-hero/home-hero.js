@@ -1,7 +1,8 @@
 import { useStaticQuery, graphql, Link } from "gatsby"
 import React from "react"
+import Flickity from "react-flickity-component"
+
 import "./home-hero.scss"
-import BgFader from "../bg-fader/bg-fader"
 
 export default function Hero() {
   const data = useStaticQuery(graphql`
@@ -27,9 +28,23 @@ export default function Hero() {
       }
     }
   `)
+  const flickityOptions = {
+    wrapAround: true,
+    lazyLoad: true,
+    pageDots: false,
+    prevNextButtons:false,
+    autoPlay: 6000
+  }
   return (
     <div className="home-hero">
-      <BgFader images={data.csHomepage.hero.images} />
+      <div className="bg-carousel-bucket">
+        <Flickity className="bg-fader"
+          options={flickityOptions}>
+          {data.csHomepage.hero.images.map((image, idx) => {
+            return (<div key={"hero-slide-" + idx} className="bg-slide" style={{ "backgroundImage": "url('" + image.url + "')" }}></div>)
+          })}
+        </Flickity>
+      </div>
       <div className="hero-content">
         <h1>{data.csHomepage.hero.header}</h1>
         <p>{data.csHomepage.hero.copy}</p>

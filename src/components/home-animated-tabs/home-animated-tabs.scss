@@ -1,10 +1,21 @@
-
 @import "../../common-sass/styles.scss";
+
 .home-animated-tabs {
     background:$off-white;
     padding:100px 0 50px;
+    .anim-tab-panel {
+        width: 100%;
+        left: 0 !important;
+        opacity: 0;
+        &.is-selected {
+            opacity: 1;
+            transition-duration: 2s;
+        }
+    }
+    .flickity-slider {
+        transform: none !important;
+    }
     .tabs {
-        display:flex;
         label, a {
             font-weight:bold;
             display:inline-block;
@@ -25,21 +36,13 @@
         }
     }
     .panels {
-        .inner {
-            display:none;
-        }
-        input[type="radio"] {
-            display:none;
-            &:checked {
-                + .inner {
-                    display:flex;
-                }
-            }
-        }
+
     }
     .anim-tab-panel {
+        width:100%;
         .inner {
             padding:50px 0;
+            display:flex;
             .panel-text, .panel-image {
                 flex-basis:40%;
             }

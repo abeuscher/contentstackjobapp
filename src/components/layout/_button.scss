@@ -1,4 +1,5 @@
 .button, a.button { 
+    @include nice-transition();
     display:inline-block;
     border-radius:3px;
     background:linear-gradient(270deg,$pink,$orange);
@@ -10,7 +11,6 @@
     letter-spacing:1.1px;
     text-align: center;
     font-size:.75em;
-    @include nice-transition();
     outline:none;
     border:none;
     &:focus {

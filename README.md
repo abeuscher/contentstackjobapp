@@ -1,6 +1,7 @@
-# Content Stack Job App
+# Contentstack.com
+## Public Website
 
-Small site for Al Beuscher's job application at contentstack. 
+v 1.0.0
 
 Built on top of Gatsby starter.
 
@@ -16,3 +17,10 @@ To run:
     PATH_TO_CERTS= <- path to SSL Certs.
 
   6. docker-compose up -d
+
+Components:
+Gatsby
+https://gatsbyjs.org/
+Flickity
+https://flickity.metafizzy.co/
+

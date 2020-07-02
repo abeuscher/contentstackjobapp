@@ -1,5 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
+import Flickity from "react-flickity-component"
+
 import "./home-testimonial-section.scss"
 
 export default function HomeTestimonialSection() {
@@ -31,48 +33,41 @@ export default function HomeTestimonialSection() {
       }
     }
   `)
+    let MainCarouselObj = null
+    const flickityOptions = {
+        wrapAround: true,
+        lazyLoad: true,
+        pageDots: false,
+        prevNextButtons: false,
+        autoPlay: false
+    }
+    const tabClick = e => {
+        e.preventDefault();
+        MainCarouselObj.select(e.target.getAttribute("data-idx"))
+    }
     return (
-        <div className="home-animated-tabs testimonial">
-            <Tabs
-                tabs={data.csHomepage.quote_carousel.slides}
-                leftPanel={data.csHomepage.quote_carousel.left_panel} />
-        </div>
-    )
-}
-class Tabs extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            currentTab: 0
-        }
-    }
-    swapTab = e => {
-        this.setState({ currentTab: parseInt(e.target.getAttribute("data-idx")) })
-    }
-    render() {
-        return (
-            <div className="testimonial-tab-block">
-                <div className="max-width">
-                    <div className="panels">
-                        <div className="left-pane">
-                            <h2>{this.props.leftPanel.header}</h2>
-                            <p>{this.props.leftPanel.copy}</p>
-                            <a className={this.props.leftPanel.cta.classname} href={this.props.leftPanel.cta.link}>{this.props.leftPanel.cta.text}</a>
-                        </div>
-                        <div className="right-pane">
-                            {this.props.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} idx={idx} selected={this.state.currentTab === idx} swapTab={this.swapTab} />))}
-                        </div>
+        <div className="testimonial-tab-block">
+            <div className="max-width">
+                <div className="panels">
+                    <div className="left-pane">
+                        <h2>{data.csHomepage.quote_carousel.left_panel.header}</h2>
+                        <p>{data.csHomepage.quote_carousel.left_panel.copy}</p>
+                        <a className={data.csHomepage.quote_carousel.left_panel.cta.classname} href={data.csHomepage.quote_carousel.left_panel.cta.link}>{data.csHomepage.quote_carousel.left_panel.cta.text}</a>
                     </div>
-                    <div className="tabs">
-                        {this.props.tabs.map((tab, idx) => (
-                            <p className={idx === parseInt(this.state.currentTab) ? "active" : ""} key={"test-label-" + idx} htmlFor={"test-panel-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }}></p>
-                        ))}
-                        {this.props.extraLink}
+                    <div className="right-pane">
+                        <Flickity flickityRef={c => MainCarouselObj = c} options={flickityOptions}>
+                            {data.csHomepage.quote_carousel.slides.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
+                        </Flickity>
                     </div>
                 </div>
+                <div className="tabs">
+                    {data.csHomepage.quote_carousel.slides.map((tab, idx) => (
+                        <button key={"test-label-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }} onClick={tabClick} data-idx={idx}></button>
+                    ))}
+                </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 class Panel extends Component {
     render() {
