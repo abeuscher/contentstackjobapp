@@ -33,7 +33,7 @@ export default function Hero() {
     lazyLoad: true,
     pageDots: false,
     prevNextButtons:false,
-    autoPlay: 6000
+    autoPlay: 8000
   }
   return (
     <div className="home-hero">

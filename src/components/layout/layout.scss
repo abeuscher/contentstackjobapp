@@ -8,15 +8,6 @@ body {
     color: $body-text-color;
     position: relative;
     min-height: 100vh;
-    @include bp(s) {
-      font-size:.8em;
-    }
-    @include bp(m) {
-      font-size:1.2em;
-    }
-    @include bp(l) {
-      font-size:1.4em;
-    }
   }
   a {
     text-decoration: none;

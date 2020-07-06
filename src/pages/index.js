@@ -17,6 +17,7 @@ import HomeFeaturesSection from "../components/home-features-section/home-featur
 import HomeAnimatedTabs from "../components/home-animated-tabs/home-animated-tabs"
 import HomeDeliverySection from "../components/home-delivery-section/home-delivery-section"
 import HomeTestimonialSection from "../components/home-testimonial-section/home-testimonial-section"
+import HomeResourcesSection from "../components/home-recommended-resources/home-recommended-resources"
 
 const IndexPage = () => (
   <Layout>
@@ -28,6 +29,7 @@ const IndexPage = () => (
     <HomeAnimatedTabs/>
     <HomeDeliverySection/>
     <HomeTestimonialSection/>
+    <HomeResourcesSection/>
   </Layout>
 )
 

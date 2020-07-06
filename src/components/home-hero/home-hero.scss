@@ -1,4 +1,5 @@
 @import "../../common-sass/styles.scss";
+$slide-transition:8s;
 
 .home-hero {
     position: relative;
@@ -51,7 +52,7 @@
         left: 0 !important;
         opacity: 0;
         @include nice-transition();
-        transition-duration: 6s;
+        transition-duration: $slide-transition;
         
         &:after {
             content: "";
@@ -60,7 +61,7 @@
         }
         &.is-selected {
             opacity: 1;
-            transition-duration: 2s;
+            transition-duration:$slide-transition/2;
         }
     }
     .flickity-slider {
