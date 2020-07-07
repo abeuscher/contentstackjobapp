@@ -56,7 +56,7 @@ function SEO({ pageMeta }) {
           content: thisMeta.twitter_description || thisMeta.page_description,
         },
         {
-          name: `og:thumb`,
+          name: `og:image`,
           content: thisThumb,
         },
         {
