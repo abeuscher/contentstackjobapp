@@ -79,7 +79,7 @@ class MainMenu extends Component {
                 <DropMenu menuData={item.dropdown[0]} />
               </li>
             ))}
-            <li><Link className={"demo-button " + this.props.data.demo_button.classname} to={this.props.data.demo_button.link}>{this.props.data.demo_button.text}</Link></li>
+            <li><a className={"demo-button " + this.props.data.demo_button.classname} href={this.props.data.demo_button.link}>{this.props.data.demo_button.text}</a></li>
           </ul>    
         </nav>
       </div>)
@@ -96,7 +96,7 @@ class DropMenu extends Component {
           <ul>
             {this.props.menuData.links.map((link, linkIndex) => {
               return (<li key={"drop-" + linkIndex}>
-                <Link to={link.link}>{link.text}</Link>
+                <a href={link.link}>{link.text}</a>
               </li>)
             })}
           </ul>
@@ -111,9 +111,9 @@ class LeftColumn extends Component {
       <div className="col-left">
         <div className="thumb" style={{ "backgroundImage": "url('" + this.props.image.url + "')" }}></div>
         <p>{this.props.text}</p>
-        <Link to={this.props.cta.link} className={this.props.cta.classname}>
+        <a href={this.props.cta.link} className={this.props.cta.classname}>
           {this.props.cta.text}
-        </Link>
+        </a>
       </div>
     )
   }

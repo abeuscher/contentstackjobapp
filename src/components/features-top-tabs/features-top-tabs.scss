@@ -1,0 +1,50 @@
+@import "../../common-sass/styles.scss";
+
+.features-section.collaboration {
+    text-align:center;
+    .features-top-tabs {
+        &.desktop {
+            display:none;
+            @include bp(m) {
+                display:block;
+            }
+            .feature-tabs {
+                width:100%;
+                display:flex;
+                flex-wrap:wrap;
+                button {
+                    flex-basis:33%;
+                    cursor:pointer;
+                    background:transparent;
+                    border:none;
+                    box-shadow:2px 2px 5px rgba(0,0,0,.1);
+                    line-height:2;
+                }
+            }
+
+            .view-pane {
+                margin-top:$gutter-width;
+                display:flex;
+                .copy, .thumb {
+                    flex-basis:50%;
+                }
+                .thumb {
+                    background-size:contain;
+                    background-repeat:no-repeat;
+                    background-position: center;
+                    &:after {
+                        content:"";
+                        display:block;
+                        padding-bottom:56.25%;
+                    }
+                }
+            }
+        }
+        &.mobile {
+            display:block;
+            @include bp(m) {
+                display:none;
+            }
+        }
+    }
+}
