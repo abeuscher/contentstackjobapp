@@ -66,7 +66,7 @@ function SEO({ pageMeta, url }) {
         },
         {
           property: `og:url`,
-          content: url ? url : defaultPageData.defaultURL,
+          content: url ? defaultPageData.defaultURL + url : defaultPageData.defaultURL,
         }
       ].concat(defaultMeta)}
     />
