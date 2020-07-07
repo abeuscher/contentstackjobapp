@@ -8,8 +8,9 @@
 import React from "react"
 
 import Layout from "../components/layout/layout.js"
-import SEO from "../components/helpers/seo"
+import SEO from "../components/template-meta-blocks/seo"
 
+import HomeMeta from "../components/template-meta-blocks/home-meta"
 import HomeHero from "../components/home-hero/home-hero"
 import ScrollingLogoLine from "../components/scrolling-logo-line/scrolling-logo-line"
 import HomeWhySection from "../components/home-why-section/home-why-section"
@@ -21,7 +22,7 @@ import HomeResourcesSection from "../components/home-recommended-resources/home-
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <HomeMeta/>
     <HomeHero/>
     <ScrollingLogoLine/>
     <HomeWhySection/>
