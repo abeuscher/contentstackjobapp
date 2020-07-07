@@ -10,7 +10,7 @@ const defaultPageData = {
   page_title:"Contentstack",
   page_description:"A Modern Content Management System",
   defaultThumb:"https://images.contentstack.io/v3/assets/blt77283b164776448a/blt8c571239b295f952/5d664df5ac43f814bc6f68a5/contentstack-logo.svg",
-  defaultURL:"https://contentstack.com"
+  defaultURL:"https://applicationforcontentstack.xyz"
 }
 const defaultMeta = [{
   property: `og:type`,
