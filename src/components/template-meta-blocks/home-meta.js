@@ -6,6 +6,7 @@ export default function Hero() {
   const data = useStaticQuery(graphql`
     query homeMetaQuery {
       csHomepage {
+        url
         metadata {
           page_title
           page_description
@@ -22,6 +23,6 @@ export default function Hero() {
   `)
 
   return (
-    <SEO pageMeta ={data.csHomepage.metadata}/>
+    <SEO pageMeta ={data.csHomepage.metadata} url={data.csHomepage.url}/>
   )
 }

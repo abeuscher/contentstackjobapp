@@ -9,7 +9,8 @@ import { Helmet } from "react-helmet"
 const defaultPageData = {
   page_title:"Contentstack",
   page_description:"A Modern Content Management System",
-  defaultThumb:"https://images.contentstack.io/v3/assets/blt77283b164776448a/blt8c571239b295f952/5d664df5ac43f814bc6f68a5/contentstack-logo.svg"
+  defaultThumb:"https://images.contentstack.io/v3/assets/blt77283b164776448a/blt8c571239b295f952/5d664df5ac43f814bc6f68a5/contentstack-logo.svg",
+  defaultURL:"https://contentstack.com"
 }
 const defaultMeta = [{
   property: `og:type`,
@@ -25,7 +26,7 @@ const defaultMeta = [{
 }]
 
 
-function SEO({ pageMeta }) {
+function SEO({ pageMeta, url }) {
 
   const thisMeta = Object.assign({},defaultPageData,pageMeta)
   const thisThumb = thisMeta.page_thumb ? thisMeta.page_thumb.url : thisMeta.defaultThumb
@@ -62,6 +63,10 @@ function SEO({ pageMeta }) {
         {
           property: `twitter:image`,
           content: thisThumb,
+        },
+        {
+          property: `og:url`,
+          content: url ? url : defaultPageData.defaultURL,
         }
       ].concat(defaultMeta)}
     />
