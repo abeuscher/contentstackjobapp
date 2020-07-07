@@ -33,6 +33,14 @@ function SEO({ pageMeta }) {
           content: `website`,
         },
         {
+          property: `og:thumb`,
+          content: pageMeta.og_thumb.url,
+        },
+        {
+          property: `twitter:image`,
+          content: pageMeta.twitter_thumb.url,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
