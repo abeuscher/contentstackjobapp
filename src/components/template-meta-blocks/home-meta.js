@@ -14,14 +14,8 @@ export default function Hero() {
           }
           twitter_title
           twitter_description
-          twitter_thumb {
-              url
-          }
           opengraph_title
           opengraph_description
-          opengraph_thumb {
-              url
-          }
         }        
       }
     }
