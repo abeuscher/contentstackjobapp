@@ -8,7 +8,6 @@
 import React from "react"
 
 import Layout from "../components/layout/layout.js"
-import SEO from "../components/template-meta-blocks/seo"
 
 import HomeMeta from "../components/template-meta-blocks/home-meta"
 import HomeHero from "../components/home-hero/home-hero"
