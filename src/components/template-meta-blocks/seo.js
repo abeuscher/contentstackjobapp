@@ -48,19 +48,19 @@ function SEO({ pageMeta }) {
           content: thisMeta.opengraph_description || thisMeta.page_description,
         },
         {
-          name: `twitter:title`,
+          property: `twitter:title`,
           content: thisMeta.twitter_title || thisMeta.page_title,
         },
         {
-          name: `twitter:description`,
+          property: `twitter:description`,
           content: thisMeta.twitter_description || thisMeta.page_description,
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: thisThumb,
         },
         {
-          name: `twitter:image`,
+          property: `twitter:image`,
           content: thisThumb,
         }
       ].concat(defaultMeta)}
