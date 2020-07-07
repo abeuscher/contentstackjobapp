@@ -22,11 +22,11 @@ function SEO({ pageMeta }) {
         },
         {
           property: `og:title`,
-          content: pageMeta.og_title || pageMeta.page_title,
+          content: pageMeta.opengraph_title || pageMeta.page_title,
         },
         {
           property: `og:description`,
-          content: pageMeta.og_description || pageMeta.page_description,
+          content: pageMeta.opengraph_description || pageMeta.page_description,
         },
         {
           property: `og:type`,
@@ -34,7 +34,7 @@ function SEO({ pageMeta }) {
         },
         {
           property: `og:thumb`,
-          content: pageMeta.og_thumb.url,
+          content: pageMeta.opengraph_thumb.url,
         },
         {
           property: `twitter:image`,
