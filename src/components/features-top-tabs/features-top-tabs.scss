@@ -45,6 +45,11 @@
             @include bp(m) {
                 display:none;
             }
+            img {
+                width:90%;
+                margin:0 5%;
+                display:none;
+            }
         }
     }
 }

@@ -1,0 +1,29 @@
+@import "../../common-sass/styles.scss";
+
+.features-icon-section {
+    .buckets {
+        .bucket {
+            .inner {
+                padding: $gutter-width/2;
+                .icon {
+                    width: 100px;
+                    height: 100px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin: 0 auto;
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+        @include bp(m) {
+            display: flex;
+            justify-content: space-between;
+            .bucket {
+                flex-basis: 30%;
+            }
+        }
+    }
+}

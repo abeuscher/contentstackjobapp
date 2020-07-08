@@ -67,7 +67,7 @@ class DesktopTabs extends Component {
     render() {
         const thumbStyle = { "backgroundImage": "url('" + this.props.features[this.state.currentSlide].thumb.url + "')" }
         return (
-            <div class="features-top-tabs desktop max-width">
+            <div className="features-top-tabs desktop max-width">
                 <div className="feature-tabs">
                     {this.props.features.map((feature, idx) => {
                         return (<button key={"feature-top-tab-=" + idx} onClick={this.showTab} onMouseEnter={this.hoverOnTab} onMouseLeave={this.hoverOffTab} data-slide-idx={idx}>{feature.tab_label}</button>)
@@ -86,7 +86,7 @@ class MobileTabs extends Component {
         return (
             <div className="features-top-tabs mobile">
                 {this.props.features.map((feature, idx) => {
-                    return (<section><h3 key={"feature-top-tab-mobile-=" + idx}>{feature.tab_label}</h3><img src={feature.thumb.url} alt={feature.tab_label} /><p>{feature.copy}</p></section>)
+                    return (<section key={"feature-top-tab-mobile-=" + idx}><h3>{feature.tab_label}</h3><img src={feature.thumb.url} alt={feature.tab_label} /><p>{feature.copy}</p></section>)
                 })}
             </div>
         )

@@ -1,0 +1,20 @@
+@import "../../common-sass/styles.scss";
+
+.bottom-cta-section {
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    h2,p {
+        color:$white;
+    }
+    .inner {
+        padding:$gutter-width 0;
+    }
+    a {
+        display:inline-block;
+    }
+    .cta-link {
+        display:block;
+    }
+}

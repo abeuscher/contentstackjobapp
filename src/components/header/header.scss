@@ -8,11 +8,18 @@ header.page-header {
     right: 0;
     .logo {
         flex-basis: 80%;
+        display:flex;
+        align-items: center;
         a {
             display: block;
+            padding-left:1em;
         }
         img {
-            max-width: 250px;
+            max-width:60%;
+            @include bp(m) {
+                max-width: 250px;
+            }
+            
         }
     }
     nav {
