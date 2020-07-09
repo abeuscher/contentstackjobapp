@@ -1,53 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "../../common-sass/styles.scss";
 @import "./button";
 
 body {
-    font-family: $body-font;
-    background: $body-bg-color;
-    color: $body-text-color;
-    position: relative;
-    min-height: 100vh;
+  font-family: $body-font;
+  background: $body-bg-color;
+  color: $body-text-color;
+  position: relative;
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: $body-link-color;
+  &:hover {
+    color: $body-link-hover-color;
   }
-  a {
-    text-decoration: none;
-    color: $body-link-color;
-    &:hover {
-      color: $body-link-hover-color;
-    }
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $header-font;
-  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+}
 p {
-  font-size:1.1em;
-  line-height:1.8;
+  font-size: 1.1em;
+  line-height: 1.8;
 }
 main {
-    display:block;
+  display: block;
 }
 .max-width {
-    width:90%;
-    margin:0 auto;
-    @each $bp-name, $bp-value in $bps {
-        @include bp($bp-name) {
-            width:$bp-value;
-        }
+  max-width: 90%;
+  margin: 0 auto;
+  @each $bp-name, $bp-value in $bps {
+    @if ($bp-name!= "xs") {
+      @include bp($bp-name) {
+        width: $bp-value;
       }
+    }
+  }
 }
 .interior {
-    padding-top:200px;
-    text-align:center;
-    background:black;
-    color:white;
-    padding-bottom:50px;
-    margin-bottom:30vh;
+  padding-top: 200px;
+  text-align: center;
+  background: black;
+  color: white;
+  padding-bottom: 50px;
+  margin-bottom: 30vh;
 }
 .centered {
   text-align: center;

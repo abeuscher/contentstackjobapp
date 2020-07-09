@@ -15,11 +15,8 @@ header.page-header {
             padding-left:1em;
         }
         img {
-            max-width:60%;
-            @include bp(m) {
-                max-width: 250px;
-            }
-            
+            height:30px;
+            width:auto;
         }
     }
     nav {
@@ -153,9 +150,6 @@ header.page-header {
         }
         .logo {
             flex-basis: 25%;
-            img {
-                max-width: 170px;
-            }
         }
 
         // Desktop menu styles
@@ -175,15 +169,20 @@ header.page-header {
                 margin: 0;
                 line-height: 1.5;
                 cursor: pointer;
-                background: transparent;
+                
                 border: none;
                 font-size: 1em;
+            }
+            button {
+                background: transparent;
+
             }
             ul {
                 @include list-to-menu();
                 padding: 10px;
                 li {
                     position: relative;
+                    padding:0 $gutter-width/2;
                     .dropdown {
                         max-height: 0;
                         overflow: hidden;
@@ -232,6 +231,7 @@ header.page-header {
                                 display: block;
                                 li {
                                     display: block;
+                                    padding:0;
                                     a {
                                         display: block;
                                         line-height: 1.5;

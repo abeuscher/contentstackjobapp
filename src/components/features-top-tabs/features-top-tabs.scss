@@ -31,17 +31,25 @@
                 .thumb {
                     background-size:contain;
                     background-repeat:no-repeat;
-                    background-position: center;
+                    background-position: center top;
                     &:after {
                         content:"";
                         display:block;
                         padding-bottom:56.25%;
                     }
                 }
+                .copy {
+                    display:flex;
+                    align-items: center;
+                    p {
+                        margin:0 $gutter-width;
+                    }
+                }
             }
         }
         &.mobile {
             display:block;
+            text-align:left;
             @include bp(m) {
                 display:none;
             }

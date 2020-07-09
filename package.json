@@ -5,6 +5,7 @@
   "author": "Al Beuscher <alexbeuscher@gmail.com>",
   "dependencies": {
     "flickity":"^2.2.1",
+    "flickity-as-nav-for":"^2.0.1",
     "gatsby": "^2.21.37",
     "gatsby-background-image": "^1.1.1",
     "gatsby-cli": "^2.12.34",
@@ -23,6 +24,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-scrollmagic": "^2.2.0",
     "react-flickity-component": "^3.5.0",
     "react-helmet": "^6.0.0"
   },

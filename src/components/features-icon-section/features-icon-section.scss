@@ -4,7 +4,6 @@
     .buckets {
         .bucket {
             .inner {
-                padding: $gutter-width/2;
                 .icon {
                     width: 100px;
                     height: 100px;
@@ -13,16 +12,43 @@
                     background-position: center;
                     margin: 0 auto;
                 }
-                h3 {
-                    text-align: center;
+
+                p {
+                    margin-bottom: 2em;
+                }
+                @include bp(xs) {
+                    .icon {
+                        float: left;
+                    }
+                    h3,
+                    p {
+                        padding-left: 110px;
+                    }
                 }
             }
         }
-        @include bp(m) {
+    }
+    @include bp(m) {
+        text-align: center;
+        .buckets {
+            text-align: left;
             display: flex;
             justify-content: space-between;
             .bucket {
                 flex-basis: 30%;
+                .inner {
+                    padding: $gutter-width/2;
+                    .icon {
+                        float: none;
+                    }
+                    h3,
+                    p {
+                        padding: 0;
+                    }
+                    h3 {
+                        text-align: center;
+                    }
+                }
             }
         }
     }

@@ -33,41 +33,54 @@ export default function HomeTestimonialSection() {
       }
     }
   `)
-    let MainCarouselObj = null
-    const flickityOptions = {
+    return (
+        <div className="testimonial-tab-block">
+            <Tabs data={data.csHomepage.quote_carousel} />
+        </div>
+    )
+}
+class Tabs extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            carousel: {}
+        }
+
+    }
+    flickityOptions = {
         wrapAround: true,
         lazyLoad: true,
         pageDots: false,
         prevNextButtons: false,
         autoPlay: false
     }
-    const tabClick = e => {
+    tabClick = e => {
         e.preventDefault();
-        MainCarouselObj.select(e.target.getAttribute("data-idx"))
+        this.state.carousel.select(e.target.getAttribute("data-idx"))
     }
-    return (
-        <div className="testimonial-tab-block">
+    render() {
+        return (
             <div className="max-width">
                 <div className="panels">
                     <div className="left-pane">
-                        <h2>{data.csHomepage.quote_carousel.left_panel.header}</h2>
-                        <p>{data.csHomepage.quote_carousel.left_panel.copy}</p>
-                        <a className={data.csHomepage.quote_carousel.left_panel.cta.classname} href={data.csHomepage.quote_carousel.left_panel.cta.link}>{data.csHomepage.quote_carousel.left_panel.cta.text}</a>
+                        <h2>{this.props.data.left_panel.header}</h2>
+                        <p>{this.props.data.left_panel.copy}</p>
+                        <a className={this.props.data.left_panel.cta.classname} href={this.props.data.left_panel.cta.link}>{this.props.data.left_panel.cta.text}</a>
                     </div>
                     <div className="right-pane">
-                        <Flickity flickityRef={c => MainCarouselObj = c} options={flickityOptions}>
-                            {data.csHomepage.quote_carousel.slides.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
+                        <Flickity flickityRef={c => this.setState({ carousel: c })} options={this.flickityOptions}>
+                            {this.props.data.slides.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
                         </Flickity>
                     </div>
                 </div>
                 <div className="tabs">
-                    {data.csHomepage.quote_carousel.slides.map((tab, idx) => (
-                        <button key={"test-label-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }} onClick={tabClick} data-idx={idx}></button>
+                    {this.props.data.slides.map((tab, idx) => (
+                        <button key={"test-label-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }} onClick={this.tabClick} data-idx={idx}></button>
                     ))}
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 class Panel extends Component {
     render() {

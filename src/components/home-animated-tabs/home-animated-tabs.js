@@ -23,38 +23,49 @@ export default function HomeAnimatedTabs() {
       }
     }
   `)
-
-    let MainCarouselObj = null
-    const flickityOptions = {
+    return (
+        <div className="home-animated-tabs">
+            <Tabs data={data.csHomepage.tab_section} />
+        </div>
+    )
+}
+class Tabs extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            carousel: {}
+        }
+    }
+    flickityOptions = {
         wrapAround: true,
         lazyLoad: true,
         pageDots: false,
         prevNextButtons: false,
         autoPlay: false
-    }
-    const tabClick = e => {
+    }    
+    tabClick = e => {
         e.preventDefault();
-        MainCarouselObj.select(e.target.getAttribute("data-idx"))
+        this.state.carousel.select(e.target.getAttribute("data-idx"))
     }
-    return (
-        <div className="home-animated-tabs">
+    render() {
+        return (
             <div className="anim-tab-block">
                 <div className="max-width">
                     <div className="tabs">
-                        {data.csHomepage.tab_section.tabs.map((tab, idx) => (
-                            <button key={"tab-label-" + idx} onClick={tabClick} data-idx={idx}>{tab.header}</button>
+                        {this.props.data.tabs.map((tab, idx) => (
+                            <button key={"tab-label-" + idx} onClick={this.tabClick} data-idx={idx}>{tab.header}</button>
                         ))}
-                        <a href={data.csHomepage.tab_section.more_tab_link}>{data.csHomepage.tab_section.more_tab_text}</a>
+                        <a href={this.props.data.more_tab_link}>{this.props.data.more_tab_text}</a>
                     </div>
                     <div className="panels">
-                        <Flickity id="animated-tabs" options={flickityOptions} flickityRef={c => MainCarouselObj = c}>
-                            {data.csHomepage.tab_section.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
+                        <Flickity id="animated-tabs" options={this.flickityOptions} flickityRef={c => this.setState({ carousel: c })}>
+                            {this.props.data.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
                         </Flickity>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 class Panel extends Component {
     render() {

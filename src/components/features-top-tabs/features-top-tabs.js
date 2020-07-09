@@ -24,7 +24,7 @@ export default function FeaturesTopTabs() {
 
 
     return (
-        <div className="features-section collaboration">
+        <div className="features-section collaboration max-width">
             <h2>{data.csFeaturesMain.collaboration_section.header}</h2>
             <p>{data.csFeaturesMain.collaboration_section.copy}</p>
             <DesktopTabs features={data.csFeaturesMain.collaboration_section.feature_list} />
@@ -67,14 +67,14 @@ class DesktopTabs extends Component {
     render() {
         const thumbStyle = { "backgroundImage": "url('" + this.props.features[this.state.currentSlide].thumb.url + "')" }
         return (
-            <div className="features-top-tabs desktop max-width">
+            <div className="features-top-tabs desktop">
                 <div className="feature-tabs">
                     {this.props.features.map((feature, idx) => {
                         return (<button key={"feature-top-tab-=" + idx} onClick={this.showTab} onMouseEnter={this.hoverOnTab} onMouseLeave={this.hoverOffTab} data-slide-idx={idx}>{feature.tab_label}</button>)
                     })}
                 </div>
                 <div className="view-pane">
-                    <div className="copy">{this.props.features[this.state.currentSlide].copy}</div>
+                    <div className="copy"><p>{this.props.features[this.state.currentSlide].copy}</p></div>
                     <div className="thumb" style={thumbStyle}></div>
                 </div>
             </div>

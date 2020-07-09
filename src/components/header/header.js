@@ -40,7 +40,7 @@ export default function Header() {
     }
   `)
   return (
-    <header className="page-header">
+    <header className="page-header max-width">
       <div className="logo">
         <Link to="/">
           <img src={data.csHeader.logo.url} alt='' />
@@ -79,7 +79,7 @@ class MainMenu extends Component {
                 <DropMenu menuData={item.dropdown[0]} />
               </li>
             ))}
-            <li><a className={"demo-button " + this.props.data.demo_button.classname} href={this.props.data.demo_button.link}>{this.props.data.demo_button.text}</a></li>
+            <li><a className={"button " + this.props.data.demo_button.classname} href={this.props.data.demo_button.link}>{this.props.data.demo_button.text}</a></li>
           </ul>    
         </nav>
       </div>)

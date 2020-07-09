@@ -1,0 +1,29 @@
+@import "../../common-sass/styles.scss";
+
+nav.sub-nav {
+    background:$white;
+    box-shadow:0 10px 20px rgba(0,0,0,0);
+    &.pinned {
+        position:fixed;
+        width:100%;
+        top:0;
+        left:0;
+        right:0;
+        box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    }
+    ul {
+        display:none;
+        @include list-to-menu();
+        width:100%;
+
+        li {
+            flex:0 1 100%;
+            a {
+                line-height:2;
+            }
+        }
+        @include bp(m) {
+            display:flex;
+        }
+    }
+}

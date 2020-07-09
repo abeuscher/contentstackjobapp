@@ -41,9 +41,11 @@ $slide-transition:8s;
     left: 0;
     right: 0;
     bottom: 0;
+    background:darken($purple,60%);
     .bg-fader, .flickity-slider, .flickity-viewport, .bg-slide {
         height:100%!important;
     }
+
     .bg-slide {
         width: 100%;
         background-size: cover;
