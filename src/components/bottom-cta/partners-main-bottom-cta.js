@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import BottomCTA from "./bottom-cta"
 
-export default function FeaturesMeta() {
+export default function PartnersBottomCTA() {
   const data = useStaticQuery(graphql`
     query partnersMainBottomCtaQuery {
       csPartnersMain {
