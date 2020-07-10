@@ -107,8 +107,8 @@ class FilterGrid extends Component {
   }
   render() {
     return (
-      <div className="integrations-grid">
-        <div className="filter-menu max-width">
+      <div className="integrations-grid max-width">
+        <div className="filter-menu">
           <input type="text" value={this.state.searchPhrase} onChange={this.searchFieldChange} placeholder={this.props.menuFields.search_placeholder_text} />
           <span className="label sort">{this.props.menuFields.sort_menu_label}</span>
           <Menu value={this.props.menuFields.sort_menu_options[this.state.sortIndex]} options={this.props.menuFields.sort_menu_options} onChange={this.sortChange} />
@@ -146,9 +146,13 @@ class FilterGrid extends Component {
 class Menu extends Component {
   render() {
     return (
-      <div className="select-menu"><p>{this.props.value}</p>
+      <div className="select-menu">
         <ul>
-          {this.props.options.map((option, idx) => (<li key={"filter-option-" + idx}><button data-idx={idx} onClick={this.props.onChange}>{option}</button></li>))}
+          <li>{this.props.value}
+            <ul>
+              {this.props.options.map((option, idx) => (<li key={"filter-option-" + idx}><button data-idx={idx} onClick={this.props.onChange}>{option}</button></li>))}
+            </ul>
+          </li>
         </ul>
       </div>
     )

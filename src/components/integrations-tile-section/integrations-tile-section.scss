@@ -1,6 +1,37 @@
 @import "../../common-sass/styles.scss";
 
 .integrations-grid {
+    .filter-menu {
+        display: flex;
+        height:50px;
+        background:$gray;
+        align-items: center;
+        .select-menu {
+            z-index: 99;
+            ul {
+                list-style:none;
+                margin:0;
+                padding:0 1em;
+                li {
+                    position: relative;
+                    ul {
+                        display: none;
+                        position: absolute;
+                        top: 1em;
+                        left: 0;
+                        background:$white;
+                        box-shadow:0 0 5px rgba(0,0,0,.5);
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        ul {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .tile-grid {
         display: flex;
         flex-wrap: wrap;
@@ -11,7 +42,7 @@
             position: relative;
             background: $white;
             perspective: 1000px;
-            margin:0 0 $gutter-width;
+            margin: 0 0 $gutter-width;
             .icon {
                 width: 100px;
                 height: 100px;
@@ -44,7 +75,7 @@
                     backface-visibility: hidden;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                     transform-style: preserve-3d;
-                    display:flex;
+                    display: flex;
                     .inner {
                         flex-basis: 100%;
                         padding: 1em;
