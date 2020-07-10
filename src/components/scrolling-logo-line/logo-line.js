@@ -11,25 +11,21 @@ const flickityOptions = {
 }
 export default class LogoLine extends Component {
     render() {
-        if (typeof window !== 'undefined') {
-            return (
-                <Flickity
-                    className={'carousel'}
-                    elementType={'div'}
-                    options={flickityOptions}
-                >
-                    {this.props.logos.map((logo, idx) => {
-                        if (logo.black_and_white_logo) {
-                            return (
-                                <LazyThumb key={"logo-thumb-" + idx} alt={logo.title} src={logo.black_and_white_logo.url} />
-                            )
-                        }
-                        return null
-                    })}
-                </Flickity>
-            )
-        }
-        else return null
-
+        return (
+            <Flickity
+                className={'carousel'}
+                elementType={'div'}
+                options={flickityOptions}
+            >
+                {this.props.logos.map((logo, idx) => {
+                    if (logo.black_and_white_logo) {
+                        return (
+                            <LazyThumb key={"logo-thumb-" + idx} alt={logo.title} src={logo.black_and_white_logo.url} />
+                        )
+                    }
+                    return null
+                })}
+            </Flickity>
+        )
     }
 }
