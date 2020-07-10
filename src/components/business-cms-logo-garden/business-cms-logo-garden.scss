@@ -1,0 +1,31 @@
+@import "../../common-sass/styles.scss";
+
+.business-logo-garden {
+    h2 {
+        text-align:center;
+    }
+    .logos {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        max-width:80%;
+        margin:0 auto;
+        .logo {
+            flex:1 1 50%;
+            background-size:80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:after {
+                content: "";
+                display: block;
+                padding-bottom: 56.25%;
+            }
+        }
+        @include bp(m) {   
+            .logo {
+                flex-basis:28%;
+                
+            }
+        }
+    }
+}

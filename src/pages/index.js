@@ -11,7 +11,7 @@ import Layout from "../components/layout/layout.js"
 
 import HomeMeta from "../components/template-meta-blocks/home-meta"
 import HomeHero from "../components/home-hero/home-hero"
-import ScrollingLogoLine from "../components/scrolling-logo-line/scrolling-logo-line"
+import ScrollingLogoLine from "../components/scrolling-logo-line/home-logo-line"
 import HomeWhySection from "../components/home-why-section/home-why-section"
 import HomeFeaturesSection from "../components/home-features-section/home-features-section"
 import HomeAnimatedTabs from "../components/home-animated-tabs/home-animated-tabs"

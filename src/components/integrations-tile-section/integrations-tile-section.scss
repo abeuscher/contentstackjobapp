@@ -1,0 +1,92 @@
+@import "../../common-sass/styles.scss";
+
+.integrations-grid {
+    .tile-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .tile {
+            display: flex;
+            flex: 0 1 100%;
+            position: relative;
+            background: $white;
+            perspective: 1000px;
+            margin:0 0 $gutter-width;
+            .icon {
+                width: 100px;
+                height: 100px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin: 0 auto;
+            }
+            .card-front,
+            .card-back {
+                width: 100%;
+                text-align: center;
+                p {
+                    text-align: left;
+                    &.cta {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+                }
+            }
+            .card-back h3 {
+                display: none;
+            }
+            @include bp(m) {
+                flex-basis: 18%;
+                .card-front,
+                .card-back {
+                    @include nice-transition();
+                    backface-visibility: hidden;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    transform-style: preserve-3d;
+                    display:flex;
+                    .inner {
+                        flex-basis: 100%;
+                        padding: 1em;
+                    }
+                    h3 {
+                        margin: 0;
+                        line-height: 3;
+                    }
+                    p {
+                        margin: 0 0 10px;
+                        font-size: 0.9em;
+                        line-height: 1.4;
+                    }
+                }
+                .card-front {
+                    display: flex;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: $white;
+                    transform: rotateY(0deg);
+                }
+                .card-back {
+                    position: relative;
+                    background: $purple;
+                    color: $white;
+                    height: 100%;
+                    transform: rotateY(-180deg);
+                    h3 {
+                        display: block;
+                    }
+                }
+                &:hover {
+                    .card-front {
+                        transform: rotateY(-180deg);
+                    }
+                    .card-back {
+                        transform: rotateY(0deg);
+                    }
+                }
+            }
+        }
+    }
+}

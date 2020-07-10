@@ -5,8 +5,8 @@ import SvgDiagramSection from "./svg-diagram-section"
 
 export default function DevDiagram() {
     const data = useStaticQuery(graphql`
-    query DevDiagramQuery {
-      csDevelopersCms {
+    query BizDiagramQuery {
+      csBusinessCms {
         diagram_section {
             header
             copy
@@ -16,6 +16,6 @@ export default function DevDiagram() {
     }
   `)
     return (
-      <SvgDiagramSection data={data.csDevelopersCms.diagram_section}/>
+      <SvgDiagramSection data={data.csBusinessCms.diagram_section}/>
     )
 }
