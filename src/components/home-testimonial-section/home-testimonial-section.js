@@ -68,9 +68,11 @@ class Tabs extends Component {
                         <a className={this.props.data.left_panel.cta.classname} href={this.props.data.left_panel.cta.link}>{this.props.data.left_panel.cta.text}</a>
                     </div>
                     <div className="right-pane">
-                        <Flickity flickityRef={c => this.setState({ carousel: c })} options={this.flickityOptions}>
-                            {this.props.data.slides.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
-                        </Flickity>
+                        {typeof window !== 'undefined' ?
+                            <Flickity flickityRef={c => this.setState({ carousel: c })} options={this.flickityOptions}>
+                                {this.props.data.slides.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
+                            </Flickity>
+                            : ""}
                     </div>
                 </div>
                 <div className="tabs">

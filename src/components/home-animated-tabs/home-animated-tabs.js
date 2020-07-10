@@ -42,7 +42,7 @@ class Tabs extends Component {
         pageDots: false,
         prevNextButtons: false,
         autoPlay: false
-    }    
+    }
     tabClick = e => {
         e.preventDefault();
         this.state.carousel.select(e.target.getAttribute("data-idx"))
@@ -58,9 +58,11 @@ class Tabs extends Component {
                         <a href={this.props.data.more_tab_link}>{this.props.data.more_tab_text}</a>
                     </div>
                     <div className="panels">
-                        <Flickity id="animated-tabs" options={this.flickityOptions} flickityRef={c => this.setState({ carousel: c })}>
-                            {this.props.data.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
-                        </Flickity>
+                        {typeof window !== 'undefined' ?
+                            <Flickity id="animated-tabs" options={this.flickityOptions} flickityRef={c => this.setState({ carousel: c })}>
+                                {this.props.data.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
+                            </Flickity>
+                            : ""}
                     </div>
                 </div>
             </div>

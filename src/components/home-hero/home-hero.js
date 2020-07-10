@@ -32,24 +32,26 @@ export default function Hero() {
     wrapAround: true,
     lazyLoad: true,
     pageDots: false,
-    prevNextButtons:false,
+    prevNextButtons: false,
     autoPlay: 8000
   }
   return (
     <div className="home-hero">
       <div className="bg-carousel-bucket">
-        <Flickity className="bg-fader"
-          options={flickityOptions}>
-          {data.csHomepage.hero.images.map((image, idx) => {
-            return (<div key={"hero-slide-" + idx} className="bg-slide" style={{ "backgroundImage": "url('" + image.url + "')" }}></div>)
-          })}
-        </Flickity>
+        {typeof window !== 'undefined' ?
+          <Flickity className="bg-fader"
+            options={flickityOptions}>
+            {data.csHomepage.hero.images.map((image, idx) => {
+              return (<div key={"hero-slide-" + idx} className="bg-slide" style={{ "backgroundImage": "url('" + image.url + "')" }}></div>)
+            })}
+          </Flickity>
+          : ""}
       </div>
       <div className="hero-content">
         <h1>{data.csHomepage.hero.header}</h1>
         <p>{data.csHomepage.hero.copy}</p>
-        <Link to={data.csHomepage.hero.primary_cta.link} className={"button"+data.csHomepage.hero.primary_cta.classname}>{data.csHomepage.hero.primary_cta.text}</Link>
-        <Link to={data.csHomepage.hero.secondary_cta.link} className={"cta-link"+data.csHomepage.hero.secondary_cta.classname}>{data.csHomepage.hero.secondary_cta.text}</Link>
+        <Link to={data.csHomepage.hero.primary_cta.link} className={"button" + data.csHomepage.hero.primary_cta.classname}>{data.csHomepage.hero.primary_cta.text}</Link>
+        <Link to={data.csHomepage.hero.secondary_cta.link} className={"cta-link" + data.csHomepage.hero.secondary_cta.classname}>{data.csHomepage.hero.secondary_cta.text}</Link>
       </div>
     </div>
   )
