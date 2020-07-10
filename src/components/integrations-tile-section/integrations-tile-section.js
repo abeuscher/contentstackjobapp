@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
 import orderBy from "lodash/orderBy"
+import Flatten from "lodash/flatten"
 
 import "./integrations-tile-section.scss"
 
@@ -75,7 +76,7 @@ class FilterGrid extends Component {
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index
     }
-    return categories.flat().filter(onlyUnique);
+    return Flatten(categories).filter(onlyUnique);
   }
   searchFieldChange = e => {
     e.preventDefault()

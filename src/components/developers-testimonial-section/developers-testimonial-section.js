@@ -1,7 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
 import Flickity from "react-flickity-component"
-import "flickity-as-nav-for"
 
 import "./developers-testimonial-section.scss"
 
