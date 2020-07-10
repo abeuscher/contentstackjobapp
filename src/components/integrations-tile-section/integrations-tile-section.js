@@ -75,19 +75,26 @@ class FilterGrid extends Component {
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index
     }
-    return categories.filter(onlyUnique).flat();
+    return categories.flat().filter(onlyUnique);
   }
   searchFieldChange = e => {
     e.preventDefault()
     this.setState({
-      searchPhrase: e.target.value
+      searchPhrase: e.target.value,
+      tiles: this.props.tiles.filter((tile) => { return tile.product_name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1 })
     })
   }
   filterChange = e => {
     e.preventDefault()
     this.setState({
       filterIndex: e.target.getAttribute("data-idx"),
-      tiles: this.props.tiles.filter((tile) => { return tile.categories.indexOf(this.state.categories[e.target.getAttribute("data-idx")][0]) > -1 })
+      tiles: this.props.tiles.filter((tile) => {
+        return tile.categories.filter(
+          category => {
+            return category.title === this.state.categoryList[e.target.getAttribute("data-idx")]
+          }
+        ).length
+      })
     })
   }
   sortChange = e => {
@@ -101,8 +108,10 @@ class FilterGrid extends Component {
     return (
       <div className="integrations-grid">
         <div className="filter-menu max-width">
-          <input type="text" value={this.state.searchPhrase} onChange={this.searchFieldChange} />
+          <input type="text" value={this.state.searchPhrase} onChange={this.searchFieldChange} placeholder={this.props.menuFields.search_placeholder_text} />
+          <span className="label sort">{this.props.menuFields.sort_menu_label}</span>
           <Menu value={this.props.menuFields.sort_menu_options[this.state.sortIndex]} options={this.props.menuFields.sort_menu_options} onChange={this.sortChange} />
+          <span className="label sort">{this.props.menuFields.filter_menu_label}</span>
           <Menu value={this.state.categoryList[this.state.filterIndex]} options={this.state.categoryList} onChange={this.filterChange} />
         </div>
         <div className="tile-grid">
