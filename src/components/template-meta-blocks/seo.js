@@ -66,6 +66,10 @@ function SEO({ pageMeta, url }) {
         {
           property: `og:url`,
           content: url ? defaultPageData.defaultURL + url : defaultPageData.defaultURL,
+        },
+        {
+          name: "robots",
+          content: "noindex"
         }
       ].concat(defaultMeta)}
     >
