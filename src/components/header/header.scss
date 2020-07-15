@@ -179,6 +179,8 @@ header.page-header {
             }
             ul {
                 @include list-to-menu();
+                display:flex;
+                align-items: center;
                 padding: 10px;
                 li {
                     position: relative;

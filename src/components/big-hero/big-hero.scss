@@ -1,0 +1,46 @@
+@import "../../common-sass/styles.scss";
+
+.big-hero {
+    background: $dark-purple;
+    color:$white;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    padding:100px 0 50px;
+    position: relative;
+    overflow:hidden;
+    font-size:1.5em;
+    .max-width {
+        padding:$gutter-width 0;
+    }
+    @include bp(m) {
+        min-height: 520px;
+        padding:0;
+    }
+    h1, h2, p {
+        position:relative;
+        margin:$gutter-width/2 0 $gutter-width/2;
+        @include bp(m) {
+             width:50%;
+        }
+        
+    }
+    h2 {
+        display:inline-block;
+        width:auto;
+        padding:0 0 25px;
+        border-bottom:2px solid $orange;
+    }
+    a {
+        position:relative;
+    }
+    .bg-image {
+        position:absolute;
+        width:100%;
+        bottom:0;
+        height:100%;
+        background-position:bottom right;
+        background-size:contain;
+        background-repeat:no-repeat;
+    }
+}

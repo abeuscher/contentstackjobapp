@@ -1,0 +1,17 @@
+@import "../../common-sass/styles.scss";
+
+.featured-customers {
+    text-align: center;
+    .featured-tiles {
+        @include bp(m) {
+            display: flex;
+            flex-wrap: wrap;
+            .featured-customer-tile {
+                flex: 0 1 50%;
+                h3 {
+                    text-transform:uppercase;
+                }
+            }
+        }
+    }
+}

@@ -1,27 +1,20 @@
-import { Link } from "gatsby"
-import React from "react"
-import PropTypes from "prop-types"
+import React, { Component } from "react"
 
 import "./hero-inner.scss"
 
-function Hero({ data }) {
-    let bgStyle = data.header_bg ? { "backgroundImage": "url('" + data.header_bg.url + "')" } : {}
-    return (
-        <div className="hero" style={bgStyle}>
-            <div className="hero-content">
-                {data.header ? <h1>{data.header}</h1> : ""}
-                {data.copy ? <p>{data.copy}</p> : ""}
-                {data.primary_cta ? <Link to={data.primary_cta.link} className={data.primary_cta.classname}>{data.primary_cta.text}</Link> : ""}
-                {data.secondary_cta ? <Link to={data.secondary_cta.link} className={data.secondary_cta.classname}>{data.secondary_cta.text}</Link> : ""}
+export default class Hero extends Component {
+    render() {
+        let bgStyle = this.props.data.header_bg ? { "backgroundImage": "url('" + this.props.data.header_bg.url + "')" } : {}
+        return (
+            <div className="hero" style={bgStyle}>
+                <div className="hero-content">
+                    {this.props.data.header ? <h1>{this.props.data.header}</h1> : ""}
+                    {this.props.data.copy ? <p>{this.props.data.copy}</p> : ""}
+                    {this.props.data.primary_cta ? <a href={this.props.data.primary_cta.link} className={this.props.data.primary_cta.classname}>{this.props.data.primary_cta.text}</a> : ""}
+                    {this.props.data.secondary_cta ? <a href={this.props.data.secondary_cta.link} className={this.props.data.secondary_cta.classname}>{this.props.data.secondary_cta.text}</a> : ""}
+                </div>
             </div>
-        </div>
-    )
-}
-Hero.defaultProps = {
-    data: {}
-}
-Hero.propTypes = {
-    data: PropTypes.object
-}
+        )
+    }
 
-export default Hero
+}

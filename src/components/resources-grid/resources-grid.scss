@@ -1,0 +1,51 @@
+@import "../../common-sass/styles.scss";
+
+.resources-grid {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+
+    .tile-inner {
+        position:relative;
+    }
+    .card-front {
+        width:100%;
+        .thumb {
+            width:100%;
+            background-size:cover;
+            background-position:center top;
+            background-repeat: no-repeat;
+            &:after {
+                content:"";
+                display:block;
+                padding-bottom:56.25%;
+            }
+        }
+    }
+    .card-front {
+        max-height:500px;
+        overflow:hidden;
+        @include nice-transition();
+    }
+    .card-back {
+        position:absolute;
+        top:0;
+        max-height:0;
+        overflow:hidden;
+        background:$white;
+        @include nice-transition();
+    }
+    .tile {
+        @include bp(m) {
+            flex-basis:20%;
+        }
+        &:hover {
+            .card-front {
+                max-height:0;
+            }
+            .card-back {
+                max-height:500px;
+            }
+        }
+    }
+}
