@@ -10,7 +10,10 @@ export default function CustomerSuccessHero() {
             page_title
             header
             copy
-            bg_image {
+            bg_image_desktop {
+                url
+            }
+            bg_image_mobile {
                 url
             }
             primary_cta {

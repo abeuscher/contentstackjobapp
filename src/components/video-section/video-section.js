@@ -6,17 +6,17 @@ export default class VideoSection extends Component {
     render() {
         if (this.props.video_id) {
             return (
-                <div class="video-section">
-                    <div class="max-width">
+                <div className="video-section">
+                    <div className="max-width">
                         {this.props.header ? <h2>{this.props.header}</h2> : ""}
-                        <div class="player-wrapper">
+                        <div className="player-wrapper">
                             <iframe
                                 width="560"
                                 height="315"
                                 src={"https://www.youtube.com/embed/"+this.props.video_id}
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media;"
-                                allowfullscreen
+                                allowFullScreen
                                 title="vplayer"
                             ></iframe>
                         </div>

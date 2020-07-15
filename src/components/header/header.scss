@@ -12,7 +12,6 @@ header.page-header {
         align-items: center;
         a {
             display: block;
-            padding-left:1em;
         }
         img {
             height:30px;
@@ -84,7 +83,6 @@ header.page-header {
         transition: all 0.3s ease-in-out;
         border: none;
         background: transparent;
-        padding-right: 2em;
         &:active,
         &:focus {
             outline: none;
@@ -99,6 +97,7 @@ header.page-header {
             display: block;
             margin: 8px auto;
             transition: all 0.3s ease-in-out;
+            border-radius:2px;
         }
 
         &:before {
@@ -121,10 +120,10 @@ header.page-header {
                     opacity: 0;
                 }
                 &:nth-child(1) {
-                    transform: translateY(13px);
+                    //transform: translateY(13px);
                 }
                 &:nth-child(3) {
-                    transform: translateY(-13px) rotate(90deg);
+                    transform: translateY(-26px) rotate(90deg);
                 }
                 &:before {
                     border: 5px solid #ecf0f1;

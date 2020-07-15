@@ -1,0 +1,61 @@
+@import "../../common-sass/styles.scss";
+
+.cs-commitment-section {
+  background: $dark-purple;
+  color: $white;
+  padding: $gutter-width 0;
+  overflow: hidden;
+  .bg {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    position: relative;
+    width: 40%;
+    margin-top: -240px;
+    height: 400px;
+    float: right;
+  }
+  .dots {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding-top: 50px;
+    .rect {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h2,
+  h3,
+  p,
+  li {  
+    line-height: 2;
+    @include bp(m) {
+      max-width: 60%;
+    }
+  }
+  h2,
+  h3,
+  p {
+    margin: $gutter-width 0 0;
+  }
+  h3 {
+    color: $orange;
+  }
+  .cs-commit-bucket {
+    clear: none;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    border-left: 5px solid $orange;
+    li {
+      margin-left: 0;
+      padding: 0 0 $gutter-width/2 1.5em;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

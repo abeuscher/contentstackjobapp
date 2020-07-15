@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import "../../common-sass/styles.scss";
 @import "./button";
 
@@ -31,6 +32,7 @@ p {
 }
 main {
   display: block;
+  font-size:1.5em;
 }
 .max-width {
   max-width: 90%;

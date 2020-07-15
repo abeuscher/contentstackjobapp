@@ -22,13 +22,13 @@ export default function CsFeaturedCustomers() {
 
     return (
         <div className="featured-customers">
-            <div class="max-width">
+            <div className="max-width">
                 <h2>{data.csCustomerSuccess.featured_customers_section.header}</h2>
                 <div className="featured-tiles">
                     {data.csCustomerSuccess.featured_customers_section.buckets.map((bucket, idx) => {
                         let bgStyle = bucket.thumb ? { "backgroundImage": "url('" + bucket.thumb + "')" } : {}
                         return (
-                            <div class="featured-customer-tile">
+                            <div key={"customer-tile="+idx} className="featured-customer-tile">
                                 <h3>{bucket.header}</h3>
                                 <div key={"feat-cust-" + idx} className="logo-line" style={bgStyle}></div>
                             </div>
