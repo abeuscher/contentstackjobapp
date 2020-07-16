@@ -14,6 +14,8 @@ import CsHero from "../components/big-hero/customer-success-hero"
 import CsVideoSection from "../components/video-section/customer-success-video-section"
 import CsFeaturedCustomers from "../components/customer-success-featured-customers/customer-success-featured-customers"
 import CsCommitmentSection from "../components/customer-success-commitment-section/customer-success-commitment-section"
+import CsIconSection from "../components/features-icon-section/customer-success-icon-section"
+import CsBadgeSection from "../components/customer-success-badges/customer-success-badges"
 
 const CustomerSuccessPage = () => (
   <Layout>
@@ -22,6 +24,8 @@ const CustomerSuccessPage = () => (
       <CsVideoSection/>
       <CsFeaturedCustomers/>
       <CsCommitmentSection/>
+      <CsIconSection/>
+      <CsBadgeSection/>
   </Layout>
 )
 

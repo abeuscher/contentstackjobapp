@@ -1,0 +1,40 @@
+@import "../../common-sass/styles.scss";
+
+.cs-badge-section {
+    background: $dark-purple
+        radial-gradient(circle at 50% 50%, $purple 0%, $purple 80%, $dark-purple 80%, $dark-purple 100%);
+    color: $white;
+    text-align: center;
+    padding:100px 0;
+    .badges {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        .badge {
+            flex-basis: 80%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom:50px;
+            &:after {
+                content: "";
+                display: block;
+                padding-bottom: 69.1%;
+            }
+
+        }
+        @include bp(m) {
+            flex-wrap: nowrap;
+            .badge {
+            flex-basis: 50%;
+            &:first-child {
+                padding-right: 50px;
+            }
+            &:last-child {
+                padding-left: 50px;
+            }                
+            }
+
+        }
+    }
+}

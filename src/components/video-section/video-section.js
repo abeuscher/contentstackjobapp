@@ -9,7 +9,7 @@ export default class VideoSection extends Component {
                 <div className="video-section">
                     <div className="max-width">
                         {this.props.header ? <h2>{this.props.header}</h2> : ""}
-                        <div className="player-wrapper">
+                        <div className="wrapper-video">
                             <iframe
                                 width="560"
                                 height="315"

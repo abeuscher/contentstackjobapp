@@ -4,6 +4,9 @@
     .buckets {
         .bucket {
             .inner {
+                min-height:100px;
+                vertical-align: middle;
+                margin-bottom:$gutter-width/2;
                 .icon {
                     width: 100px;
                     height: 100px;

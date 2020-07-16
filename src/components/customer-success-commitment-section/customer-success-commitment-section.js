@@ -12,6 +12,9 @@ export default function CsCommitmentSection() {
             bg_image {
                 url
             }
+            bg_dots {
+                url
+            }
             buckets {
                 header
                 copy
@@ -22,14 +25,14 @@ export default function CsCommitmentSection() {
     }
   `)
     let bgStyle = data.csCustomerSuccess.commitment_section.bg_image ? { "backgroundImage": "url('" + data.csCustomerSuccess.commitment_section.bg_image.url + "')" } : {}
-    let dots = <svg className="dots"><pattern id="pattern" x="0" y="0" width="150" height="50" patternUnits="userSpaceOnUse"><circle className="round" cx="15" cy="15" r="15" stroke="none" fill="#5a20b9"></circle></pattern><rect className="rect" x="0" y="0" stroke="#630" strokeWidth="0" fill="url(#pattern)"></rect></svg>
+    let dotBG = data.csCustomerSuccess.commitment_section.bg_dots ? { "backgroundImage": "url('" + data.csCustomerSuccess.commitment_section.bg_dots.url + "')" } : {}
     return (
         <div className="cs-commitment-section">
             <div className="max-width">
                 <h2>{data.csCustomerSuccess.commitment_section.header}</h2>
                 <CBucket data={data.csCustomerSuccess.commitment_section.buckets[0]} />
             </div>
-            {dots}
+            <div className="dots" style={dotBG}></div>
             <div className="bg" style={bgStyle}></div>
             <div className="max-width">
                 <CBucket data={data.csCustomerSuccess.commitment_section.buckets[1]} />
