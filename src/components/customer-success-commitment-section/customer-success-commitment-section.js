@@ -27,10 +27,12 @@ export default function CsCommitmentSection() {
         <div className="cs-commitment-section">
             <div className="max-width">
                 <h2>{data.csCustomerSuccess.commitment_section.header}</h2>
-                <CBucket data={data.csCustomerSuccess.commitment_section.buckets[0]}/>
-                {dots}
-                <div className="bg" style={bgStyle}></div>
-                <CBucket data={data.csCustomerSuccess.commitment_section.buckets[1]}/>
+                <CBucket data={data.csCustomerSuccess.commitment_section.buckets[0]} />
+            </div>
+            {dots}
+            <div className="bg" style={bgStyle}></div>
+            <div className="max-width">
+                <CBucket data={data.csCustomerSuccess.commitment_section.buckets[1]} />
             </div>
         </div>
     )

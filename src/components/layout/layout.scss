@@ -32,7 +32,10 @@ p {
 }
 main {
   display: block;
-  font-size:1.5em;
+  @include bp(m) {
+    font-size:1.5em;
+  }
+  
 }
 .max-width {
   max-width: 90%;

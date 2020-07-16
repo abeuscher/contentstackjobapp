@@ -7,7 +7,7 @@ export default class Hero extends Component {
         let bgStyle = this.props.data.header_bg ? { "backgroundImage": "url('" + this.props.data.header_bg.url + "')" } : {}
         return (
             <div className="hero" style={bgStyle}>
-                <div className="hero-content">
+                <div className="hero-content max-width">
                     {this.props.data.header ? <h1>{this.props.data.header}</h1> : ""}
                     {this.props.data.copy ? <p>{this.props.data.copy}</p> : ""}
                     {this.props.data.primary_cta ? <a href={this.props.data.primary_cta.link} className={this.props.data.primary_cta.classname}>{this.props.data.primary_cta.text}</a> : ""}
