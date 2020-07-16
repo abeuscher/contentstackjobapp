@@ -8,14 +8,14 @@ header.page-header {
     right: 0;
     .logo {
         flex-basis: 80%;
-        display:flex;
+        display: flex;
         align-items: center;
         a {
             display: block;
         }
         img {
-            height:30px;
-            width:auto;
+            height: 30px;
+            width: auto;
         }
     }
     nav {
@@ -42,7 +42,7 @@ header.page-header {
             background: transparent;
             border: none;
             color: $white;
-            border-bottom: 1px solid $white;
+            border-bottom: 1px solid $gray;
             display: block;
             padding: 0;
             margin-top: $gutter-width/2;
@@ -52,7 +52,6 @@ header.page-header {
         ul {
             list-style: none;
             margin: 0;
-            padding: 0 2em 50px;
             &.admin-menu {
                 margin: 0;
                 padding-top: 25px;
@@ -97,7 +96,7 @@ header.page-header {
             display: block;
             margin: 8px auto;
             transition: all 0.3s ease-in-out;
-            border-radius:2px;
+            border-radius: 2px;
         }
 
         &:before {
@@ -166,36 +165,44 @@ header.page-header {
             button {
                 padding: 0.25em 0.5em;
                 margin: 0;
-                line-height: 1.5;
+                line-height: 3;
                 cursor: pointer;
-                
                 border: none;
                 font-size: 1em;
             }
+
             button {
                 background: transparent;
-
             }
             ul {
                 @include list-to-menu();
-                display:flex;
+                display: flex;
                 align-items: center;
-                padding: 10px;
+                justify-content: flex-end;
+                padding: 15px 0;
                 li {
                     position: relative;
-                    padding:0 $gutter-width/2;
+                    padding: 0 $gutter-width/2;
+                    a {
+                        font-size: 1em;
+                        &.button {
+                            font-size: 0.75em;
+                            padding: 0 32px;
+                            line-height: 2.5;
+                        }
+                    }
                     .dropdown {
                         max-height: 0;
                         overflow: hidden;
                         position: absolute;
-                        top: 2em;
+                        top: 3.5em;
                         width: 100%;
                         min-width: 200px;
                         box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
                         &.has-left {
                             min-width: 400px;
                             display: flex;
-                            left: -200px;
+                            transform: translateX(-200px);
                         }
                         .col-left {
                             display: block;
@@ -203,8 +210,9 @@ header.page-header {
                             background: $dark-gray;
                             color: $white;
                             flex-basis: 50%;
+                            padding-bottom: 20px;
                             .thumb {
-                                margin: 10px 10px 0;
+                                margin: 20px 20px 0;
                                 &:after {
                                     content: "";
                                     display: block;
@@ -212,15 +220,18 @@ header.page-header {
                                 }
                             }
                             p {
-                                margin: 10px;
+                                margin: 5px 20px 0;
                                 text-align: left;
-                                color: $gray;
+                                color: $white;
+                                opacity: 0.5;
                                 line-height: 1.2;
+                                font-size: 0.9em;
                             }
                             a {
                                 display: block;
                                 color: white;
                                 text-align: center;
+                                font-size: 0.9em;
                             }
                         }
                         .col-right {
@@ -232,11 +243,11 @@ header.page-header {
                                 display: block;
                                 li {
                                     display: block;
-                                    padding:0;
+                                    padding: 0;
                                     a {
                                         display: block;
-                                        line-height: 1.5;
-                                        font-size: 0.8em;
+                                        line-height: 2;
+                                        font-size: 1em;
                                         color: $black;
                                         &:hover {
                                             background: $purple;
@@ -284,6 +295,32 @@ header.page-header {
             nav {
                 left: 10%;
                 overflow-y: scroll;
+                ul {
+                    padding: 0 20% 0;
+                    .button {
+                        margin-top: 1em;
+                    }
+                    ul {
+                        padding: 0;
+                    }
+                }
+                .dropdown {
+                    a {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                button {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                    margin-left:-1em;
+                    padding-left:1em;
+                    &:focus, &:focus-within {
+                        outline: none;
+                    }
+                }
             }
         }
     }

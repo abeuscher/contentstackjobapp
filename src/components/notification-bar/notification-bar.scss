@@ -4,7 +4,7 @@
     position:relative;
     border-bottom:1px solid $orange;
     height:0px;
-    width:25px;
+    width:15px;
     vertical-align: middle;
     display:inline-block;
     margin-left:.25em;
@@ -14,21 +14,21 @@
       border:1px solid $orange;
       transform:rotate(45deg);
       right:0;
-      width:10px;
-      height:10px;
+      width:5px;
+      height:5px;
       border-left-color:transparent;
       border-bottom-color:transparent;
-      transform-origin:11px 0 0;
+      transform-origin:7px 2px 0;
     }
   }
 .notification-bar {
-    
+    padding:0 40px;
     background:$cta-bar-bg;
+    text-align:center;
     .cta {
         color:$white;
         display:inline-block;
         line-height:40px;
-        padding-left:1em;
         font-size:.8em;
     }
     a {
@@ -54,7 +54,6 @@
         @include bp(m) {
             display:inline-block;
             float:right;
-            padding-right:1em;
             li {
                 a {
                     color:$white;
@@ -69,6 +68,7 @@
         
     }
     @include bp(m) {
+        text-align: left;
         height:$cta-bar-height;
     }
 }
