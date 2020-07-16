@@ -48,6 +48,10 @@ header.page-header {
             margin-top: $gutter-width/2;
             line-height: 2;
             font-size: 1.2em;
+            &:focus,
+            &:focus-within {
+                outline: none;
+            }
         }
         ul {
             list-style: none;
@@ -315,11 +319,8 @@ header.page-header {
                     display: block;
                     width: 100%;
                     text-align: left;
-                    margin-left:-1em;
-                    padding-left:1em;
-                    &:focus, &:focus-within {
-                        outline: none;
-                    }
+                    margin-left: -1em;
+                    padding-left: 1em;
                 }
             }
         }
