@@ -1,9 +1,12 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
 import LazyThumb from "../helpers/lazy-thumb"
-import Flickity from "react-flickity-component"
+import SwiperCore, { Autoplay, EffectFade, Thumbs, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import "./home-animated-tabs.scss"
+import "swiper/swiper.scss"
+import 'swiper/components/pagination/pagination.scss';
 
 export default function HomeAnimatedTabs() {
     const data = useStaticQuery(graphql`
@@ -23,51 +26,58 @@ export default function HomeAnimatedTabs() {
       }
     }
   `)
+
     return (
-        <div className="home-animated-tabs">
-            <Tabs data={data.csHomepage.tab_section} />
-        </div>
+        <Tabs data={data.csHomepage.tab_section} />
     )
 }
+SwiperCore.use([Autoplay, EffectFade, Thumbs, Pagination]);
 class Tabs extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            carousel: {}
+            activeIndex: 0,
+            swiper: {}
         }
     }
-    flickityOptions = {
-        wrapAround: true,
-        lazyLoad: true,
-        pageDots: false,
-        prevNextButtons: false,
-        autoPlay: false
-    }
     tabClick = e => {
-        e.preventDefault();
-        this.state.carousel.select(e.target.getAttribute("data-idx"))
+        this.setState({
+            activeIndex: e.target.getAttribute("data-idx")
+        })
+        this.state.swiper.slideTo(e.target.getAttribute("data-idx"))
+    }
+    slideSwap = e => {
+        this.setState({
+            activeIndex: e.activeIndex
+        })
     }
     render() {
         return (
-            <div className="anim-tab-block">
+            <div className="home-animated-tabs">
                 <div className="max-width">
                     <div className="tabs">
                         {this.props.data.tabs.map((tab, idx) => (
-                            <button key={"tab-label-" + idx} onClick={this.tabClick} data-idx={idx}>{tab.header}</button>
+                            <button key={"tab-slide-" + idx} className={this.state.activeIndex === idx ? "active" : ""} onClick={this.tabClick} data-idx={idx}>{tab.header}</button>
                         ))}
                         <a href={this.props.data.more_tab_link}>{this.props.data.more_tab_text}</a>
                     </div>
-                    <div className="panels">
-                        {typeof window !== 'undefined' ?
-                            <Flickity id="animated-tabs" options={this.flickityOptions} flickityRef={c => this.setState({ carousel: c })}>
-                                {this.props.data.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
-                            </Flickity>
-                            : ""}
-                    </div>
+                    <Swiper
+                        onSlideChange={this.slideSwap}
+                        effect={"fade"}
+                        pagination={{ clickable: true }}
+                        onSwiper={(swiper) => { this.setState({swiper : swiper })}}
+                        autoplay={{ "delay": 4500 }}>
+                        {this.props.data.tabs.map((tab, idx) => (
+                            <SwiperSlide key={"panel-slide-" + idx}>
+                                <Panel tab={tab} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         )
     }
+
 }
 class Panel extends Component {
     render() {

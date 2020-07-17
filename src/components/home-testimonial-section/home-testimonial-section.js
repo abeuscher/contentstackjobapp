@@ -1,8 +1,11 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
-import Flickity from "react-flickity-component"
+import SwiperCore, { Autoplay, EffectFade, Thumbs, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import "./home-testimonial-section.scss"
+import "swiper/swiper.scss"
+import 'swiper/components/pagination/pagination.scss';
 
 export default function HomeTestimonialSection() {
     const data = useStaticQuery(graphql`
@@ -20,7 +23,7 @@ export default function HomeTestimonialSection() {
             }
             slides {
                 logo {
-                    black_and_white_logo {
+                    png_black_and_white {
                         url
                     }
                 }
@@ -28,6 +31,9 @@ export default function HomeTestimonialSection() {
                 speaker_name
                 speaker_job_title
                 company_name
+            }
+            quote_icon {
+                url
             }
         }
       }
@@ -39,24 +45,26 @@ export default function HomeTestimonialSection() {
         </div>
     )
 }
+SwiperCore.use([Autoplay, EffectFade, Thumbs, Pagination]);
 class Tabs extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            carousel: {}
+            activeIndex: 0,
+            swiper: {}
         }
 
     }
-    flickityOptions = {
-        wrapAround: true,
-        lazyLoad: true,
-        pageDots: false,
-        prevNextButtons: false,
-        autoPlay: false
-    }
     tabClick = e => {
-        e.preventDefault();
-        this.state.carousel.select(e.target.getAttribute("data-idx"))
+        this.setState({
+            activeIndex: e.target.getAttribute("data-idx")
+        })
+        this.state.swiper.slideTo(e.target.getAttribute("data-idx"))
+    }
+    slideSwap = e => {
+        this.setState({
+            activeIndex: e.activeIndex
+        })
     }
     render() {
         return (
@@ -68,16 +76,27 @@ class Tabs extends Component {
                         <a className={this.props.data.left_panel.cta.classname} href={this.props.data.left_panel.cta.link}>{this.props.data.left_panel.cta.text}</a>
                     </div>
                     <div className="right-pane">
-                        {typeof window !== 'undefined' ?
-                            <Flickity flickityRef={c => this.setState({ carousel: c })} options={this.flickityOptions}>
-                                {this.props.data.slides.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
-                            </Flickity>
-                            : ""}
+                        <Swiper
+                            onSlideChange={this.slideSwap}
+                            effect={"fade"}
+                            onSwiper={(swiper) => { this.setState({ swiper: swiper }) }}
+                            autoplay={{ "delay": 4500 }}>
+                            {this.props.data.slides.map((tab, idx) => (
+                                <SwiperSlide key={"panel-slide-" + idx}>
+                                    <Panel tab={tab} quoteIcon={this.props.data.quote_icon}/>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
                 </div>
                 <div className="tabs">
                     {this.props.data.slides.map((tab, idx) => (
-                        <button key={"test-label-" + idx} style={{ backgroundImage: "url('" + tab.logo[0].black_and_white_logo.url + "'" }} onClick={this.tabClick} data-idx={idx}></button>
+                        <button
+                            key={"test-label-" + idx}
+                            className={this.state.activeIndex === idx ? "active" : ""}
+                            style={{ backgroundImage: "url('" + tab.logo[0].png_black_and_white.url + "'" }}
+                            onClick={this.tabClick}
+                            data-idx={idx}></button>
                     ))}
                 </div>
             </div>
@@ -86,9 +105,15 @@ class Tabs extends Component {
 }
 class Panel extends Component {
     render() {
+        let logoStyle = this.props.tab.logo[0].png_black_and_white ? { backgroundImage: "url('" + this.props.tab.logo[0].png_black_and_white.url + "'" } : {}
+        let quoteStyle = this.props.quoteIcon ? { backgroundImage: "url('" + this.props.quoteIcon.url + "'" } : {}
         return (
             <div className="testimonial-tab-panel">
                 <div className="inner">
+                    <div className="top-bar">
+                        <div className="logo" style={logoStyle}></div>
+                        <div className="fancy-quote" style={quoteStyle}></div>
+                    </div>
                     <p>{this.props.tab.quote}</p>
                     <cite>{this.props.tab.speaker}{this.props.tab.company_name}</cite>
                 </div>

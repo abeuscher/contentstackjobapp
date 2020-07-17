@@ -1,75 +1,100 @@
 @import "../../common-sass/styles.scss";
 
 .home-animated-tabs {
-    background:$off-white;
-    padding:100px 0 50px;
-    .anim-tab-panel {
-        width: 100%;
-        left: 0 !important;
-        opacity: 0;
-        &.is-selected {
-            opacity: 1;
-            transition-duration: 2s;
-        }
-    }
-    .flickity-slider {
-        transform: none !important;
-    }
+    background: $off-white;
+    padding: 100px 0 50px;
     .tabs {
-        label, a {
-            font-weight:bold;
-            display:inline-block;
-            padding:1em 1em .25em 0;
-            margin-right:1em;
-            cursor:pointer;
-            color:$purple;
+        display: none;
+        @include bp(m) {
+            display: flex;
+        }
+        button,
+        a {
+            text-align:left;
+            font-size:20px;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-weight: bold;
+            display: inline-block;
+            padding: 1em 0 0.5em 0;
+            cursor: pointer;
+            color: $purple;
             text-decoration: none;
+            position:relative;
+            margin-right:40px;
+            &:after {
+                content:"";
+                position:absolute;
+                width:100%;
+                height:4px;
+                bottom:0;
+                left:0;
+                background:transparent;
+            }
             &.active {
-                border-bottom:3px solid $purple;
+                &:after {
+                    background:linear-gradient(to right, $purple 0%, $purple 60%, lighten($purple,30%) 60%, lighten($purple,30%) 100%);
+                }
             }
         }
         a {
-            color:$orange;
+            color: $orange;
             &:hover {
-                color:$pink;
+                color: $pink;
             }
         }
     }
-    .panels {
-
+    .swiper-pagination {
+        @include bp(m) {
+            display: none;
+        }
     }
     .anim-tab-panel {
-        width:100%;
+        width: 100%;
+        background: $off-white;
         .inner {
-            padding:50px 0;
-            display:flex;
-            .panel-text, .panel-image {
-                flex-basis:40%;
+            padding: 50px 0;
+
+            @include bp(m) {
+                display: flex;
+            }
+            .panel-text,
+            .panel-image {
+                flex-basis: 40%;
             }
             .panel-text {
-                h2, p {
-                    padding:0 1em 0 0;
+                h2,
+                p {
+                    padding: 0 1em 0 0;
                 }
                 h2 {
-                    margin-top:0;
+                    margin-top: 0;
+                }
+                @include bp(m) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding-bottom:100px;
                 }
             }
             .panel-image {
-                flex-basis:60%;
-                position:relative;
-                height:100%;
+                flex-basis: 60%;
+                position: relative;
+                height: 100%;
                 .static {
-                    display:none;
+                    display: none;
                 }
-                .static, .animated {
-                    width:100%;
-                    background-size:contain;
+                .static,
+                .animated {
+                    width: 100%;
+                    background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
                     &:after {
-                        content:'';
-                        display:block;
-                        padding-bottom:56.25%;
+                        content: "";
+                        display: block;
+                        padding-bottom: 56.25%;
                     }
                 }
             }

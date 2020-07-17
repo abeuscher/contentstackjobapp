@@ -3,7 +3,7 @@
 header.page-header {
     display: flex;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     left: 0;
     right: 0;
     .logo {
@@ -36,8 +36,6 @@ header.page-header {
         }
         .col-left {
             display: none;
-        }
-        .admin-menu {
         }
         button {
             background: transparent;
@@ -179,6 +177,9 @@ header.page-header {
 
             button {
                 background: transparent;
+                &:hover {
+                    font-weight:bold;
+                }
             }
             ul {
                 @include list-to-menu();
@@ -188,13 +189,20 @@ header.page-header {
                 padding: 15px 0;
                 li {
                     position: relative;
-                    padding: 0 $gutter-width/2;
+                    padding: 0 5px;
+                    @include bp(l) {
+                        padding:0 15px;
+                    }
                     a {
                         font-size: 1em;
                         &.button {
                             font-size: 0.75em;
                             padding: 0 32px;
                             line-height: 2.5;
+                            border:3px solid transparent;
+                            &:hover {
+                                border:3px solid $orange;
+                            }
                         }
                     }
                     .dropdown {

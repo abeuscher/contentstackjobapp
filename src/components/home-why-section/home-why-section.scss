@@ -1,47 +1,54 @@
 @import "../../common-sass/styles.scss";
 
 .why-section {
-    display:flex;
-    flex-wrap:wrap;
-    position:relative;
-    padding-bottom:100px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 100px;
     h2 {
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        min-height:300px;
-        color:$white;
-        background:linear-gradient(270deg,$pink,$orange);
-        text-align:center;
-        font-size:2.5em;
-        padding-top:100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        min-height: 300px;
+        color: $white;
+        background: linear-gradient(75deg, $purple, $orange),
+            linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        text-align: center;
+        font-size: 2.5em;
+        padding-top: 100px;
+        margin: 0;
     }
     .buckets {
-        margin:250px auto 0;
+        margin: 200px auto 0;
         position: relative;
-        display:flex;
-        flex-wrap:wrap;
-        min-height:300px;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 300px;
         justify-content: space-between;
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+        @include bp(m) {
+            flex-wrap: nowrap;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        }
     }
     .why-bucket {
-        background:$white;
-        flex-basis:100%;
-        border-right:1px solid lighten($gray,10%);
-        &:last-child {
-            border-right:none;
-        }
+        background: $white;
+        flex-basis: 100%;
+        margin-bottom: $gutter-width/2;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
         .inner {
-            padding:$gutter-width;
-        }
-        &:hover {
-            color:$white;
-            background:linear-gradient(30deg,$pink,$orange);
+            padding: $gutter-width;
         }
         @include bp(m) {
-            flex-basis:33%;
+            box-shadow: -1px 0 0 $light-gray;
+            margin-bottom:0;
+            &:first-child {
+                box-shadow: none;
+            }
+            &:hover {
+                color: $white;
+                background: linear-gradient(47deg, $purple, $orange);
+            }
         }
     }
 }

@@ -1,31 +1,56 @@
-.button, a.button { 
+.buttons {
+    display:flex;
+    justify-content: center;
+    margin: 0 auto;
+    .button {
+        margin:$gutter-width/2;
+    }
+    &.vertical {
+       flex-direction: column; 
+    }
+}
+.button,
+a.button {
     @include nice-transition();
-    display:inline-block;
-    border-radius:3px;
-    background:linear-gradient(270deg,$pink,$orange);
-    color:$white;
-    padding:0 32px;
-    line-height:2;
-    text-transform:uppercase;
-    font-weight:bold;
-    letter-spacing:1.1px;
+    display: inline-block;
+    border-radius: 3px;
+    background: $orange;
+    color: $white;
+    padding: 0 42px;
+    line-height: 2.5;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.1px;
     text-align: center;
-    font-size:.75em;
-    outline:none;
-    border:none;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    border: 3px solid transparent;
     &:focus {
-        outline:none;
+        outline: none;
     }
     &:hover {
-        background:linear-gradient(270deg,$orange,$orange);
-        color:$white;
+        border: 3px solid $orange;
+        background: transparent;
+        color: $white;
+        font-weight: bold;
         text-decoration: none;
+    }
+    &.knockout {
+        border: 3px solid $white;
+        background: transparent;
+        &:hover {
+            border-color: $orange;
+        }
     }
 }
 .cta-link {
-    color:$pink;
-    line-height:3;
+    color: $pink;
+    line-height: 2.5;
+    font-size: 16px;
+    font-weight:bold;
+    text-shadow:1px 1px 5px rgba(0,0,0,.3);
     &:hover {
-        color:$white;
+        color: $white;
     }
 }

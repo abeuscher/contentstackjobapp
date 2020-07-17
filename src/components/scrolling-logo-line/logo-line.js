@@ -1,31 +1,30 @@
 import React, { Component } from "react"
-import Flickity from "react-flickity-component"
+import SwiperCore, { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import LazyThumb from "../helpers/lazy-thumb"
 import "./scrolling-logo-line.scss"
-const flickityOptions = {
-    wrapAround: true,
-    lazyLoad: true,
-    pageDots: false,
-    autoPlay: 1500
-}
+SwiperCore.use([Autoplay]);
 export default class LogoLine extends Component {
     render() {
         return (
-            <Flickity
+            <Swiper
                 className={'carousel'}
-                elementType={'div'}
-                options={flickityOptions}
+                autoplay={{delay:3000}}
+                slidesPerView={6}
+                loop={true}
             >
                 {this.props.logos.map((logo, idx) => {
                     if (logo.black_and_white_logo) {
                         return (
-                            <LazyThumb key={"logo-thumb-" + idx} alt={logo.title} src={logo.black_and_white_logo.url} />
+                            <SwiperSlide key={"logo-thumb-" + idx}>
+                            <LazyThumb alt={logo.title} src={logo.black_and_white_logo.url} />
+                            </SwiperSlide>
                         )
                     }
                     return null
                 })}
-            </Flickity>
+            </Swiper>
         )
     }
 }

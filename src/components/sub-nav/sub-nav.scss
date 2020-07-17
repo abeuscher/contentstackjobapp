@@ -2,7 +2,7 @@
 
 nav.sub-nav {
     background:$white;
-    box-shadow:0 10px 20px rgba(0,0,0,0);
+    box-shadow:0 1px 1px rgba(0,0,0,.1);
     &.pinned {
         position:fixed;
         width:100%;
@@ -20,6 +20,14 @@ nav.sub-nav {
             flex:0 1 100%;
             a {
                 line-height:2;
+                display:block;
+                border-bottom:4px solid transparent;
+                margin-bottom:-4px;
+                &:hover {
+                    font-weight:bold;
+                    color:$purple;
+                    border-bottom:4px solid $purple;
+                }
             }
         }
         @include bp(m) {

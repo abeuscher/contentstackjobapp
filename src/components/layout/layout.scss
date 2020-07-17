@@ -25,6 +25,7 @@ h4,
 h5,
 h6 {
   font-family: $header-font;
+  font-weight: bold;
 }
 p {
   font-size: 1.1em;
@@ -32,10 +33,12 @@ p {
 }
 main {
   display: block;
-  @include bp(m) {
-    font-size:1.5em;
+  h2 {
+    font-size:2em;
   }
-  
+  @include bp(m) {
+    
+  }
 }
 .max-width {
   max-width: 90%;
@@ -58,4 +61,9 @@ main {
 }
 .centered {
   text-align: center;
+}
+.big-text {
+  @include bp(m) {
+    font-size: 1.5em;
+  }
 }

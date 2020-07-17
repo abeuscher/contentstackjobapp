@@ -1,6 +1,8 @@
 @import "../../common-sass/styles.scss";
 
 .testimonial-tab-block {
+    padding:$gutter-width 0;
+    background: $off-white;
     label {
         width: 100px;
         height: 40px;
@@ -13,40 +15,111 @@
     }
     .panels {
         display: flex;
+        flex-wrap: wrap;
         min-height: 400px;
         .left-pane,
         .right-pane {
-            flex-basis: 50%;
+            flex: 1 1 100%;
+            @include bp(m) {
+                flex-basis: 50%;
+            }
         }
         .right-pane {
-        }
-    }
-    .testimonial-tab-panel {
-        width: 100%;
-        left: 0 !important;
-        opacity: 0;
-        &.is-selected {
-            opacity: 1;
-            transition-duration: 2s;
-        }
-    }
-    .tabs {
-        button {
-            width:150px;
-            height:30px;
-            border:none;
-            background-position:center;
-            background-size: contain;
-            background-color:transparent;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            outline:none;
-            &:active, &:focus {
-                outline: none;
+            overflow: hidden;
+            position: relative;
+            margin-top:$gutter-width*2;
+            @include bp(m) {
+                margin-top:0;
+                
+            }
+            .swiper-container {
+                width: 100%;
+                height:100%;
+            }
+            .swiper-wrapper {
+                flex-shrink: 1;
+            }
+            .swiper-slide {
+                padding-top:$gutter-width;
+                background: linear-gradient(45deg, $light-gray 0%, $light-gray 70%, $white 70%, $white 100%);
+                p {
+                    width:70%;
+                    font-size:.9em;
+                }
+                cite {
+                    padding-bottom:$gutter-width/2;
+                }
             }
         }
     }
-    .flickity-slider {
-        transform: none !important;
+    .testimonial-tab-panel {
+        
+        @include bp(m) {
+            margin-top:0;
+            height: 100%;
+            .inner {
+                height: 100%;
+                padding: 0 $gutter-width;
+            }
+        }
+        .top-bar {
+            display: flex;
+            .logo {
+                flex-basis: 50%;
+                background-size: contain;
+                background-position: center top;
+                background-repeat: no-repeat;
+                &:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 33.3%;
+                }
+            }
+            .fancy-quote {
+                flex-basis: 50%;
+                height: 63px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: top right;
+            }
+        }
+    }
+    .tabs {
+        text-align: right;
+        display: flex;
+        @include bp(m) {
+            display: block;
+            margin-top:$gutter-width/2;
+        }
+        button {
+            width: 150px;
+            height: 30px;
+            border: none;
+            background-position: center;
+            background-size: contain;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            &:active,
+            &:focus {
+                outline: none;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 30%;
+                height: 4px;
+                bottom: -12px;
+                left: 35%;
+                background: transparent;
+            }
+            &.active {
+                &:after {
+                    background: linear-gradient(to right, $purple 0%, $orange 100%);
+                }
+            }
+        }
     }
 }

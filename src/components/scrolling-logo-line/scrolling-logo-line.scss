@@ -2,15 +2,25 @@
 @import "../../../node_modules/flickity/dist/flickity.css";
 
 .carousel {
-    .thumb {   
-        width:16.6%;     
-        background-size:70%;
-        background-repeat:no-repeat;
-        background-position:center center;
+    .swiper-slide {
+        width: 16.6%;
+    }
+    .thumb {
+        
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center center;
         &:after {
-            content:'';
-            display:block;
-            padding-bottom:56.25%;
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+        @include bp(m) {
+            background-size: 50%;
+            height:77px;
+            &:after {
+                padding-bottom:0;
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 @import "../../common-sass/styles.scss";
-$slide-transition:8s;
+@import "./fade-carousel";
+
+$slide-transition: 8s;
 
 .home-hero {
     position: relative;
@@ -10,28 +12,41 @@ $slide-transition:8s;
         color: white;
         text-align: center;
         width: 80%;
+
         margin: 0 auto;
+        z-index: 2;
         h1,
         p {
             text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            max-width: 620px;
-            margin: 0 auto;
             font-weight: 700;
             line-height: 1.25;
             letter-spacing: 2.8px;
         }
         p {
-            max-width: 560px;
-            margin: 20px auto 42px;
+            margin: 20px 0 42px;
         }
-        a {
-            display: block;
-            margin: 0 0 1em;
-            &.button {
-                display: inline-block;
+
+        .buttons {
+            max-width: 360px;
+            width: 90%;
+            a {
+                display: block;
+                margin: 0 0 1em;
+                &.button {
+                    display: inline-block;
+                }
             }
+        }
+    }
+    @include bp(m) {
+        min-height: 740px;
+        display:flex;
+        align-items: center;
+        .hero-content {
+            max-width: 900px;
+            padding:90px 0 0;
         }
     }
 }
@@ -41,9 +56,12 @@ $slide-transition:8s;
     left: 0;
     right: 0;
     bottom: 0;
-    background:darken($purple,60%);
-    .bg-fader, .flickity-slider, .flickity-viewport, .bg-slide {
-        height:100%!important;
+    background: darken($purple, 60%);
+    .bg-fader,
+    .flickity-slider,
+    .flickity-viewport,
+    .bg-slide {
+        height: 100% !important;
     }
 
     .bg-slide {
@@ -51,11 +69,9 @@ $slide-transition:8s;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center top;
-        left: 0 !important;
-        opacity: 0;
         @include nice-transition();
         transition-duration: $slide-transition;
-        
+
         &:after {
             content: "";
             display: block;
@@ -63,7 +79,7 @@ $slide-transition:8s;
         }
         &.is-selected {
             opacity: 1;
-            transition-duration:$slide-transition/2;
+            transition-duration: $slide-transition/2;
         }
     }
     .flickity-slider {
