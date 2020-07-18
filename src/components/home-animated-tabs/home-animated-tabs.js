@@ -5,8 +5,6 @@ import SwiperCore, { Autoplay, EffectFade, Thumbs, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import "./home-animated-tabs.scss"
-import "swiper/swiper.scss"
-import 'swiper/components/pagination/pagination.scss';
 
 export default function HomeAnimatedTabs() {
     const data = useStaticQuery(graphql`

@@ -3,10 +3,6 @@ import React from "react"
 
 import LogoLine from "./logo-line"
 
-
-
-
-
 export default function Header() {
     const data = useStaticQuery(graphql`
     query homeLogoQuery {

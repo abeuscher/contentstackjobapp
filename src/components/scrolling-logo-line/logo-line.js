@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import LazyThumb from "../helpers/lazy-thumb"
 import "./scrolling-logo-line.scss"
+
 SwiperCore.use([Autoplay]);
 export default class LogoLine extends Component {
     render() {

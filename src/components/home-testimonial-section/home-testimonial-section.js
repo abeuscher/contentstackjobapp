@@ -4,8 +4,6 @@ import SwiperCore, { Autoplay, EffectFade, Thumbs, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import "./home-testimonial-section.scss"
-import "swiper/swiper.scss"
-import 'swiper/components/pagination/pagination.scss';
 
 export default function HomeTestimonialSection() {
     const data = useStaticQuery(graphql`

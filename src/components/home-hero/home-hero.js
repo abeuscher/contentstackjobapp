@@ -3,8 +3,6 @@ import React from "react"
 import SwiperCore, { Autoplay, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/swiper.scss';
-import "swiper/components/effect-fade/"
 import "./home-hero.scss"
 
 export default function Hero() {
