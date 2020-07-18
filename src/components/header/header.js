@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
 import AdminMenu from "../admin-menu/admin-menu"
 
@@ -42,9 +42,9 @@ export default function Header() {
   return (
     <header className="page-header max-width">
       <div className="logo">
-        <Link to="/">
+        <a href="/">
           <img src={data.csHeader.logo.url} alt='' />
-        </Link>
+        </a>
       </div>
       <MainMenu data={data.csHeader} />
     </header>

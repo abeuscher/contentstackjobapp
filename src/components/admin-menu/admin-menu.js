@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 
 import "./admin-menu.scss"
@@ -19,7 +19,7 @@ export default function AdminMenu() {
         <ul className="admin-menu">
             {data.csAdminMenu.links.map((link, idx) => {
                 return (<li key={"admin-link-" + idx}>
-                    <Link to={link.link} className={link.classname}>{link.text}</Link>
+                    <a href={link.link} className={link.classname}>{link.text}</a>
                 </li>)
             })}
         </ul>
