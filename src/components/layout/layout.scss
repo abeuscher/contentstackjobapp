@@ -43,12 +43,17 @@ main {
 .max-width {
   max-width: 90%;
   margin: 0 auto;
-  @each $bp-name, $bp-value in $bps {
-    @if ($bp-name!= "xs") {
-      @include bp($bp-name) {
-        width: $bp-value;
-      }
-    }
+  @include bp(xs) {
+    
+  }
+  @include bp(s) {
+
+  }
+  @include bp(m) {
+
+  }
+  @include bp(l) {
+    max-width:1280px;
   }
 }
 .interior {

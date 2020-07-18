@@ -1,15 +1,45 @@
-import React, { Component} from "react"
+import React, { useState, useEffect } from 'react';
 
-export default class MarketoForm extends Component {
-    constructor(props) {
-        this.state = {
-            form:{}
+const marketoScriptId = 'mktoForms';
+
+export default function MarketoForm({ formId }) {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        if (!document.getElementById(marketoScriptId)) {
+            loadScript();
+        } else {
+            setIsLoaded(true);
         }
-    }
-    componentDidMount() {
-        MktoForms2.loadForm("//app-ab04.marketo.com", "362-RJN-040", this.props.id)
-    }
-    render() {
-        return(<div class="marketo-form-wrapper"></div>)
-    }
+    }, []);
+
+    useEffect(() => {
+        isLoaded &&
+            window.MktoForms2.loadForm(
+                '//app-sj21.marketo.com',
+                '489-WNI-383',
+                formId
+            );
+    }, [isLoaded, formId]);
+
+    const loadScript = () => {
+        var s = document.createElement('script');
+        s.id = marketoScriptId;
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//app-sj21.marketo.com/js/forms2/js/forms2.min.js';
+        s.onreadystatechange = function () {
+            if (this.readyState === 'complete' || this.readyState === 'loaded') {
+                setIsLoaded(true);
+            }
+        };
+        s.onload = () => setIsLoaded(true);
+        document.getElementsByTagName('head')[0].appendChild(s);
+    };
+
+    return (
+        <div>
+            <form id={`mktoForm_${formId}`}></form>
+        </div>
+    );
 }
