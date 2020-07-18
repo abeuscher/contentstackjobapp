@@ -7,7 +7,7 @@ import MarketoForm from "../marketo-embedded-form/marketo-embedded-form"
 
 
 export default function ContactPageContent() {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query contactPageQuery {
       csContactUs {
         hero {
@@ -22,11 +22,13 @@ export default function ContactPageContent() {
   `)
 
 
-    return (
-        <div className="contact-us-section">
-            <h2>{data.csContactUs.hero.header}</h2>
-            <p>{data.csContactUs.hero.copy}</p>
-            <MarketoForm formId={data.csContactUs.contact_form.form_id}/>
-        </div>
-    )
+  return (
+    <div className="contact-us-section">
+      <div className="max-width">
+        <h2>{data.csContactUs.hero.header}</h2>
+        <p>{data.csContactUs.hero.copy}</p>
+        <MarketoForm className={"contact-form"} formId={data.csContactUs.contact_form.form_id} />
+      </div>
+    </div>
+  )
 }
