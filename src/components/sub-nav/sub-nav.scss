@@ -10,6 +10,7 @@ nav.sub-nav {
         left:0;
         right:0;
         box-shadow:0 10px 20px rgba(0,0,0,0.3);
+        z-index:99;
     }
     ul {
         display:none;
@@ -17,7 +18,7 @@ nav.sub-nav {
         width:100%;
 
         li {
-            flex:0 1 100%;
+            margin-left:24px;
             a {
                 line-height:2;
                 display:block;
@@ -32,6 +33,7 @@ nav.sub-nav {
         }
         @include bp(m) {
             display:flex;
+            justify-content: flex-end;
         }
     }
 }

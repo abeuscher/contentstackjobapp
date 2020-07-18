@@ -64,11 +64,14 @@ class Tabs extends Component {
                     <Swiper
                         onSlideChange={this.slideSwap}
                         effect={"fade"}
+                        grabCursor={true}
                         pagination={{ clickable: true }}
-                        onSwiper={(swiper) => { this.setState({swiper : swiper })}}
+                        onSwiper={(swiper) => { this.setState({ swiper: swiper }) }}
                         autoplay={{ "delay": 4500 }}>
                         {this.props.data.tabs.map((tab, idx) => (
-                            <SwiperSlide key={"panel-slide-" + idx}>
+                            <SwiperSlide key={"panel-slide-" + idx} 
+                                onMouseEnter={()=>{this.state.swiper.autoplay.stop()}}
+                                onMouseLeave={()=>{this.state.swiper.autoplay.start()}}>
                                 <Panel tab={tab} />
                             </SwiperSlide>
                         ))}

@@ -1,12 +1,14 @@
 @import "../../common-sass/styles.scss";
 
 .features-icon-section {
+    .max-width {
+        padding:$gutter-width 0;
+    }
     .buckets {
         .bucket {
             .inner {
                 min-height:100px;
                 vertical-align: middle;
-                margin-bottom:$gutter-width/2;
                 .icon {
                     width: 100px;
                     height: 100px;
@@ -14,10 +16,6 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     margin: 0 auto;
-                }
-
-                p {
-                    margin-bottom: 2em;
                 }
                 @include bp(xs) {
                     .icon {
@@ -36,11 +34,16 @@
         .buckets {
             text-align: left;
             display: flex;
+            flex-flow:row wrap;
             justify-content: space-between;
+            margin:0 -25px;
             .bucket {
-                flex-basis: 30%;
+                flex-basis: 31%;
+                &.up-4 {
+                    flex-basis: 23%;
+                }
                 .inner {
-                    padding: $gutter-width/2;
+                    padding: $gutter-width/3;
                     .icon {
                         float: none;
                     }
@@ -50,6 +53,9 @@
                     }
                     h3 {
                         text-align: center;
+                    }
+                    p {
+                        font-size:.9em;
                     }
                 }
             }

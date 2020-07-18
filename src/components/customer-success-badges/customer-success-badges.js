@@ -36,12 +36,14 @@ export default function CsCommitmentSection() {
                         return (<div className="badge" style={bgStyle}></div>)
                     })}
                 </div>
-                <a className={"button " + data.csCustomerSuccess.badge_section.primary_cta.classname} href={data.csCustomerSuccess.badge_section.primary_cta.link}>
-                    {data.csCustomerSuccess.badge_section.primary_cta.text}
-                </a>
-                <a className={"button knockout " + data.csCustomerSuccess.badge_section.secondary_cta.classname} href={data.csCustomerSuccess.badge_section.secondary_cta.link}>
-                    {data.csCustomerSuccess.badge_section.secondary_cta.text}
-                </a>
+                <div className="buttons">
+                    <a className={"button " + data.csCustomerSuccess.badge_section.primary_cta.classname} href={data.csCustomerSuccess.badge_section.primary_cta.link}>
+                        {data.csCustomerSuccess.badge_section.primary_cta.text}
+                    </a>
+                    <a className={"button knockout " + data.csCustomerSuccess.badge_section.secondary_cta.classname} href={data.csCustomerSuccess.badge_section.secondary_cta.link}>
+                        {data.csCustomerSuccess.badge_section.secondary_cta.text}
+                    </a>
+                </div>
             </div>
         </div>
     )

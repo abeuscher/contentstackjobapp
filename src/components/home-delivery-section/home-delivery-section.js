@@ -84,7 +84,7 @@ class DeliveryFlipper extends Component {
                             <label> Description
                     <textarea onChange={this.changeText} value={this.state.formCopy}></textarea>
                             </label>
-                            <button className="button" onClick={this.publishText}>Publish</button>
+                            <button className="button hover-orange" onClick={this.publishText}>Publish</button>
                         </form>
                     </div>
                     <div className="right-pane view-pane">

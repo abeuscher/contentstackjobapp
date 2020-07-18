@@ -10,7 +10,7 @@ export default class Hero extends Component {
                 <div className="hero-content max-width">
                     {this.props.data.header ? <h1>{this.props.data.header}</h1> : ""}
                     {this.props.data.copy ? <p>{this.props.data.copy}</p> : ""}
-                    <div class="buttons">
+                    <div className="buttons">
                         {this.props.data.primary_cta ? <a href={this.props.data.primary_cta.link} className={"button " + this.props.data.primary_cta.classname}>{this.props.data.primary_cta.text}</a> : ""}
                         {this.props.data.secondary_cta ? <a href={this.props.data.secondary_cta.link} className={"button knockout " + this.props.data.secondary_cta.classname}>{this.props.data.secondary_cta.text}</a> : ""}
                     </div>

@@ -4,12 +4,12 @@ footer.page-footer {
     padding:100px 0;
     position:relative;
     .inner {
-        font-size:.8em;
+        font-size:17px;
         display:flex;
         justify-content: space-between;
         flex-wrap:wrap;
         .column {
-            flex-basis:100%;
+            flex-basis:33%;
             &.logo {
                 img {
                     max-width:75%;
@@ -25,10 +25,12 @@ footer.page-footer {
             }
             h2 {
                 font-size:1em;
+                font-family:$nav-font;
+                font-weight:bold;
                 margin-top:.5em;
             }
             @include bp(m) {
-                flex-basis:14%;
+                flex:0 1 200px;
             }
         }
     }

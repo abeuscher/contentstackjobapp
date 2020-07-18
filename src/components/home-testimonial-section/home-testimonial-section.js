@@ -71,9 +71,11 @@ class Tabs extends Component {
             <div className="max-width">
                 <div className="panels">
                     <div className="left-pane">
-                        <h2>{this.props.data.left_panel.header}</h2>
-                        <p>{this.props.data.left_panel.copy}</p>
-                        <a className={this.props.data.left_panel.cta.classname} href={this.props.data.left_panel.cta.link}>{this.props.data.left_panel.cta.text}</a>
+                        <div className="inner">
+                            <h2>{this.props.data.left_panel.header}</h2>
+                            <p>{this.props.data.left_panel.copy}</p>
+                            <a className={"button hover-orange"} href={this.props.data.left_panel.cta.link}>{this.props.data.left_panel.cta.text}</a>
+                        </div>
                     </div>
                     <div className="right-pane">
                         <Swiper
@@ -82,8 +84,10 @@ class Tabs extends Component {
                             onSwiper={(swiper) => { this.setState({ swiper: swiper }) }}
                             autoplay={{ "delay": 4500 }}>
                             {this.props.data.slides.map((tab, idx) => (
-                                <SwiperSlide key={"panel-slide-" + idx}>
-                                    <Panel tab={tab} quoteIcon={this.props.data.quote_icon}/>
+                                <SwiperSlide key={"panel-slide-" + idx}
+                                    onMouseEnter={() => { this.state.swiper.autoplay.stop() }}
+                                    onMouseLeave={() => { this.state.swiper.autoplay.start() }}>
+                                    <Panel tab={tab} quoteIcon={this.props.data.quote_icon} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>

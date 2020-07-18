@@ -37,7 +37,8 @@ class DesktopTabs extends Component {
         super(props);
         this.state = {
             currentSlide: 0,
-            lastSlide: 0
+            lastSlide: 0,
+            clickedSlide: 0
         }
     }
 
@@ -45,7 +46,8 @@ class DesktopTabs extends Component {
         e.preventDefault();
         this.setState({
             lastSlide: e.target.getAttribute("data-slide-idx"),
-            currentSlide: e.target.getAttribute("data-slide-idx")
+            currentSlide: e.target.getAttribute("data-slide-idx"),
+            clickedSlide: e.target.getAttribute("data-slide-idx")
         })
 
     }
@@ -60,7 +62,7 @@ class DesktopTabs extends Component {
         e.preventDefault();
         this.setState({
             lastSlide: this.state.lastSlide,
-            currentSlide: this.state.lastSlide
+            currentSlide: this.state.clickedSlide
         })
     }
 
@@ -70,12 +72,19 @@ class DesktopTabs extends Component {
             <div className="features-top-tabs desktop">
                 <div className="feature-tabs">
                     {this.props.features.map((feature, idx) => {
-                        return (<button key={"feature-top-tab-=" + idx} onClick={this.showTab} onMouseEnter={this.hoverOnTab} onMouseLeave={this.hoverOffTab} data-slide-idx={idx}>{feature.tab_label}</button>)
+                        return (<button
+                            key={"feature-top-tab-=" + idx}
+                            onClick={this.showTab} onMouseEnter={this.hoverOnTab}
+                            onMouseLeave={this.hoverOffTab}
+                            className={idx === parseInt(this.state.currentSlide) ? "active" : ""}
+                            data-slide-idx={idx}>{feature.tab_label}</button>)
                     })}
                 </div>
                 <div className="view-pane">
-                    <div className="copy"><p>{this.props.features[this.state.currentSlide].copy}</p></div>
                     <div className="thumb" style={thumbStyle}></div>
+                    <div className="copy">
+                        <h2>{this.props.features[this.state.currentSlide].tab_label}</h2>
+                        <p>{this.props.features[this.state.currentSlide].copy}</p></div>
                 </div>
             </div>
         )
