@@ -2,9 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 const marketoScriptId = 'mktoForms';
 
-export default function MarketoForm({ formId, className }) {
+export default function MarketoForm({ formId, className, onValidate, onSubmit, onSuccess }) {
 
     const [isLoaded, setIsLoaded] = useState(false);
+
+    const formCallback = form => {
+        destyleMktoForm(form)
+        form.onSubmit(onSubmit)
+        form.onValidate(onValidate)
+        form.onSuccess(onSuccess)
+    }
 
     useEffect(() => {
         if (!document.getElementById(marketoScriptId)) {
@@ -20,9 +27,7 @@ export default function MarketoForm({ formId, className }) {
                 '//app-sj21.marketo.com',
                 '489-WNI-383',
                 formId,
-                form => {
-                    destyleMktoForm(form)
-                }
+                formCallback
             )
     }, [isLoaded, formId]);
 
