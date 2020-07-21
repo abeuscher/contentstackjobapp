@@ -34,7 +34,7 @@ export default function ContactPageContent() {
   }
 
   return (
-    <div className="contact-us-section">
+    <div className="contact-us-section light-section">
       <div className="max-width">
         <h2>{data.csContactUs.hero.header}</h2>
         <p>{data.csContactUs.hero.copy}</p>

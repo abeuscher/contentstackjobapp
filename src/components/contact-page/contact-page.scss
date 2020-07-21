@@ -1,45 +1,89 @@
 @import "../../common-sass/styles.scss";
 
 .contact-us-section {
-    padding-top:150px;
-    min-height:320px;
-    background:$off-white;
+    min-height: 320px;
+    background: $off-white;
 }
 
 .contact-form {
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100% !important;
     > .mktoFormRow {
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
         @include bp(m) {
-            flex:1 1 50%;
+            flex: 1 1 60%;
+        }
+        &:nth-child(2) {
+            @include bp(m) {
+                flex: 1 1 40%;
+                fieldset {
+                    border-right: 1px solid $black;
+                }
+            }
+        }
+        &:nth-child(3) {
+            @include bp(m) {
+                flex: 1 1 50%;
+                padding-left: 2.5%;
+                .mktoFormRow {
+                    display: flex;
+
+                    .mktoFormCol {
+                        flex: 1 1 50%;
+                    }
+                }
+            }
         }
     }
     fieldset.mktoFormCol {
-        border:none;
-        margin:0;
-        padding:0;
-        display:flex;
-        flex-wrap:wrap;
+        border: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
         > .mktoFormRow {
-            flex-basis:100%;
+            flex-basis: 100%;
         }
         legend {
-            font-size:2em;
-            font-weight:bold;
-            font-family:$header-font;
+            font-size: 2em;
+            font-weight: bold;
+            font-family: $header-font;
+            margin-bottom: $gutter-width/2;
         }
     }
     .mktoFieldWrap {
-        flex-basis:90%;
-        align-self:center;
-        margin-bottom:$gutter-width/2;
+        flex-basis: 90%;
+        margin-bottom: $gutter-width/2;
     }
     .mktoAsterix {
-        display:none;
+        display: none;
     }
-    select, input[type="text"], input[type="email"], input[type="tel"], textarea {
-        width:100%;
+    .mktoGutter,
+    .mktoHasWidth {
+        width: inherit !important;
+    }
+    select,
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    label {
+        width: 90% !important;
+        padding: 0.5em;
+        margin-top: 0.5em;
+        &.mktoHasWidth {
+            width: 90% !important;
+            padding: 0.5em;
+            margin-top: 0.5em;
+        }
+    }
+
+    label {
+        text-transform: initial;
+    }
+    textarea#Contact_Us__c {
+        width:95%!important;
     }
 }

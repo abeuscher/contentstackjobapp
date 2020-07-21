@@ -6,12 +6,6 @@ export default function MarketoForm({ formId, className, onValidate, onSubmit, o
 
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const formCallback = form => {
-        destyleMktoForm(form)
-        form.onSubmit(onSubmit)
-        form.onValidate(onValidate)
-        form.onSuccess(onSuccess)
-    }
 
     useEffect(() => {
         if (!document.getElementById(marketoScriptId)) {
@@ -27,9 +21,14 @@ export default function MarketoForm({ formId, className, onValidate, onSubmit, o
                 '//app-sj21.marketo.com',
                 '489-WNI-383',
                 formId,
-                formCallback
+                form => {
+                    destyleMktoForm(form)
+                    form.onSubmit(onSubmit)
+                    form.onValidate(onValidate)
+                    form.onSuccess(onSuccess)
+                }
             )
-    }, [isLoaded, formId]);
+    }, [isLoaded, formId, onSubmit, onValidate, onSuccess]);
 
     const loadScript = () => {
         var s = document.createElement('script');
