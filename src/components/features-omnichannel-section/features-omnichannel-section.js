@@ -1,7 +1,8 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
 import LazyThumb from "../helpers/lazy-thumb"
-import Flickity from "react-flickity-component"
+import SwiperCore, { Autoplay, EffectFade, Thumbs, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import "./features-omnichannel-section.scss"
 
@@ -23,38 +24,65 @@ export default function FeaturesOmnichannelSection() {
       }
     }
   `)
-
-    let MainCarouselObj = null
-    const flickityOptions = {
-        wrapAround: true,
-        lazyLoad: true,
-        pageDots: false,
-        prevNextButtons: false,
-        autoPlay: false
-    }
-    const tabClick = e => {
-        e.preventDefault();
-        MainCarouselObj.select(e.target.getAttribute("data-idx"))
-    }
     return (
         <div className="features-section omnichannel">
-            <div className="anim-tab-block max-width">
-                <h2>{data.csFeaturesMain.omnichannel_section.header}</h2>
-                <p>{data.csFeaturesMain.omnichannel_section.copy}</p>
-                <div className="tabs">
-                    {data.csFeaturesMain.omnichannel_section.tabs.map((tab, idx) => (
-                        <button key={"tab-label-" + idx} onClick={tabClick} data-idx={idx}>{tab.header}</button>
-                    ))}
-                </div>
-                <div className="panels">
-                    <Flickity id="animated-tabs" options={flickityOptions} flickityRef={c => MainCarouselObj = c}>
-                        {data.csFeaturesMain.omnichannel_section.tabs.map((tab, idx) => (<Panel key={"panel-" + idx} tab={tab} />))}
-                    </Flickity>
-                </div>
-            </div>
+            <Carousel data = {data.csFeaturesMain.omnichannel_section} />
         </div>
     )
 }
+
+SwiperCore.use([Autoplay, EffectFade, Thumbs, Pagination]);
+class Carousel extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeIndex: 0,
+            swiper: {}
+        }
+
+    }
+    tabClick = e => {
+        this.setState({
+            activeIndex: e.target.getAttribute("data-idx")
+        })
+        this.state.swiper.slideTo(e.target.getAttribute("data-idx"))
+    }
+    slideSwap = e => {
+        this.setState({
+            activeIndex: e.activeIndex
+        })
+    }
+    render() {
+        return (
+            <div className="anim-tab-block max-width">
+                <h2>{this.props.data.header}</h2>
+                <p>{this.props.data.copy}</p>
+                <div className="tabs">
+                    {this.props.data.tabs.map((tab, idx) => (
+                        <button key={"tab-label-" + idx} onClick={this.tabClick} data-idx={idx}>{tab.header}</button>
+                    ))}
+                </div>
+                <div className="panels">
+                    <Swiper
+                        onSlideChange={this.slideSwap}
+                        effect={"fade"}
+                        onSwiper={(swiper) => { this.setState({ swiper: swiper }) }}
+                        autoplay={{ "delay": 4500 }}>
+                        {this.props.data.tabs.map((tab, idx) => (
+                            <SwiperSlide key={"panel-slide-" + idx}
+                                onMouseEnter={() => { this.state.swiper.autoplay.stop() }}
+                                onMouseLeave={() => { this.state.swiper.autoplay.start() }}>
+                                <Panel key={"panel-" + idx} tab={tab} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+
+                </div>
+            </div>
+        )
+    }
+}
+
 class Panel extends Component {
     render() {
         return (
