@@ -77,6 +77,9 @@ main {
     content:"";
     display:block;
     background:$dark-purple;
-    height:80px;
+    height:60px;
+    @include bp(m) {
+      height:80px;
+    }
   }
 }

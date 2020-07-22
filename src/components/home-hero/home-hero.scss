@@ -6,6 +6,7 @@ $slide-transition: 8s;
 .home-hero {
     position: relative;
     overflow: hidden;
+    background:$dark-purple;
     .hero-content {
         padding: 125px 0 25px;
         position: relative;
@@ -51,6 +52,7 @@ $slide-transition: 8s;
     }
 }
 .bg-carousel-bucket {
+    display:none;
     position: absolute;
     top: 0;
     left: 0;
@@ -84,5 +86,8 @@ $slide-transition: 8s;
     }
     .flickity-slider {
         transform: none !important;
+    }
+    @include bp(m) {
+        display: block;
     }
 }

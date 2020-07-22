@@ -91,11 +91,34 @@ class DesktopTabs extends Component {
     }
 }
 class MobileTabs extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            activeTab: 0
+        }
+    }
+    switchTab = e => {
+        e.preventDefault();
+        let newIdx = parseInt(e.target.getAttribute("data-idx"))
+        this.setState({
+            activeTab: newIdx
+        })
+    }
     render() {
         return (
             <div className="features-top-tabs mobile">
                 {this.props.features.map((feature, idx) => {
-                    return (<section key={"feature-top-tab-mobile-=" + idx}><h3>{feature.tab_label}</h3><img src={feature.thumb.url} alt={feature.tab_label} /><p>{feature.copy}</p></section>)
+                    let activeClass = idx === this.state.activeTab ? "active" : ""
+                    return (
+                        <section key={"feature-top-tab-mobile-=" + idx}>
+                            <button onClick={this.switchTab} data-idx={idx} className={activeClass}>{feature.tab_label}</button>
+                            <div className={"mobile-tab " + activeClass}>
+                                <p>{feature.copy}</p>
+                                <img src={feature.thumb.url} alt={feature.tab_label} />
+                            </div>
+                        </section>
+                    )
                 })}
             </div>
         )

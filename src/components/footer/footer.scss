@@ -29,9 +29,37 @@ footer.page-footer {
                 font-weight:bold;
                 margin-top:.5em;
             }
+            .social-menu {
+                @include list-to-menu();
+                li {
+                    padding-right:1em;
+                    a {
+                        &:hover {
+                            text-decoration:none;
+                        }
+                    }
+                }
+            }
             @include bp(m) {
                 flex:0 1 200px;
             }
+
+        }
+        &.bottom {
+            border-top:1px solid $black;
+            justify-content:flex-end;
+            padding:$gutter-width;
+            margin-top:$gutter-width;
+            .bottom-utility-links {
+                
+                @include list-to-menu();
+                display:inline-block;
+                li {
+                    padding-left:1em;
+                }
+            }
         }
     }
+
+
 }

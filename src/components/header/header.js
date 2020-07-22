@@ -27,7 +27,7 @@ export default function Header() {
               links {
                 text
                 link
-                classname
+                target
               }
             }
           }          
@@ -76,11 +76,11 @@ class MainMenu extends Component {
             {this.props.data.items.map((item, idx) => (
               <li key={"header-list-item-" + idx}>
                 <button>{item.title}</button>
-                <DropMenu menuData={item.dropdown[0]} />
+                <DropMenu menuData={item.dropdown} />
               </li>
             ))}
             <li><a className={"button " + this.props.data.demo_button.classname} href={this.props.data.demo_button.link}>{this.props.data.demo_button.text}</a></li>
-          </ul>    
+          </ul>
         </nav>
       </div>)
   }
@@ -96,7 +96,7 @@ class DropMenu extends Component {
           <ul>
             {this.props.menuData.links.map((link, linkIndex) => {
               return (<li key={"drop-" + linkIndex}>
-                <a href={link.link}>{link.text}</a>
+                <a href={link.link} target={link.target ? "_blank" : "_self"}>{link.text}</a>
               </li>)
             })}
           </ul>
@@ -107,9 +107,10 @@ class DropMenu extends Component {
 }
 class LeftColumn extends Component {
   render() {
+    let bgStyle = this.props.image ? { "backgroundImage": "url('" + this.props.image.url + "')" } : {}
     return (
       <div className="col-left">
-        <div className="thumb" style={{ "backgroundImage": "url('" + this.props.image.url + "')" }}></div>
+        <div className="thumb" style={bgStyle}></div>
         <p>{this.props.text}</p>
         <a href={this.props.cta.link} className={this.props.cta.classname}>
           {this.props.cta.text}
