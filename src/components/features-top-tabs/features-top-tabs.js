@@ -83,7 +83,7 @@ class DesktopTabs extends Component {
                 <div className="view-pane">
                     <div className="thumb" style={thumbStyle}></div>
                     <div className="copy">
-                        <h2>{this.props.features[this.state.currentSlide].tab_label}</h2>
+                        <h3>{this.props.features[this.state.currentSlide].tab_label}</h3>
                         <p>{this.props.features[this.state.currentSlide].copy}</p></div>
                 </div>
             </div>
