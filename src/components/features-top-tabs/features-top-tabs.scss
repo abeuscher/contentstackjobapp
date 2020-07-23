@@ -1,5 +1,11 @@
 @import "../../common-sass/styles.scss";
 
+$static-color:$white;
+$hover-color:$purple;
+$selected-color:$light-gray;
+$border-color:$gray;
+
+
 .features-section.collaboration {
     text-align:center;
     
@@ -36,16 +42,16 @@
                              display:none;
                             content:"";
                             width:0;
-                            border:1.3em solid transparent;
-                            border-left-color:$purple;
+                            border:1.4em solid transparent;
+                            border-left-color:$selected-color;
                             position:absolute;
                             right:0;
-                            margin-right:-2.6em;
-                            top:1px;
+                            margin-right:-2.8em;
+                            top:0px;
                         }                    
                     &.active {
-                        background:$purple;
-                        color:$white;
+                        background:$selected-color;
+                        color:$black;
                         font-weight: bold;
                         &:after {
                             display:block;
@@ -86,17 +92,19 @@
             display:block;
             text-align:left;
             button {
-                background:$purple;
-                color:$white;
+                background:$static-color;
+                color:$black;
                 border:none;
                 outline:none;
                 width:100%;
                 text-align:left;
                 line-height:3;
-                border-bottom:1px solid $dark-purple;
+                border-bottom:1px solid $border-color;
                 text-indent:$gutter-width/2;
                 padding:0;
                 &.active {
+                    background:$hover-color;
+                    color:$white;
                      font-weight:bold;
                 }
             }
