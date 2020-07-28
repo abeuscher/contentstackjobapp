@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentstack",
       options: {
-        'api_key': 'blt7ef002f7ea3b43f1',
-        'delivery_token': 'cs30a96efed683013e4297e173',
+        'api_key': 'bltc5a09bf374882538',
+        'delivery_token': 'cse163b933a95c7b2101fe2712',
         'environment':'development',
         'expediteBuild':false,
         'type_prefix': `cs`

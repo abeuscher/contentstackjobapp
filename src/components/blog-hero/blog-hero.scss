@@ -1,0 +1,48 @@
+@import "../../common-sass/styles.scss";
+
+.blog-hero {
+    position: relative;
+    background: $dark-purple;
+    display: flex;
+    align-items: center;
+    .max-width {
+        @include bp(m) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    h1 {
+        color: $white;
+        text-align: left;
+        
+        @include bp(m) {
+            flex-basis:50%;
+            padding-left:$gutter-width;
+        }
+    }
+    .blog-thumb {
+        background-size: cover;
+        background-position: center;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+        @include bp(m) {
+            flex-basis: 50%;
+        }
+    }
+    .hero-content {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        padding: 100px 0 50px;
+    }
+    @include bp(m) {
+        min-height: 520px;
+        .hero-content {
+            padding: 0;
+        }
+    }
+}
