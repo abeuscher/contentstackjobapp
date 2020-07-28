@@ -1,7 +1,8 @@
 const path = require(`path`)
 
 const buildPageQuery = `query csBuildPageQuery {
-                    allCsBlogPost(limit: 200, sort: {fields: date, order: DESC}) {
+                    # Blog Post Query
+                    allCsBlogPost(limit: 200, sort: {fields: date, order: DESC}) { 
                         edges {
                           node {
                             id
@@ -36,6 +37,7 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
+    // Build Blog Posts
     result.data.allCsBlogPost.edges.forEach(blogPost => {
       createPage({
         path: `${blogPost.node.url}`,
