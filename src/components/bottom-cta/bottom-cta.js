@@ -8,7 +8,7 @@ import "./bottom-cta.scss"
 
 export default class BottomCTA extends Component {
     render() {
-        let bgStyle = this.props.data.bg_image ? { "backgroundImage": "url('" + this.props.data.bg_image.url + "')" } : ""
+        let bgStyle = this.props.data.bg_image ? { "backgroundImage": "url('" + this.props.data.bg_image.url + "')" } : {}
         return (
             <div className="bottom-cta-section" style={bgStyle}>
                 <div className="inner max-width">
