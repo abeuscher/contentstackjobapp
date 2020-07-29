@@ -1,5 +1,5 @@
 @mixin nice-transition() {
-	transition: 0.4s cubic-bezier(0.335, 0.815, 0.470, 1);
+  transition: 0.4s cubic-bezier(0.335, 0.815, 0.47, 1);
 }
 
 @mixin list-to-menu($ul-margin: 0, $ul-padding: 0) {
@@ -40,5 +40,64 @@
     @media only screen and (#{$prop}: #{$bp-width}) {
       @content;
     }
+  }
+}
+
+@mixin marketo-form() {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100% !important;
+  > .mktoFormRow {
+    width: 100%;
+    height: 100%;
+  }
+  fieldset.mktoFormCol {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    > .mktoFormRow {
+      flex-basis: 100%;
+    }
+    legend {
+      font-size: 2em;
+      font-weight: bold;
+      font-family: $header-font;
+      margin-bottom: $gutter-width/2;
+    }
+  }
+  .mktoFieldWrap {
+    flex-basis: 90%;
+    margin-bottom: $gutter-width/2;
+  }
+  .mktoAsterix {
+    display: none;
+  }
+  .mktoGutter,
+  .mktoHasWidth {
+    width: inherit !important;
+  }
+  select,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  label {
+    width: 90% !important;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    &.mktoHasWidth {
+      width: 90% !important;
+      padding: 0.5em;
+      margin-top: 0.5em;
+    }
+  }
+
+  label {
+    text-transform: initial;
+  }
+  textarea#Contact_Us__c {
+    width: 95% !important;
   }
 }

@@ -2,10 +2,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import SEO from "./seo"
 
-export default function BlogMainMeta() {
+export default function RequestDemoMeta() {
   const data = useStaticQuery(graphql`
-    query BecomePartnerMetaQuery {
-      csBecomeAPartner {
+    query requestDemoMetaQuery {
+      csRequestDemo {
         url
         metadata {
           page_title
@@ -23,6 +23,6 @@ export default function BlogMainMeta() {
   `)
 
   return (
-    <SEO pageMeta={data.csBecomeAPartner.metadata} url={data.csBecomeAPartner.url}/>
+    <SEO pageMeta={data.csRequestDemo.metadata} url={data.csRequestDemo.url}/>
   )
 }

@@ -6,7 +6,7 @@ import "./blog-roll.scss"
 export default function BlogRoll() {
   const data = useStaticQuery(graphql`
     query blogRollQuery {
-        allCsBlogPost(limit: 200, sort: {fields: date, order: DESC}) {
+        allCsBlogPost(limit: 20, sort: {fields: date, order: DESC}) {
             edges {
               node {
                 id
@@ -21,7 +21,6 @@ export default function BlogRoll() {
                   title
                   uid
                 }
-                body
                 category {
                   title
                 }

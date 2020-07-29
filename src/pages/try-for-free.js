@@ -9,14 +9,14 @@ import React from "react"
 
 import Layout from "../components/layout/layout.js"
 
-import ContactMeta from "../components/template-meta-blocks/contact-us-meta"
-import ContactPageContent from "../components/contact-page/contact-page"
+import TryForFreeMeta from "../components/template-meta-blocks/try-for-free-meta"
+import TryForFreeForm from "../components/form-with-copy/try-for-free-form"
 
 const ContactUsPage = () => (
-    <Layout>
-        <ContactMeta />
-        <ContactPageContent/>
-    </Layout>
+  <Layout>
+    <TryForFreeMeta />
+    <TryForFreeForm />
+  </Layout>
 )
 
 

@@ -33,7 +33,7 @@ function SEO({ pageMeta, url }) {
   return (
     <Helmet
       title={thisMeta.page_title}
-      titleTemplate={`%s | ${thisMeta.page_title}`}
+      titleTemplate={`Contentstack | ${thisMeta.page_title}`}
       meta={[
         {
           name: `description`,

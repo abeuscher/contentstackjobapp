@@ -1,0 +1,10 @@
+@import "../../common-sass/styles.scss";
+
+.form-with-copy {
+    .max-width {
+        padding-top: $gutter-width;
+    }
+    .marketo-form {
+        @include marketo-form();
+    }
+}

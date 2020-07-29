@@ -34,26 +34,22 @@ p {
 main {
   display: block;
   h2 {
-    font-size:2em;
+    font-size: 2em;
   }
   @include bp(m) {
-    
   }
 }
 .max-width {
   max-width: 90%;
   margin: 0 auto;
   @include bp(xs) {
-    
   }
   @include bp(s) {
-
   }
   @include bp(m) {
-
   }
   @include bp(l) {
-    max-width:1280px;
+    max-width: 1280px;
   }
 }
 .interior {
@@ -74,12 +70,21 @@ main {
 }
 .light-section {
   &:before {
-    content:"";
-    display:block;
-    background:$dark-purple;
-    height:60px;
+    content: "";
+    display: block;
+    background: $dark-purple;
+    height: 60px;
     @include bp(m) {
-      height:80px;
+      height: 80px;
+    }
+  }
+}
+.flex {
+  @include bp(m) {
+    display: flex;
+    flex-wrap: wrap;
+    .col-half {
+      flex-basis: 50%;
     }
   }
 }
