@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `ContentStack`,
-    description: `Application for job. I used Gatsby starter for base.`,
+    description: `contentstack.com.`,
     author: `Al Beuscher`,
     siteUrl:`https://applicationforcontentstack.xyz/`
   },
