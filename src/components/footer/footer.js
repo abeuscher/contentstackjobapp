@@ -42,7 +42,7 @@ export default function Footer() {
           <Column key={"footer-nav-col-" + idx} columnData={column} />
         ))}
       </div>
-      <div class="inner max-width bottom">
+      <div className="inner max-width bottom">
         <ul className="bottom-utility-links">
           {data.csFooter.bottom_links.map((link, idx) => (
             <li key={"bottom-util-link-" + idx}>

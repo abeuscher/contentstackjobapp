@@ -22,12 +22,12 @@ export default class FormWithCopy extends Component {
     render() {
         return (
             <section className="form-with-copy light-section">
-                <div class="max-width flex">
-                    <div class="col-half">
+                <div className="max-width flex">
+                    <div className="col-half">
                         <h2>{this.props.data.left_panel.header}</h2>
                         <p>{this.props.data.left_panel.copy}</p>
                     </div>
-                    <div class="col-half">
+                    <div className="col-half">
                         <MarketoForm formId={this.props.data.form_panel.form_id} className={this.props.className} onSuccess={this.formSubmitted} />
                     </div>
                 </div>

@@ -22,6 +22,9 @@ export default function MarketoForm({ formId, className, onValidate, onSubmit, o
                 '489-WNI-383',
                 formId,
                 form => {
+                    if (!form) {
+                        return false
+                    }
                     destyleMktoForm(form)
                     form.onSubmit(onSubmit)
                     form.onValidate(onValidate)
