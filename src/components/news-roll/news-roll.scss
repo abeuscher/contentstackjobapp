@@ -1,0 +1,19 @@
+@import "../../common-sass/styles.scss";
+
+.sub-nav {
+    ul {
+        @include list-to-menu();
+        li {
+            margin-left:1em;
+            button {
+                cursor:pointer;
+                border:none;
+                outline:none;
+                background:transparent;
+                &.active {
+                    border-bottom:2px solid $purple;
+                }
+            }
+        }
+    }
+}

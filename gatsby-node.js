@@ -1,29 +1,44 @@
 const path = require(`path`)
 
 const buildPageQuery = `query csBuildPageQuery {
-                    # Blog Post Query
-                    allCsBlogPost(limit: 200, sort: {fields: date, order: DESC}) { 
-                        edges {
-                          node {
-                            id
-                            title
-                            url
-                            date
-                            image {
-                              url
-                              title
-                            }
-                            author {
-                              title
-                              uid
-                            }
-                            body
-                            category {
-                              title
-                            }
+                    
+                    #Press Post Query
+                    allCsHomeCompanyPressPost {
+                      edges {
+                        node {
+                          title
+                          url
+                          date
+                          seo {
+                              description
                           }
                         }
-                        totalCount
+                      }        
+                    }
+
+                    # Blog Post Query
+                    allCsBlogPost(limit: 200, sort: {fields: date, order: DESC}) { 
+                      edges {
+                        node {
+                          id
+                          title
+                          url
+                          date
+                          image {
+                            url
+                            title
+                          }
+                          author {
+                            title
+                            uid
+                          }
+                          body
+                          category {
+                            title
+                          }
+                        }
+                      }
+                      totalCount
                     }
                   }`;
 
@@ -42,6 +57,13 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: `${blogPost.node.url}`,
         component: path.resolve(`src/templates/blog-post.js`),
+        context: blogPost.node,
+      })
+    })
+    result.data.allCsHomeCompanyPressPost.edges.forEach(blogPost => {
+      createPage({
+        path: `${blogPost.node.url}`,
+        component: path.resolve(`src/templates/press-article.js`),
         context: blogPost.node,
       })
     })

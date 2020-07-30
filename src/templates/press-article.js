@@ -1,19 +1,21 @@
 /*
 
-  CMS Guide Layout
+  Press Article Layout
 
 */
+
 import React from "react"
 
 import Layout from "../components/layout/layout"
 
-const CmsGuide = ({ pageContext }) => {
+
+const PressArticle = ({ pageContext }) => {
 
     return (
         <Layout>
-            <p>{JSON.stringify(pageContext)}</p>
+            <h2>{pageContext.title}</h2>
         </Layout>
     )
 }
 
-export default CmsGuide
+export default PressArticle

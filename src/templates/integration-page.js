@@ -1,19 +1,20 @@
 /*
 
-  CMS Guide Layout
+  Integration Page Layout
 
 */
 import React from "react"
 
 import Layout from "../components/layout/layout"
 
-const CmsGuide = ({ pageContext }) => {
+
+const IntegrationPage = ({ pageContext }) => {
 
     return (
         <Layout>
-            <p>{JSON.stringify(pageContext)}</p>
+
         </Layout>
     )
 }
 
-export default CmsGuide
+export default IntegrationPage

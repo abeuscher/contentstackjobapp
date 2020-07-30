@@ -1,6 +1,6 @@
 /*
 
-  Blog Article Page Layout
+  Blog Post Layout
 
 */
 import React from "react"
