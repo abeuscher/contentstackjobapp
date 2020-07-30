@@ -2,6 +2,69 @@ const path = require(`path`)
 
 const buildPageQuery = `query csBuildPageQuery {
                     
+
+                    #Integrations Pages Query
+                    allCsIntegrationsPages {
+                      edges {
+                        node {
+                          title
+                          url
+                          about_section {
+                            logo {
+                              color_logo {
+                                url
+                              }
+                            }
+                            copy
+                            header_image_mobile {
+                              url
+                            }
+                            header_image {
+                              url
+                            }
+                          }
+                          overview_section {
+                            header
+                            copy
+                            thumb {
+                              url
+                            }
+                          }
+                          use_cases_section {
+                            header
+                            subhead
+                            buckets {
+                              header
+                              copy
+                            }
+                          }
+                          setup_section {
+                            header
+                            subhead
+                            copy
+                          }
+                          bottom_section {
+                            header
+                            copy
+                            bg_image {
+                              url
+                            }
+                          }
+                          metadata {
+                            page_title
+                            page_description
+                            page_thumb {
+                                url
+                            }
+                            twitter_title
+                            twitter_description
+                            opengraph_title
+                            opengraph_description
+                          }
+                        }
+                      }
+                    }
+
                     #Press Post Query
                     allCsHomeCompanyPressPost {
                       edges {
@@ -64,6 +127,13 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: `${blogPost.node.url}`,
         component: path.resolve(`src/templates/press-article.js`),
+        context: blogPost.node,
+      })
+    })
+    result.data.allCsIntegrationsPages.edges.forEach(blogPost => {
+      createPage({
+        path: `${blogPost.node.url}`,
+        component: path.resolve(`src/templates/integration-page.js`),
         context: blogPost.node,
       })
     })

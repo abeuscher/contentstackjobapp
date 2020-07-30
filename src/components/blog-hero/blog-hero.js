@@ -8,7 +8,7 @@ export default class BlogHero extends Component {
         return (
             <div className="blog-hero big-text">
                 <div className="hero-content max-width">
-                    <div class="blog-thumb" style={bgStyle}></div>
+                    <div className="blog-thumb" style={bgStyle}></div>
                     {this.props.data.header ? <h1>{this.props.data.header}</h1> : ""}
                 </div>
             </div>

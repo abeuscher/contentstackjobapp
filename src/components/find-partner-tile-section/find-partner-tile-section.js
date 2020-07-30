@@ -37,14 +37,27 @@ export default function FindPartnerTileSection() {
 class PartnerGrid extends Component {
   render() {
     return (
-      <div className="integrations-grid max-width">
+      <div className="integrations-grid">
         <div className="filter-menu">
-          MENU
+            <div className="max-width">
+
+            </div>
         </div>
         <div className="partner-grid">
-          {this.props.data.map((partner,idx)=>(<div key={"partner-tile"+idx} className="partner-tile"><h2>{partner.node.title}</h2></div>))}
+          {this.props.data.map((partner,idx)=>(<PartnerTile key={"partner-tile-"+idx} data={partner.node}/>))}
         </div>
       </div>
     )
   }
+}
+class PartnerTile extends Component {
+    render() {
+        return(
+            <a className="partner-tile" href={this.props.data.url}>
+                <div className="front-panel">
+                    <h2>{this.props.data.title}</h2>
+                </div>
+            </a>
+        )
+    }
 }

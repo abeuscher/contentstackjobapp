@@ -21,6 +21,20 @@ To run:
 Components:
 Gatsby
 https://gatsbyjs.org/
-Flickity
-https://flickity.metafizzy.co/
+Swiper JS
+https://swiperjs.com/
+
+To Do:
+ - Integrations Pages
+ - CMS Guides
+ - Partner Pages
+ - Author Pages
+ - Greenhouse app integration
+ - Add placeholder content to About and Build
+ - Add placeholder content to team and build
+ - Pricing Page
+ - ROI Calculator
+ - Add highlight functionality to subnav
+ - Pretty up the filter nav
+ 
 
