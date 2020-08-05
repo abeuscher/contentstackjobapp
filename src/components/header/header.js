@@ -65,7 +65,7 @@ class MainMenu extends Component {
   render() {
     return (
       <div className="nav-box">
-        <button id="menu-toggle" className={"mobile-menu-toggle " + this.state.menu} onClick={this.toggleMenu}>
+        <button title="Open Menu" id="menu-toggle" className={"mobile-menu-toggle " + this.state.menu} onClick={this.toggleMenu}>
           <span className="line"></span>
           <span className="line"></span>
           <span className="line"></span>
