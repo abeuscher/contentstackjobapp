@@ -34,6 +34,8 @@ To Do:
  - ROI Calculator
  - Add highlight functionality to subnav
  - Pretty up the filter nav
+ - faqs section
+ - platforms section
 
  - Integrations Pages 
  - CMS Guides 
