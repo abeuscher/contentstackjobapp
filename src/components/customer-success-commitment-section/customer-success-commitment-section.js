@@ -46,7 +46,7 @@ class CBucket extends Component {
         return (
             <div className="cs-commit-bucket">
                 <h3>{this.props.data.header}</h3>
-                <p>{this.props.data.copy}</p>
+                <p className="header-copy">{this.props.data.copy}</p>
                 <ul>
                     {this.props.data.bullets.map((bullet, idx) => (
                         <li key={"bullet-" + idx}>{bullet}</li>

@@ -8,12 +8,12 @@ export default class BigHero extends Component {
         let bgMobileDiv = this.props.data.bg_image_mobile ? <div className="bg-image-mobile" style={{ "backgroundImage": "url('" + this.props.data.bg_image_mobile.url + "')" }}></div> : ""
         return (
             <div className="big-hero">
-                {bgDiv}
                 {bgMobileDiv}
                 <div className="max-width">
+                    {bgDiv}
                     {this.props.data.page_title ? <h2>{this.props.data.page_title}</h2> : ""}
                     {this.props.data.header ? <h1>{this.props.data.header}</h1> : ""}
-                    {this.props.data.copy ? <p>{this.props.data.copy}</p> : ""}
+                    {this.props.data.copy ? <p className="header-copy">{this.props.data.copy}</p> : ""}
                     {this.props.data.primary_cta.text ? <a className={"button " + this.props.data.primary_cta.classname} href={this.props.data.primary_cta.link}>{this.props.data.primary_cta.text}</a> : ""}
                 </div>
             </div>

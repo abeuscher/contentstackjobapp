@@ -45,7 +45,7 @@ export default function Hero() {
       </div>
       <div className="hero-content">
         <h1>{data.csHomepage.hero.header}</h1>
-        <p>{data.csHomepage.hero.copy}</p>
+        <p className="header-copy">{data.csHomepage.hero.copy}</p>
         <div className="buttons vertical">
           <a href={data.csHomepage.hero.primary_cta.link} className={"button" + data.csHomepage.hero.primary_cta.classname}>{data.csHomepage.hero.primary_cta.text}</a>
           <a href={data.csHomepage.hero.secondary_cta.link} className={"cta-link " + data.csHomepage.hero.secondary_cta.classname}>{data.csHomepage.hero.secondary_cta.text}</a>

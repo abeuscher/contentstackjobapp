@@ -1,7 +1,9 @@
 @import "../../common-sass/styles.scss";
 
 .video-section {
+  padding:$gutter-width*2 0;
     text-align: center;
+    background: radial-gradient(circle at 50% 0, $off-white 0%, $off-white 65%, $white 65%, $white 100%);
 }
 .wrapper-video {
     position: relative;
