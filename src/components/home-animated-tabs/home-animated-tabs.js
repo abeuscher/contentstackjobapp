@@ -19,6 +19,9 @@ export default function HomeAnimatedTabs() {
                 animated_image {
                     url
                 }
+                static_image {
+                    url
+                }
             }
         }
       }
@@ -91,6 +94,7 @@ class Panel extends Component {
                     </div>
                     <div className="panel-image">
                         <LazyThumb classname="animated" src={this.props.tab.animated_image.url} />
+                        <LazyThumb classname="static" src={this.props.tab.static_image.url} />
                     </div>
                 </div>
             </div>

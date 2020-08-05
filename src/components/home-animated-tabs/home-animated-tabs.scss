@@ -84,7 +84,10 @@
                 position: relative;
                 height: 100%;
                 .static {
-                    display: none;
+                    display: block;
+                    @include bp(m) {
+                        display:none;
+                    }
                 }
                 .static,
                 .animated {
@@ -96,6 +99,12 @@
                         content: "";
                         display: block;
                         padding-bottom: 56.25%;
+                    }
+                }
+                .animated {
+                    display:none;
+                    @include bp(m) {
+                        display:block;
                     }
                 }
             }
