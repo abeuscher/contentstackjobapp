@@ -1,0 +1,17 @@
+@import "../../common-sass/styles.scss";
+
+.integrations-bottom {
+    padding:$gutter-width 0;
+    .max-width {
+        min-height:300px;
+    }
+    .bg-thumb {
+        margin:0 auto;
+        width:200px;
+        height:200px;
+        background-repeat:no-repeat;
+        @include bp(m) {
+            float:right;
+        }
+    }
+}

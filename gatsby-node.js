@@ -11,7 +11,7 @@ const buildPageQuery = `query csBuildPageQuery {
                           url
                           about_section {
                             logo {
-                              color_logo {
+                              color_logo_with_text {
                                 url
                               }
                             }
@@ -33,6 +33,12 @@ const buildPageQuery = `query csBuildPageQuery {
                           use_cases_section {
                             header
                             subhead
+                            bg_desktop {
+                              url
+                            }
+                            bg_mobile {
+                              url
+                            }
                             buckets {
                               header
                               copy
@@ -42,6 +48,12 @@ const buildPageQuery = `query csBuildPageQuery {
                             header
                             subhead
                             copy
+                            bg_desktop {
+                              url
+                            }
+                            bg_mobile {
+                              url
+                            }                            
                           }
                           bottom_section {
                             header

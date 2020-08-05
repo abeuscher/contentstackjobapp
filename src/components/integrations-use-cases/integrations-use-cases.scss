@@ -1,0 +1,50 @@
+@import "../../common-sass/styles.scss";
+
+.integrations-use-cases {
+    background-position: 100%;
+    background-repeat: no-repeat;
+    padding: $gutter-width 0;
+    @include bp(m) {
+        min-height: 672px;
+    }
+    h2,
+    h3 {
+        margin: 0 0 0.5em;
+    }
+    h3 {
+        color: $purple;
+    }
+    .buckets {
+        margin-top:$gutter-width;
+        @include bp(m) {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            .bucket {
+                flex-basis: 50%;
+                .content {
+                    padding-right: $gutter-width/2;
+                }
+            }
+        }
+    }
+    .bg-mobile {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+        @include bp(m) {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .integrations-use-cases {
+        background-image:none!important;
+    }   
+}

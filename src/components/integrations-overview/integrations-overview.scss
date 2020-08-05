@@ -1,0 +1,15 @@
+@import "../../common-sass/styles.scss";
+
+.integrations-overview {
+    background: $off-white;
+    padding: $gutter-width 0;
+    .overview-thumb {
+        width: 90%;
+        box-shadow:7px 17px 95px 0 rgba(0,0,0,.1);
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+    }
+}

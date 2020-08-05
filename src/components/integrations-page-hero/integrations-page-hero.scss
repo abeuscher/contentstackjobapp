@@ -1,0 +1,68 @@
+@import "../../common-sass/styles.scss";
+
+.hero-integrations {
+    position: relative;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    
+    @include bp(m) {
+        min-height: 672px;
+    }
+    @include bp(l) {
+background-size: cover;
+    }
+    nav {
+        padding: $gutter-width/2 0 $gutter-width;
+        ul {
+            @include list-to-menu();
+            li {
+                a {
+                    display: inline-block;
+                    padding: 1em 0;
+                    margin: 0 4em 0 0;
+                    border-bottom: 2px solid transparent;
+                }
+                &.active {
+                    a {
+                        border-bottom-color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+    .about-logo {
+        width: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top left;
+        height: 50px;
+    }
+    .max-width {
+        position: relative;
+        .hero-content {
+            @include bp(m) {
+                width: 50%;
+                max-width: 400px;
+            }
+        }
+    }
+    .bg-mobile {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+        @include bp(m) {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .hero-integrations {
+        background-image:none!important;
+    }   
+}

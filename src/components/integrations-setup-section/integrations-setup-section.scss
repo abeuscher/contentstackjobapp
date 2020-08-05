@@ -1,0 +1,32 @@
+@import "../../common-sass/styles.scss";
+
+.integrations-setup-section {
+    background-position: 0;
+    background-repeat: no-repeat;
+    padding: $gutter-width 0;
+    @include bp(m) {
+        min-height: 672px;
+    }
+    h3 {
+        color:$purple;
+    }
+    .bg-mobile {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
+        }
+        @include bp(m) {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .integrations-setup-section {
+        background-image:none!important;
+    }   
+}

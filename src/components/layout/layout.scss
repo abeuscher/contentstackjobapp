@@ -73,7 +73,7 @@ main {
     content: "";
     display: block;
     background: $dark-purple;
-    height: 60px;
+    height: 100px;
     @include bp(m) {
       height: 80px;
     }
@@ -83,8 +83,16 @@ main {
   @include bp(m) {
     display: flex;
     flex-wrap: wrap;
+    .col-full {
+      flex-basis: 100%;
+    }
     .col-half {
       flex-basis: 50%;
     }
+  }
+}
+.wysiwyg {
+  p {
+    margin:0 0 .5em;
   }
 }
