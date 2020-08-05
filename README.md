@@ -25,8 +25,6 @@ Swiper JS
 https://swiperjs.com/
 
 To Do:
- - Integrations Pages
- - CMS Guides
  - Partner Pages
  - Author Pages
  - Greenhouse app integration
@@ -36,5 +34,7 @@ To Do:
  - ROI Calculator
  - Add highlight functionality to subnav
  - Pretty up the filter nav
- 
+
+ - Integrations Pages 
+ - CMS Guides 
 

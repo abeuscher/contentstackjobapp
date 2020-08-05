@@ -1,0 +1,10 @@
+@import "../../common-sass/styles.scss";
+
+.cms-guide {
+    .left-nav {
+        flex-basis:20%;
+    }
+    .content {
+        flex-basis:80%;
+    }
+}

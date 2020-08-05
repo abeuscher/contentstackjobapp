@@ -8,6 +8,7 @@ export default class IntegrationsSetupSection extends Component {
         const mobileBg = this.props.data.bg_mobile ? { "backgroundImage": "url('" + this.props.data.bg_mobile.url + "')" } : {}
         return (
             <div className="integrations-setup-section" style={desktopBg}>
+                <div classNAme="page-anchor" id="setup"></div>
                 <div className="bg-mobile" style={mobileBg}></div>
                 <div className="max-width flex">
                     <div className="col-full"><h2>{this.props.data.header}</h2></div>

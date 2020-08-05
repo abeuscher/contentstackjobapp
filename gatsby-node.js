@@ -3,6 +3,52 @@ const path = require(`path`)
 const buildPageQuery = `query csBuildPageQuery {
                     
 
+                    #CMS Guide Query
+                    allCsEvergreenDetailPages {
+                      edges {
+                        node {
+                          title
+                          url
+                          banner_section {
+                            title
+                            desc
+                            background_image {
+                              url
+                            }
+                          }
+                          content
+                          tiles_section {
+                            title
+                            content
+                            tiles {
+                              title
+                              desc
+                              image {
+                                url
+                              }
+                              cta {
+                                title
+                                link
+                                open_in_new_tab
+                                open_in_new_window
+                              }
+                            }
+                          }
+                          metadata {
+                            page_title
+                            page_description
+                            page_thumb {
+                                url
+                            }
+                            twitter_title
+                            twitter_description
+                            opengraph_title
+                            opengraph_description
+                          }
+                        }
+                      }
+                    }
+
                     #Integrations Pages Query
                     allCsIntegrationsPages {
                       edges {
@@ -149,5 +195,12 @@ exports.createPages = ({ actions, graphql }) => {
         context: blogPost.node,
       })
     })
+    result.data.allCsEvergreenDetailPages.edges.forEach(blogPost => {
+      createPage({
+        path: `${blogPost.node.url}`,
+        component: path.resolve(`src/templates/cms-guide.js`),
+        context: blogPost.node,
+      })
+    })    
   })
 }

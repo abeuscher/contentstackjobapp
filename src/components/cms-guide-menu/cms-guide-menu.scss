@@ -1,0 +1,17 @@
+@import "../../common-sass/styles.scss";
+
+.cms-guide-menu {
+    .section {
+        .links {
+            display:none;
+            a {
+                display:block;
+            }
+        }
+        &.active {
+            .links {
+                display:block;
+            }
+        }
+    }
+}
