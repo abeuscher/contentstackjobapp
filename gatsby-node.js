@@ -1,8 +1,6 @@
 const path = require(`path`)
 
 const buildPageQuery = `query csBuildPageQuery {
-                    
-
                     #CMS Guide Query
                     allCsEvergreenDetailPages {
                       edges {
@@ -137,6 +135,41 @@ const buildPageQuery = `query csBuildPageQuery {
                       }        
                     }
 
+                    #Partner Pages
+                    allCsPartnerPosts {
+                      edges {
+                        node {
+                          title
+                          url
+                          find_partners_preview_section {
+                            company_logo {
+                              url
+                            }
+                            company_name
+                            partner_type
+                            location
+                          }
+                          company_section {
+                            title
+                            partner_type
+                            headline
+                            long_description
+                          }
+                          metadata {
+                            page_title
+                            page_description
+                            page_thumb {
+                                url
+                            }
+                            twitter_title
+                            twitter_description
+                            opengraph_title
+                            opengraph_description
+                          }
+                        }
+                      }        
+                    }
+
                     # Blog Post Query
                     allCsBlogPost(limit: 200, sort: {fields: date, order: DESC}) { 
                       edges {
@@ -157,6 +190,17 @@ const buildPageQuery = `query csBuildPageQuery {
                           category {
                             title
                           }
+                          metadata {
+                            page_title
+                            page_description
+                            page_thumb {
+                                url
+                            }
+                            twitter_title
+                            twitter_description
+                            opengraph_title
+                            opengraph_description
+                          }
                         }
                       }
                       totalCount
@@ -173,34 +217,38 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
-    // Build Blog Posts
-    result.data.allCsBlogPost.edges.forEach(blogPost => {
-      createPage({
-        path: `${blogPost.node.url}`,
-        component: path.resolve(`src/templates/blog-post.js`),
-        context: blogPost.node,
+    // Pair Pages with Templates
+    const pagesToBeBuilt = [
+      {
+        data: result.data.allCsBlogPost.edges,
+        template: path.resolve(`src/templates/blog-post.js`)
+      },
+      {
+        data: result.data.allCsHomeCompanyPressPost.edges,
+        template: path.resolve(`src/templates/press-article.js`)
+      },
+      {
+        data: result.data.allCsIntegrationsPages.edges,
+        template: path.resolve(`src/templates/integration-page.js`)
+      },
+      {
+        data: result.data.allCsEvergreenDetailPages.edges,
+        template: path.resolve(`src/templates/cms-guide.js`)
+      },
+      {
+        data: result.data.allCsPartnerPosts.edges,
+        template: path.resolve(`src/templates/partner-page.js`)
+      },
+    ]
+    // Build Pages
+    pagesToBeBuilt.forEach(page => {
+      page.data.forEach(pageData => {
+        createPage({
+          path: `${pageData.node.url}`,
+          component: page.template,
+          context: pageData.node,
+        })
       })
     })
-    result.data.allCsHomeCompanyPressPost.edges.forEach(blogPost => {
-      createPage({
-        path: `${blogPost.node.url}`,
-        component: path.resolve(`src/templates/press-article.js`),
-        context: blogPost.node,
-      })
-    })
-    result.data.allCsIntegrationsPages.edges.forEach(blogPost => {
-      createPage({
-        path: `${blogPost.node.url}`,
-        component: path.resolve(`src/templates/integration-page.js`),
-        context: blogPost.node,
-      })
-    })
-    result.data.allCsEvergreenDetailPages.edges.forEach(blogPost => {
-      createPage({
-        path: `${blogPost.node.url}`,
-        component: path.resolve(`src/templates/cms-guide.js`),
-        context: blogPost.node,
-      })
-    })    
   })
 }
