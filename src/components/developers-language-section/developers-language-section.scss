@@ -1,15 +1,33 @@
 @import "../../common-sass/styles.scss";
 
 .developers-language-section {
+    background:$off-black;
+    color:$white;
+    padding:$gutter-width*2 0;
     .icons {
-        .icon {
-            width:100px;
-            padding-top:110px;
-            background-size:85%;
-            background-position:center top;
-            background-repeat:no-repeat;
-            display:inline-block;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .lang-icon-bucket {
+            flex: 1 1 25%;
+
+            padding-top: 110px;
+            background-size: 85%;
             text-align: center;
+            .lang-icon {
+                margin:0 auto;
+                width: 100px;
+                height: 100px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            p {
+                color:$white;
+            }
+            @include bp(m) {
+                flex: 1 1 16.5%;
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ class Bucket extends Component {
             <div className={"bucket " + this.props.className}>
                 <div className="inner">
                     <div className="icon" style={iconStyle}></div>
-                    <div class="text">
+                    <div className="text">
                         {this.props.header ? <h3>{this.props.header}</h3> : ""}
                         {this.props.copy ? <p>{this.props.copy}</p> : ""}
                     </div>

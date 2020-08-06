@@ -5,7 +5,7 @@
         radial-gradient(circle at 50% 50%, $purple 0%, $purple 80%, $dark-purple 80%, $dark-purple 100%);
     color: $white;
     text-align: center;
-    padding: $gutter-width 0;
+    padding: $gutter-width*2 0;
     h2 {
         margin:0 0 $gutter-width;
     }

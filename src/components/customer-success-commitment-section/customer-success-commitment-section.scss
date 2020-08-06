@@ -3,7 +3,7 @@
 .cs-commitment-section {
   background: $dark-purple;
   color: $white;
-  padding: $gutter-width 0;
+  padding: $gutter-width*2 0;
   overflow: hidden;
   .bg {
     background-color: transparent;
@@ -33,7 +33,6 @@
       height: 100%;
     }
   }
-  h2,
   h3,
   p,
   li {  

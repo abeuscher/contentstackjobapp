@@ -1,6 +1,8 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { Component } from "react"
-import Flickity from "react-flickity-component"
+import SwiperCore, { Autoplay, EffectFade, Thumbs, Pagination, Controller } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 import "./developers-testimonial-section.scss"
 
@@ -31,54 +33,53 @@ export default function DevTestimonialSection() {
         </div>
     )
 }
+SwiperCore.use([Autoplay, EffectFade, Thumbs, Pagination, Controller]);
 class Tabs extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            logoCarousel: {},
-            quoteCarousel: {}
+            quoteCarousel: {},
+            activeIndex: 0,
         }
 
     }
-    flickityLogoOptions = {
-        wrapAround: true,
-        lazyLoad: true,
-        pageDots: false,
-        prevNextButtons: false,
-        autoPlay: 4500,
-        asNavFor: ".quote-carousel"
-    }
-    flickityQuoteOptions = {
-        wrapAround: true,
-        lazyLoad: true,
-        pageDots: false,
-        prevNextButtons: false,
-        autoPlay: 4500
-    }
     tabClick = e => {
         e.preventDefault();
-        this.state.carousel.select(e.target.getAttribute("data-idx"))
+        this.setState({
+            activeIndex: e.target.getAttribute("data-idx")
+        })
+        this.state.quoteCarousel.slideTo(e.target.getAttribute("data-idx"))
+    }
+    slideSwap = e => {
+        this.setState({
+            activeIndex: e.activeIndex
+        })
     }
     render() {
         return (
             <div className="max-width">
                 <h2>{this.props.data.header}</h2>
-                {typeof window !== 'undefined' ?
-                    <Flickity className="logo-carousel" flickityRef={c => this.setState({ logoCarousel: c })} options={this.flickityLogoOptions}>
-                        {this.props.data.testimonials.map((tab, idx) => {
-                            let bgStyle = tab.logo.length ? { "backgroundImage": "url('" + tab.logo[0].color_logo.url + "')" } : {}
-                            return (
-                                <div key={"dev-logo-slide-" + idx} className="logo-slide" style={bgStyle}>
-                                </div>
-                            )
-                        })}
-                    </Flickity>
-                    : ""}
-                {typeof window !== 'undefined' ?
-                    <Flickity className="quote-carousel" flickityRef={c => this.setState({ quoteCarousel: c })} options={this.flickityQuoteOptions}>
-                        {this.props.data.testimonials.map((tab, idx) => (<div key={"quote-logo-slide-" + idx} className="testimonial"><p className="quote">"{tab.quote}"</p><cite>{tab.speaker_name + ", " + tab.speaker_job_title + " - " + tab.company_name}</cite></div>))}
-                    </Flickity>
-                    : ""}
+                <div class="buttons">
+                {this.props.data.testimonials.map((tab, idx) => {
+                    let bgStyle = tab.logo.length ? { "backgroundImage": "url('" + tab.logo[0].color_logo.url + "')" } : {}
+                    return (<button key={"dev-logo-slide-" + idx} className={"logo-slide " + (this.state.activeIndex===idx ? "active" : "")} style={bgStyle} data-idx={idx} onClick={this.tabClick}></button>)
+                })}</div>
+                <Swiper
+                    onSlideChange={this.slideSwap}
+                    grabCursor={true}
+                    autoHeight={true}
+                    onSwiper={(swiper) => { this.setState({ quoteCarousel: swiper }) }}
+                    autoplay={{ "delay": 4500 }}>
+                    {this.props.data.testimonials.map((tab, idx) => (
+                        <SwiperSlide key={"quote-logo-slide-" + idx}
+                            onMouseEnter={() => { this.state.quoteCarousel.autoplay.stop() }}
+                            onMouseLeave={() => { this.state.quoteCarousel.autoplay.start() }}>
+                            <div className="testimonial">
+                                <p className="quote">"{tab.quote}"</p>
+                                <cite>{tab.speaker_name + ", " + tab.speaker_job_title + " - " + tab.company_name}</cite>
+                            </div>
+                        </SwiperSlide>))}
+                </Swiper>
             </div>
         )
     }

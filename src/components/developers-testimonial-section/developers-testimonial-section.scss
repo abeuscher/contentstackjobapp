@@ -1,38 +1,37 @@
 @import "../../common-sass/styles.scss";
 
 .dev-testimonial-block {
+    padding: $gutter-width 0;
     .logo-slide {
-        width:33%;
-        background-size:contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        display: block;
+        width: 33%;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position:center;
-        opacity:0.5;
+        background-position: center;
+        opacity: 0.5;
         &:after {
-            content:"";
-            display:block;
-            padding-bottom:56.25%;
+            content: "";
+            display: block;
+            padding-bottom: 56.25%;
         }
-        &.is-selected {
-            opacity:1;
+        &.active {
+            opacity: 1;
         }
     }
     .logo-carousel {
-        width:50%;
-        margin:0 25%;           
+        width: 50%;
+        margin: 0 25%;
     }
     .quote-carousel {
-        width:50%;
-        margin:0 25%;        
-        .flickity-slider {
-            transform:none!important;
-        }
+        width: 50%;
+        margin: 0 25%;
     }
     .testimonial {
-        width:100%;
-        opacity:0;
-        left:0!important;
-        &.is-selected {
-            opacity:1;
-        }
+        display:block;
+        min-height:200px;
+        width: 100%;
     }
 }
