@@ -51,24 +51,27 @@
         width:100%;
         bottom:-400px;
         top:0;
-        right:-90px;
+        
         height:100%;
-        background-position:100% -25%;
-        background-size:60%;
+        
         background-repeat:no-repeat;
     }
     .bg-image {
         display:none;
-        @include bp(m) {
+        right:-90px;
+        background-position:100% -25%;
+        background-size:60%;
+        @include bp(l) {
             display:block;
         }
     }
     .bg-image-mobile { 
         background-position:top right;
+        background-size:contain;
         width:55%;
         right:0;
         top:50px;
-        @include bp(m) {
+        @include bp(l) {
             display:none;
         }
     }
