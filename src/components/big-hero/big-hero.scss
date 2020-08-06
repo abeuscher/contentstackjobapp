@@ -2,78 +2,104 @@
 
 .big-hero {
     background: $dark-purple;
-    color:$white;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
+    color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     position: relative;
     overflow: hidden;
-    min-height:520px;
+    
     .max-width {
-        padding:$gutter-width 0;
-        position:relative;
-        min-height:520px;
+        padding: $gutter-width 0;
+        position: relative;
+        
     }
     @include bp(m) {
-        padding:0;
+        padding: 0;
+        min-height: 700px;
+        .max-width {
+            min-height: 700px;
+        }
     }
-    h1, h2, p {
-        position:relative;
-        margin:$gutter-width 0 0;
-        width:75%;
+    h1,
+    h2,
+    p {
+        position: relative;
+        margin: $gutter-width 0 0;
+        width: 75%;
         @include bp(m) {
-             width:45%;
-        }  
+            width: 60%;
+        }
     }
     .button {
-        margin-top:$gutter-width;
+        margin-top: $gutter-width;
+    }
+    h1 {
+        font-weight:500;
+        font-size: 36px;
+        @include bp(m) {
+            font-size: 80px;
+        }
     }
     h2 {
-        display:inline-block;
-        font-size:1.5em;
-        width:auto;
-        padding:0 0 29px;
-        position:relative;
+        font-weight:500;
+        display: inline-block;
+        font-size: 24px;
+        width: auto;
+        padding: 0 0 29px;
+        position: relative;
         &:after {
-            content:"";
+            content: "";
             position: absolute;
-            width:70%;
-            height:4px;
-            left:0;
-            background:$orange;
-            bottom:0;
+            width: 70%;
+            height: 4px;
+            left: 0;
+            background: $orange;
+            bottom: 0;
+        }
+        @include bp(m) {
+            font-size: 40px;
+        }
+    }
+    p.header-copy {
+        font-size: 18px;
+        line-height: 22px;
+        @include bp(m) {
+            font-size: 30px;
+            line-height: 40px;
         }
     }
     a {
-        position:relative;
+        position: relative;
     }
-    .bg-image, .bg-image-mobile {
-        position:absolute;
-        width:100%;
-        bottom:-400px;
-        top:0;
-        
-        height:100%;
-        
-        background-repeat:no-repeat;
+    .bg-image,
+    .bg-image-mobile {
+        position: absolute;
+        width: 100%;
+        bottom: -400px;
+        top: 0;
+
+        height: 100%;
+
+        background-repeat: no-repeat;
     }
     .bg-image {
-        display:none;
-        right:-180px;
-        background-position:100% 8%;
-        background-size:90%;
+        display: none;
+        right: -520px;
+        background-position: 100% 8%;
+        background-size: 100%;
         @include bp(l) {
-            display:block;
+            display: block;
         }
     }
-    .bg-image-mobile { 
-        background-position:top right;
-        background-size:contain;
-        width:55%;
-        right:0;
-        top:50px;
+    .bg-image-mobile {
+        background-position: top right;
+        background-size: contain;
+        width: 55%;
+        right: 0;
+        top: 50px;
         @include bp(l) {
-            display:none;
+            display: none;
         }
     }
 }

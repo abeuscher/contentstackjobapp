@@ -1,13 +1,23 @@
 .buttons {
     display: flex;
     justify-content: center;
-    margin: 0 -$gutter-width/2;
+    flex-direction: column;
     .button {
-        margin: $gutter-width/2;
+        margin: 0 auto $gutter-width/2;
+        max-width: 300px;
     }
-    &.vertical {
-        margin: 0 auto;
-        flex-direction: column;
+
+    @include bp(m) {
+        display: block;
+        margin: 0 -$gutter-width/2;
+        .button {
+            margin: 0 1em;
+        }
+        &.vertical {
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+        }
     }
 }
 .button,

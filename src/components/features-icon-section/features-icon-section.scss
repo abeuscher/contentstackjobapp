@@ -2,16 +2,15 @@
 
 .features-icon-section {
     .max-width {
-        padding:$gutter-width 0;
+        padding: $gutter-width 0;
     }
     .buckets {
         .bucket {
             .inner {
-                min-height:175px;
+                min-height: 175px;
                 vertical-align: middle;
-                
+
                 .icon {
-                    
                     width: 100px;
                     height: 100px;
                     background-size: contain;
@@ -19,20 +18,24 @@
                     background-position: center;
                     margin: 0 auto;
                 }
-                p,h3 {
-                    text-align:center;
+                p,
+                h3 {
+                    text-align: center;
                 }
                 @include bp(s) {
-                    display:flex;
-                align-items: center;
+                    display: flex;
+                    align-items: center;
                     .icon {
-                        flex:0 0 150px;
+                        flex: 0 0 150px;
+                    }
+                    .text {
+                        flex:1 1 100%;
                     }
                     h3,
                     p {
-                        flex:1 1 100%;
+                        flex: 1 1 100%;
                         text-align: left;
-                        padding-left:1em;
+                        padding-left: 1em;
                     }
                 }
             }
@@ -43,21 +46,21 @@
         .buckets {
             text-align: left;
             display: flex;
-            flex-flow:row wrap;
+            flex-flow: row wrap;
             justify-content: space-between;
-            margin:0 -25px;
+            margin: 0 -25px;
             .bucket {
                 flex-basis: 31%;
                 &.up-4 {
                     flex-basis: 23%;
                 }
                 .inner {
-                    display:block;
+                    display: block;
                     padding: $gutter-width/3;
                     .icon {
                         float: none;
-                        width:150px;
-                        height:150px;
+                        width: 150px;
+                        height: 150px;
                     }
                     h3,
                     p {
@@ -67,7 +70,7 @@
                         text-align: center;
                     }
                     p {
-                        font-size:.9em;
+                        font-size: 0.9em;
                     }
                 }
             }

@@ -9,12 +9,15 @@ export default function FeaturesHero() {
             video_section {
                 header
                 video_id
+                bg_image {
+                  url
+                }
             }
         }
     }
   `)
 
   return (
-    <VideoSection header={data.csCustomerSuccess.video_section.header} video_id={data.csCustomerSuccess.video_section.video_id}/>
+    <VideoSection header={data.csCustomerSuccess.video_section.header} video_id={data.csCustomerSuccess.video_section.video_id} bg_image={data.csCustomerSuccess.video_section.bg_image}/>
   )
 }

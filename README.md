@@ -36,7 +36,8 @@ To Do:
  - Pretty up the filter nav
  - faqs section
  - platforms section
-
+ - Add option to open callout in nav dropdown in new tab.
+ 
  - Integrations Pages 
  - CMS Guides 
 

@@ -24,9 +24,9 @@
     position: relative;
     height: 50px;
     padding-top: 100px;
-    margin-right:90px;
+    margin-right:150px;
     background-repeat:repeat-x;
-    background-size:80px;
+    background-size:150px;
     background-position: center right;
     .rect {
       width: 100%;
@@ -44,9 +44,28 @@
   h3,
   p {
     margin: $gutter-width/2 0 0;
+    @include bp(m) {
+      margin: $gutter-width 0 0;
+    }
   }
   h3 {
     color: $orange;
+    font-size:24px;
+    @include bp(m) {
+      font-size:40px;
+    }
+  }
+  p {
+    font-size:18px;
+    @include bp(m) {
+      font-size:30px;
+    }
+  }
+  li {
+    font-size:16px;
+    @include bp(m) {
+      font-size:20px;
+    }
   }
   .cs-commit-bucket {
     clear: none;
@@ -57,12 +76,16 @@
     list-style: none;
     padding: 0;
     border-left: 5px solid $orange;
+    margin-top:$gutter-width/2;
     li {
       margin-left: 0;
       padding: 0 15% $gutter-width/2 1.5em;
       &:last-child {
         padding-bottom: 0;
       }
+    }
+    @include bp(m) {
+      margin-top:$gutter-width;
     }
   }
 }

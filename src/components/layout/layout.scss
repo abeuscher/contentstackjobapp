@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 @import "../../common-sass/styles.scss";
 @import "./button";
 
@@ -28,16 +28,22 @@ h6 {
   font-weight: bold;
 }
 p {
-  font-size: 1.1em;
-  line-height: 1.8;
-  line-height:1.4;
+  font-size: 16px;
+  line-height: 1.4;
 }
 main {
   display: block;
   h2 {
-    font-size: 2em;
-  }
-  @include bp(m) {
+    font-size: 36px;
+    &.small {
+      font-size: 30px;
+    }
+    @include bp(m) {
+      font-size: 60px;
+      &.small {
+        font-size: 40px;
+      }
+    }
   }
 }
 .max-width {
@@ -94,9 +100,9 @@ main {
 }
 .wysiwyg {
   p {
-    margin:0 0 .5em;
+    margin: 0 0 0.5em;
   }
 }
 p.header-copy {
-  font-family:$header-font;
+  font-family: $header-font;
 }

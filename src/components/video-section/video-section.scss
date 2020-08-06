@@ -3,7 +3,9 @@
 .video-section {
   padding:$gutter-width*2 0;
     text-align: center;
-    background: radial-gradient(circle at 50% 0, $violet-fog 0%, $violet-fog 65%, $white 65%, $white 90%);
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-size:contain;
     .inner {
       width:80%;
       margin:0 auto;

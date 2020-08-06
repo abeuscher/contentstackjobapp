@@ -23,7 +23,7 @@ export default function CsFeaturedCustomers() {
     return (
         <div className="featured-customers">
             <div className="max-width">
-                <h2>{data.csCustomerSuccess.featured_customers_section.header}</h2>
+                <h2 className="small">{data.csCustomerSuccess.featured_customers_section.header}</h2>
                 <div className="featured-tiles">
                     {data.csCustomerSuccess.featured_customers_section.buckets.map((bucket, idx) => {
                         let bgStyle = bucket.thumb ? { "backgroundImage": "url('" + bucket.thumb.url + "')" } : {}
