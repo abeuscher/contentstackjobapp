@@ -12,9 +12,10 @@
     background-size: contain;
     position: relative;
     width: 40%;
-    margin-top: -240px;
-    height: 400px;
+    margin-top: -475px;
+    height: 800px;
     float: right;
+    z-index:0;
     @include bp(m) {
       width:400px;
     }
@@ -22,7 +23,7 @@
   .dots {
     position: relative;
     height: 50px;
-    padding-top: 50px;
+    padding-top: 100px;
     margin-right:90px;
     background-repeat:repeat-x;
     background-size:80px;
@@ -44,7 +45,7 @@
   h2,
   h3,
   p {
-    margin: $gutter-width 0 0;
+    margin: $gutter-width/2 0 0;
   }
   h3 {
     color: $orange;
@@ -53,12 +54,14 @@
     clear: none;
   }
   ul {
+    position: relative;
+    z-index:1;
     list-style: none;
     padding: 0;
     border-left: 5px solid $orange;
     li {
       margin-left: 0;
-      padding: 0 0 $gutter-width/2 1.5em;
+      padding: 0 15% $gutter-width/2 1.5em;
       &:last-child {
         padding-bottom: 0;
       }
