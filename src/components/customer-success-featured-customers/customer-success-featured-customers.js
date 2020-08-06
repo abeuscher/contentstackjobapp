@@ -26,7 +26,7 @@ export default function CsFeaturedCustomers() {
                 <h2>{data.csCustomerSuccess.featured_customers_section.header}</h2>
                 <div className="featured-tiles">
                     {data.csCustomerSuccess.featured_customers_section.buckets.map((bucket, idx) => {
-                        let bgStyle = bucket.thumb ? { "backgroundImage": "url('" + bucket.thumb + "')" } : {}
+                        let bgStyle = bucket.thumb ? { "backgroundImage": "url('" + bucket.thumb.url + "')" } : {}
                         return (
                             <div key={"customer-tile="+idx} className="featured-customer-tile">
                                 <h3>{bucket.header}</h3>

@@ -1,6 +1,7 @@
 @import "../../common-sass/styles.scss";
 
 .featured-customers {
+    padding:0 0 $gutter-width*2;
     text-align: center;
     .featured-tiles {
         @include bp(m) {
@@ -9,7 +10,21 @@
             .featured-customer-tile {
                 flex: 0 1 50%;
                 h3 {
-                    text-transform:uppercase;
+                    text-transform: uppercase;
+                    margin:10px 0 0;
+                }
+                .logo-line {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 80%;
+                    margin:0 10% 25px;
+                    //filter: grayscale(100%);
+                    &:after {
+                        content: "";
+                        display: block;
+                        padding-bottom: 14.7%;
+                    }
                 }
             }
         }

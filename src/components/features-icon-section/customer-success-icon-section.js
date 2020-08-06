@@ -2,6 +2,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import FeaturesIconSection from "./features-icon-section"
 
+import "./customer-success-icons.scss"
+
 export default function CsIconSection() {
     const data = useStaticQuery(graphql`
     query CsIconQuery {
