@@ -13,7 +13,6 @@
         position:relative;
     }
     @include bp(m) {
-        min-height: 520px;
         padding:0;
     }
     h1, h2, p {
@@ -21,7 +20,7 @@
         margin:$gutter-width 0 0;
         width:75%;
         @include bp(m) {
-             width:50%;
+             width:45%;
         }  
     }
     .button {
@@ -58,9 +57,9 @@
     }
     .bg-image {
         display:none;
-        right:-90px;
-        background-position:100% -25%;
-        background-size:60%;
+        right:-120px;
+        background-position:100% 8%;
+        background-size:75%;
         @include bp(l) {
             display:block;
         }

@@ -36,7 +36,6 @@
   h3,
   p,
   li {  
-    line-height: 2;
     @include bp(m) {
       max-width: 60%;
     }
