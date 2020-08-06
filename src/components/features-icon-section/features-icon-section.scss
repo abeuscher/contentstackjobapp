@@ -7,9 +7,11 @@
     .buckets {
         .bucket {
             .inner {
-                min-height:100px;
+                min-height:175px;
                 vertical-align: middle;
+                
                 .icon {
+                    
                     width: 100px;
                     height: 100px;
                     background-size: contain;
@@ -17,13 +19,20 @@
                     background-position: center;
                     margin: 0 auto;
                 }
+                p,h3 {
+                    text-align:center;
+                }
                 @include bp(xs) {
+                    display:flex;
+                align-items: center;
                     .icon {
-                        float: left;
+                        flex:0 0 150px;
                     }
                     h3,
                     p {
-                        padding-left: 110px;
+                        flex:1 1 100%;
+                        text-align: left;
+                        padding-left:1em;
                     }
                 }
             }
@@ -43,9 +52,12 @@
                     flex-basis: 23%;
                 }
                 .inner {
+                    display:block;
                     padding: $gutter-width/3;
                     .icon {
                         float: none;
+                        width:150px;
+                        height:150px;
                     }
                     h3,
                     p {

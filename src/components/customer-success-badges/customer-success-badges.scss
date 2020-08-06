@@ -29,6 +29,7 @@
         }
         @include bp(m) {
             flex-wrap: nowrap;
+            width: 60%;
             .badge {
                 flex-basis: 50%;
                 &:first-child {

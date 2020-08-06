@@ -3,15 +3,18 @@
 .featured-customers {
     padding:0 0 $gutter-width*2;
     text-align: center;
+    h2 {
+        margin-bottom:$gutter-width;
+    }
     .featured-tiles {
         @include bp(m) {
             display: flex;
             flex-wrap: wrap;
             .featured-customer-tile {
-                flex: 0 1 50%;
+                flex: 0 1 33%;
                 h3 {
                     text-transform: uppercase;
-                    margin:10px 0 0;
+                    margin:25px 0 15px;
                 }
                 .logo-line {
                     background-size: contain;

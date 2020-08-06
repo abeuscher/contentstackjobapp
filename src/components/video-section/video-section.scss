@@ -4,13 +4,17 @@
   padding:$gutter-width*2 0;
     text-align: center;
     background: radial-gradient(circle at 50% 0, $off-white 0%, $off-white 65%, $white 65%, $white 90%);
+    .inner {
+      width:80%;
+      margin:0 auto;
+    }
 }
 .wrapper-video {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 
     embed,
