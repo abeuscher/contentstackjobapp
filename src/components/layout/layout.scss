@@ -26,21 +26,23 @@ h5,
 h6 {
   font-family: $header-font;
   font-weight: bold;
+  margin:0 0 .5em;
 }
 p {
   font-size: 16px;
   line-height: 1.4;
+  margin:0 0 1em;
 }
 main {
   display: block;
   h2 {
     font-size: 36px;
-    &.small {
+    &.small-header {
       font-size: 30px;
     }
     @include bp(m) {
       font-size: 60px;
-      &.small {
+      &.small-header {
         font-size: 40px;
       }
     }
@@ -95,6 +97,12 @@ main {
     }
     .col-half {
       flex-basis: 50%;
+    }
+    .col-quarter {
+      flex-basis:25%;
+    }
+    .col-three-quarter {
+      flex-basis:75%;
     }
   }
 }

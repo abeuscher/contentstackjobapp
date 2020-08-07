@@ -154,6 +154,22 @@ const buildPageQuery = `query csBuildPageQuery {
                             partner_type
                             headline
                             long_description
+                            link {
+                              title
+                              href
+                            }
+                          }
+                          contact_section {
+                            partner_details {
+                              title
+                              desc
+                            }
+                            contact_cta {
+                              title
+                              open_in_new_tab_
+                              link
+                              email_subject
+                            }
                           }
                           metadata {
                             page_title

@@ -1,0 +1,35 @@
+@import "../../common-sass/styles.scss";
+
+.partner-page-content {
+    .max-width {
+        padding:$gutter-width*2 0;
+        flex-wrap:nowrap;
+    }
+    .partners-page-logo {
+
+        width:208px;
+        height:120px;
+        background-size:80%;
+        background-repeat:no-repeat;
+        background-position:center;
+        background-color:$lighter-gray;
+        margin:0 0 1em;
+    }
+    .partner-link {
+        display:block;
+        margin:0 0 1em;
+        color:$purple;
+        font-size:20px;
+        font-weight:bold;
+    }
+    .detail-value {
+         white-space:pre-line;
+         margin:0 0 1em;
+    }
+    .partner-right {
+        .inner {
+            padding:0 0 0 $gutter-width/2;
+        }
+    }
+   
+}
