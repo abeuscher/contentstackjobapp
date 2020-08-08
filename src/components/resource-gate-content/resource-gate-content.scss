@@ -1,0 +1,15 @@
+@import "../../common-sass/styles.scss";
+
+.resource-gate-content {
+    .form-header-image {
+        width:100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position:center;
+        &:after {
+            content:"";
+            display: block;
+            padding-bottom:56.25%;
+        }
+    }
+}

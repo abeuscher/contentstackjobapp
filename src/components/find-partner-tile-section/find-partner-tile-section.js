@@ -26,7 +26,7 @@ export default function FindPartnerTileSection() {
     }
   `)
   return (
-    <div className="integrations-tiles">
+    <div className="find-partner-tiles">
       <div className="max-width">
         <PartnerGrid data={data.allCsPartnerPosts.edges} />
       </div>
@@ -36,14 +36,15 @@ export default function FindPartnerTileSection() {
 
 class PartnerGrid extends Component {
   render() {
+   
     return (
-      <div className="integrations-grid">
-        <div className="filter-menu">
+      <div className="find-partner-widget">
+        <div className="filter-menu find-partner-menu">
             <div className="max-width">
-
+              <p>SEARCH</p>
             </div>
         </div>
-        <div className="partner-grid">
+        <div className="find-partner-grid">
           {this.props.data.map((partner,idx)=>(<PartnerTile key={"partner-tile-"+idx} data={partner.node}/>))}
         </div>
       </div>
@@ -52,10 +53,15 @@ class PartnerGrid extends Component {
 }
 class PartnerTile extends Component {
     render() {
+      let logoStyle = this.props.data.find_partners_preview_section.company_logo ? {"backgroundImage":"url('"+this.props.data.find_partners_preview_section.company_logo.url+"')"} : {}
         return(
             <a className="partner-tile" href={this.props.data.url}>
-                <div className="front-panel">
-                    <h2>{this.props.data.title}</h2>
+                <div className="inner">
+                  <div class="logo" style={logoStyle}></div>
+                    <h3>{this.props.data.title}</h3>
+                    <p><strong>{this.props.data.find_partners_preview_section.partner_type}</strong></p>
+                    <p><strong>{this.props.data.find_partners_preview_section.location}</strong></p>
+                    <p>{this.props.data.find_partners_preview_section.short_description}</p>
                 </div>
             </a>
         )

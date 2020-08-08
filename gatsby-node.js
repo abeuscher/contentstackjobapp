@@ -1,6 +1,7 @@
 const path = require(`path`)
 
 const buildPageQuery = `query csBuildPageQuery {
+                    
                     #CMS Guide Query
                     allCsEvergreenDetailPages {
                       edges {
@@ -135,6 +136,41 @@ const buildPageQuery = `query csBuildPageQuery {
                       }        
                     }
 
+                    #Respurce Gate Query
+                    allCsResourceGates {
+                      edges {
+                        node {
+                          title
+                          url
+                          page_content {
+                            header
+                            copy
+                          }
+                          form_section {
+                            header_image {
+                              url
+                            }
+                            header
+                            form_id
+                            resource_link
+                            known_visitor_copy
+                            show_resource_to_known_visitor
+                          }
+                          metadata {
+                            page_title
+                            page_description
+                            page_thumb {
+                                url
+                            }
+                            twitter_title
+                            twitter_description
+                            opengraph_title
+                            opengraph_description
+                          }
+                        }
+                      }        
+                    }
+
                     #Partner Pages
                     allCsPartnerPosts {
                       edges {
@@ -254,6 +290,10 @@ exports.createPages = ({ actions, graphql }) => {
       {
         data: result.data.allCsPartnerPosts.edges,
         template: path.resolve(`src/templates/partner-page.js`)
+      },
+      {
+        data: result.data.allCsResourceGates.edges,
+        template: path.resolve(`src/templates/resource-gate.js`)
       },
     ]
     // Build Pages

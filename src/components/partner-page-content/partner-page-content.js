@@ -38,35 +38,3 @@ export default class PartnerPageContent extends Component {
     )
   }
 }
-/*
-
-title
-                          url
-                          find_partners_preview_section {
-                            company_logo {
-                              url
-                            }
-                            company_name
-                            partner_type
-                            location
-                          }
-                          company_section {
-                            title
-                            partner_type
-                            headline
-                            long_description
-                          }
-                                                    contact_section {
-                            partner_details {
-                              title
-                              desc
-                            }
-                            contact_cta {
-                              title
-                              open_in_new_tab_
-                              link
-                              email_subject
-                            }
-                          }
-
-*/

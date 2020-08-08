@@ -1,0 +1,31 @@
+@import "../../common-sass/styles.scss";
+
+.find-partner-tiles {
+    background:$off-white;
+    .find-partner-grid { 
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        margin:0 -$gutter-width/2;
+        .partner-tile {
+            .logo {
+                width:100%;
+                background-color:$lighter-gray;
+                background-repeat:no-repeat;
+                background-position:center;
+                background-size:contain;
+                &:after {
+                    content:"";
+                    display:block;
+                    padding-bottom:25%;
+                }
+            }
+            margin:$gutter-width/2 0;
+            background:$white;
+            flex:0 1 30%;
+            .inner {
+                padding:25px;
+            }
+        }
+    }
+}

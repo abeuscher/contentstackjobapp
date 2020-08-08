@@ -104,6 +104,12 @@ main {
     .col-three-quarter {
       flex-basis:75%;
     }
+    .col-third {
+      flex-basis:33.3%;
+    }
+    .col-two-third {
+      flex-basis:66.6%;
+    }
   }
 }
 .wysiwyg {

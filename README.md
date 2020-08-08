@@ -25,7 +25,8 @@ Swiper JS
 https://swiperjs.com/
 
 To Do:
- - Partner Pages
+
+ - Legal Pages
  - Author Pages
  - Greenhouse app integration
  - Add placeholder content to About and Build
@@ -40,4 +41,12 @@ To Do:
  
  - Integrations Pages 
  - CMS Guides 
+ - Partner Pages
+ - Resources Pages
 
+Idea for Docs Templates
+We create global types for each "component" the client wants. These globals are then assembled into content typoes of "page" for the team.
+
+All of these publish to the same place. We then identify the relevant component by the key of its data type and build the template on the fly from those pieces.
+
+So at gatsby-node, we load all of the graphQl fragments, then iterate through them. And the docs fragment is one huge query that pushes to a single template that has a place where we key each piece of the object to a template. then profit.
