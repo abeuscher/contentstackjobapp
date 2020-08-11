@@ -136,6 +136,34 @@ const buildPageQuery = `query csBuildPageQuery {
                       }        
                     }
 
+                    #Legal Page Query
+                    allCsLegalPages {
+                      edges {
+                        node {
+                          title
+                          url
+                          hero_section {
+                            title
+                            background_image {
+                              url
+                            }
+                          }
+                          content
+                          metadata {
+                            page_title
+                            page_description
+                            page_thumb {
+                                url
+                            }
+                            twitter_title
+                            twitter_description
+                            opengraph_title
+                            opengraph_description
+                          }
+                        }
+                      }        
+                    }
+
                     #Respurce Gate Query
                     allCsResourceGates {
                       edges {
@@ -295,6 +323,10 @@ exports.createPages = ({ actions, graphql }) => {
         data: result.data.allCsResourceGates.edges,
         template: path.resolve(`src/templates/resource-gate.js`)
       },
+      {
+        data: result.data.allCsLegalPages.edges,
+        template: path.resolve(`src/templates/legal-page.js`)
+      },
     ]
     // Build Pages
     pagesToBeBuilt.forEach(page => {
@@ -306,5 +338,29 @@ exports.createPages = ({ actions, graphql }) => {
         })
       })
     })
+
+    // Build Pagination for Blog Results
+    const posts = result.data.allCsBlogPost.edges
+    const postsPerPage = 10
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+
+      // Skip first page - first page is printed out on Blog Main.
+      if (i > 0) {
+        createPage({
+          path: `/blog/entries/${i + 1}`,
+          component: path.resolve("src/templates/blog-roll-page.js"),
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1,
+            data: posts.slice(i * postsPerPage, i * postsPerPage + postsPerPage)
+          }
+        })
+      }
+    })
+
   })
 }

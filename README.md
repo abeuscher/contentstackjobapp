@@ -26,7 +26,7 @@ https://swiperjs.com/
 
 To Do:
 
- - Legal Pages
+
  - Author Pages
  - Greenhouse app integration
  - Add placeholder content to About and Build
@@ -43,6 +43,8 @@ To Do:
  - CMS Guides 
  - Partner Pages
  - Resources Pages
+ - Legal Pages 
+ - Blog pagination
 
 Idea for Docs Templates
 We create global types for each "component" the client wants. These globals are then assembled into content typoes of "page" for the team.

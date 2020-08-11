@@ -6,4 +6,36 @@
         font-size: 1.4em;
         line-height: 2;
     }
+    .blog-roll-entry {
+        padding:$gutter-width 0 0;
+        vertical-align: top;
+        .post-thumb {
+            vertical-align: top;
+            display:inline-block;
+            width:30%;
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position:center;
+            &:after {
+                content:"";
+                display:block;
+                padding-bottom:66.66%;
+            }
+        }
+        .post-info {
+            display:inline-block;
+            width:70%;
+            
+        }
+    }
+}
+.blog-pagination {
+    ul {
+        @include list-to-menu();
+        li {
+            &.active {
+                font-weight:bold;
+            }
+        }
+    }
 }

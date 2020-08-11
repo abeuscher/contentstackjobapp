@@ -1,45 +1,50 @@
-import { useStaticQuery, graphql } from "gatsby"
-import React from "react"
+import React, { Component } from "react"
 
 import "./blog-roll.scss"
 
-export default function BlogRoll() {
-  const data = useStaticQuery(graphql`
-    query blogRollQuery {
-        allCsBlogPost(limit: 20, sort: {fields: date, order: DESC}) {
-            edges {
-              node {
-                id
-                title
-                url
-                date
-                image {
-                  url
-                  title
-                }
-                author {
-                  title
-                  uid
-                }
-                category {
-                  title
-                }
-              }
-            }
-            totalCount
-        }
-    }
-  `)
-
-  return (
-    <div className="blog-roll">
-      <div class="max-width">
-        {data.allCsBlogPost.edges.map((post, idx) => {
-          return (
-            <a key={"blog-entry-" + idx} href={post.node.url}>{post.node.title}</a>
-          )
-        })}
+export default class BlogRoll extends Component {
+  render() {
+    const stripHTML = /(<([^>]+)>)/ig
+    return (
+      <div className="blog-roll">
+        <div className="max-width">
+          {this.props.posts.map((post, idx) => {
+            let thumbStyle = post.node.image ? { "backgroundImage": "url('" + post.node.image.url + "')" } : {}
+            return (
+              <a className="blog-roll-entry" key={"blog-entry-" + idx} href={post.node.url}>
+                <div className="post-thumb" style={thumbStyle}></div>
+                <div className="post-info">
+                  <h3>{post.node.title}</h3>
+                  <cite>
+                    <span className="date">{post.node.date}</span>
+                    <span className="author">{post.node.author[0].title}</span>
+                  </cite>
+                  <div className="excerpt">{post.node.body.substring(0, 300).replace(stripHTML, "") + "..."}</div>
+                </div>
+              </a>
+            )
+          })}
+          <Pagination limit={this.props.limit} skip={this.props.skip} numPages={this.props.numPages} currentPage={this.props.currentPage} />
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+}
+
+class Pagination extends Component {
+  render() {
+    return (<nav className="blog-pagination">
+      <ul>
+        {Array.from({ length: this.props.numPages }).map((_, pageNum) => {
+          if (pageNum === 0) {
+            return (<li key={"blog-page-link-" + pageNum}><a href={"/blog/"}>{(pageNum + 1)}</a></li>)
+          }
+          else {
+            return (<li key={"blog-page-link-" + pageNum} className={pageNum === this.props.currentPage - 1 ? "active" : ""}><a href={"/blog/entries/" + (pageNum + 1)}>{(pageNum + 1)}</a></li>)
+          }
+
+        })}
+      </ul>
+    </nav>)
+  }
 }
