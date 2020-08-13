@@ -12,7 +12,7 @@ export default class BottomCTA extends Component {
         return (
             <div className="bottom-cta-section" style={bgStyle}>
                 <div className="inner max-width">
-                    {this.props.data.header ? <h2 className="centered">{this.props.data.header}</h2> : ""}
+                    {this.props.data.header ? <h2 className="centered small-header">{this.props.data.header}</h2> : ""}
                     {this.props.data.copy ? <p className="centered">{this.props.data.copy}</p> : ""}
                     <div className="buttons vertical">
                         {this.props.data.primary_cta ? <a className={"button " + this.props.data.primary_cta.classname} href={this.props.data.primary_cta.link}>{this.props.data.primary_cta.text}</a> : ""}

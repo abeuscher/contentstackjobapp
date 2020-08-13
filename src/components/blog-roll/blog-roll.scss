@@ -7,34 +7,52 @@
         line-height: 2;
     }
     .blog-roll-entry {
-        padding:$gutter-width 0 0;
+        padding: $gutter-width 10% 0;
         vertical-align: top;
         .post-thumb {
             vertical-align: top;
-            display:inline-block;
-            width:30%;
+            display: inline-block;
+            width: 30%;
             background-repeat: no-repeat;
-            background-size:cover;
-            background-position:center;
+            background-size: cover;
+            background-position: center;
             &:after {
-                content:"";
-                display:block;
-                padding-bottom:66.66%;
+                content: "";
+                display: block;
+                padding-bottom: 66.66%;
             }
         }
         .post-info {
-            display:inline-block;
-            width:70%;
-            
+            display: inline-block;
+            width: 70%;
+            h3,
+            cite,
+            .excerpt {
+                padding-left: $gutter-width;
+            }
+            .read-link {
+                color: $orange;
+                font-weight: bold;
+            }
+        }
+        &:hover {
+            .read-link {
+                text-decoration: underline;
+            }
         }
     }
 }
 .blog-pagination {
+    text-align:center;
+    padding:$gutter-width 0;
+    margin-top:$gutter-width;
+    border-top:1px solid $purple;
     ul {
         @include list-to-menu();
         li {
+            margin:0 .5em;
             &.active {
-                font-weight:bold;
+                font-weight: bold;
             }
         }
     }

@@ -70,7 +70,7 @@ class Tabs extends Component {
                 <div className="panels">
                     <div className="left-pane">
                         <div className="inner">
-                            <h2>{this.props.data.left_panel.header}</h2>
+                            <h2 className="small-header">{this.props.data.left_panel.header}</h2>
                             <p>{this.props.data.left_panel.copy}</p>
                             <a className={"button hover-orange"} href={this.props.data.left_panel.cta.link}>{this.props.data.left_panel.cta.text}</a>
                         </div>

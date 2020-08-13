@@ -1,50 +1,81 @@
 @import "../../common-sass/styles.scss";
 
 .resources-grid {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
+    background: $off-white;
+    .max-width {
+        display: flex;
+        flex-wrap: wrap;
+        
+        padding: $gutter-width 0 $gutter-width * 2;
 
-    .tile-inner {
-        position:relative;
-    }
-    .card-front {
-        width:100%;
-        .thumb {
-            width:100%;
-            background-size:cover;
-            background-position:center top;
-            background-repeat: no-repeat;
-            &:after {
-                content:"";
-                display:block;
-                padding-bottom:56.25%;
+        .tile-inner {
+            position: relative;
+            @include bp(m) {
+                height: 400px;
             }
         }
-    }
-    .card-front {
-        max-height:500px;
-        overflow:hidden;
-        @include nice-transition();
-    }
-    .card-back {
-        position:absolute;
-        top:0;
-        max-height:0;
-        overflow:hidden;
-        background:$white;
-        @include nice-transition();
-    }
-    .tile {
-        @include bp(m) {
-            flex-basis:20%;
-        }
-        &:hover {
-            .card-front {
-                max-height:0;
+        .card-front {
+            width: 100%;
+            .thumb {
+                width: 100%;
+                background-size: cover;
+                background-position: center top;
+                background-repeat: no-repeat;
+                &:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 56.25%;
+                }
             }
-            .card-back {
-                max-height:500px;
+            h3 {
+                margin: 1em 0 0.5em;
+            }
+        }
+        .card-front {
+            overflow: hidden;
+            @include nice-transition();
+            @include bp(m) {
+                height: 400px;
+            }
+        }
+        .card-back {
+            overflow: hidden;
+            background: $white;
+            .inner {
+                h3 {
+                    display: none;
+                }
+                margin-bottom: $gutter-width;
+            }
+            @include nice-transition();
+            @include bp(m) {
+                position: absolute;
+                bottom: 100px;
+                max-height: 0;
+                height: 400px;
+                margin-bottom: 0;
+                .inner {
+                    padding: 1em;
+                    background: $purple;
+                    color: $white;
+                    height: 100%;
+                    h3 {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .tile {
+            width: 100%;
+            @include bp(m) {
+                flex-basis: 30%;
+                margin: 0 1.5%;
+                &:hover {
+                    .card-back {
+                        height: 300px;
+                        max-height: 300px;
+                    }
+                }
             }
         }
     }

@@ -26,19 +26,17 @@ https://swiperjs.com/
 
 To Do:
 
-
+Build:
  - Author Pages
- - Greenhouse app integration
- - Add placeholder content to About and Build
- - Add placeholder content to team and build
+ - FAQ Page
+ - Trust Page
  - Pricing Page
- - ROI Calculator
- - Add highlight functionality to subnav
- - Pretty up the filter nav
- - faqs section
- - platforms section
- - Add option to open callout in nav dropdown in new tab.
+ - ROI Calculator 
+ - Careers Page / Greenhouse app integration
+ - About Page
+
  
+ Finish:
  - Integrations Pages 
  - CMS Guides 
  - Partner Pages
@@ -46,9 +44,8 @@ To Do:
  - Legal Pages 
  - Blog pagination
 
-Idea for Docs Templates
-We create global types for each "component" the client wants. These globals are then assembled into content typoes of "page" for the team.
-
-All of these publish to the same place. We then identify the relevant component by the key of its data type and build the template on the fly from those pieces.
-
-So at gatsby-node, we load all of the graphQl fragments, then iterate through them. And the docs fragment is one huge query that pushes to a single template that has a place where we key each piece of the object to a template. then profit.
+Tasks:
+ - Add scrolling highlight functionality to subnav
+ - Pretty up the filter nav
+ - Add option to open callout in nav dropdown in new tab.
+ - Polish everything / First Round mobile testing

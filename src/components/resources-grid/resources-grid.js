@@ -29,9 +29,7 @@ export default function ResourcesGrid() {
   `)
     return (
         <div className="resources-tiles">
-            <div className="max-width">
                 <ResourceGrid tiles={data.csResourcesMain.resources} />
-            </div>
         </div>
     )
 }
@@ -101,24 +99,28 @@ class ResourceGrid extends Component {
     render() {
         return (
             <div className="resources-grid max-width">
-                {this.state.tiles.map((tile, idx) => {
-                    let iconStyle = tile.thumb ? { "backgroundImage": "url('" + tile.thumb.url + "')" } : {}
-                    return (
-                        <a key={"resources-tile-" + idx} className="tile" href={tile.link}>
-                            <div className="tile-inner">
-                                <div className="card-front">
-                                    <div className="thumb" style={iconStyle}></div>
-                                    <h3>{tile.title}</h3>
+                <div className="max-width">
+                    {this.state.tiles.map((tile, idx) => {
+                        let iconStyle = tile.thumb ? { "backgroundImage": "url('" + tile.thumb.url + "')" } : {}
+                        return (
+                            <a key={"resources-tile-" + idx} className="tile" href={tile.link}>
+                                <div className="tile-inner">
+                                    <div className="card-front">
+                                        <div className="thumb" style={iconStyle}></div>
+                                        <h3>{tile.title}</h3>
+                                    </div>
+                                    <div className="card-back">
+                                        <div className="inner">
+                                            <h3>{tile.title}</h3>
+                                            <p>{tile.description}</p>
+                                            <p className="cta">Consume Now</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="card-back">
-                                    <h3>{tile.title}</h3>
-                                    <p>{tile.description}</p>
-                                    <p className="cta">Consume Now</p>
-                                </div>
-                            </div>
-                        </a>
-                    )
-                })}
+                            </a>
+                        )
+                    })}
+                </div>
             </div>
         )
     }

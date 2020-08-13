@@ -24,13 +24,13 @@ export default function BizQuoteSection() {
 
     return (
         <div className="business-quote-section max-width">
-            <h2>{data.csBusinessCms.quote_section.header}</h2>
+            <h2 className="small-header">{data.csBusinessCms.quote_section.header}</h2>
             <div className="quote">
                 <p>{data.csBusinessCms.quote_section.quote}</p>
                 <cite>{data.csBusinessCms.quote_section.quote_source}</cite>
             </div>
             <a
-                className={"button knockout" + data.csBusinessCms.quote_section.cta.classname}
+                className={"button hover-orange" + data.csBusinessCms.quote_section.cta.classname}
                 href={data.csBusinessCms.quote_section.cta.link}>
                 {data.csBusinessCms.quote_section.cta.text}
             </a>

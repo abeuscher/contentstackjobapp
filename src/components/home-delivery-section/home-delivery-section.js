@@ -69,7 +69,7 @@ class DeliveryFlipper extends Component {
             <div className="home-delivery-section">
                 <div className="max-width">
                     <div className="left-pane header">
-                        <h2>{this.props.tabs[this.state.currentTabIndex].header}</h2>
+                        <h2 className="small-header">{this.props.tabs[this.state.currentTabIndex].header}</h2>
                     </div>
                     <div className="right-pane header">
                         {this.props.icons.map((icon, idx) => (
@@ -89,15 +89,15 @@ class DeliveryFlipper extends Component {
                     </div>
                     <div className="right-pane view-pane">
                         <div className="view desktop">
-                            <h2>{this.state.templateHeader}</h2>
+                            <h2 className="small-header">{this.state.templateHeader}</h2>
                             <p>{this.state.templateCopy}</p>
                         </div>
                         <div className="view tablet">
-                            <h2>{this.state.templateHeader}</h2>
+                            <h2 className="small-header">{this.state.templateHeader}</h2>
                             <p>{this.state.templateCopy}</p>
                         </div>
                         <div className="view mobile">
-                            <h2>{this.state.templateHeader}</h2>
+                            <h2 className="small-header">{this.state.templateHeader}</h2>
                             <p>{this.state.templateCopy}</p>
                         </div>
                     </div>

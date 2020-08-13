@@ -89,7 +89,7 @@ class Panel extends Component {
             <div className="anim-tab-panel">
                 <div className="inner">
                     <div className="panel-text">
-                        <h2>{this.props.tab.header}</h2>
+                        <h2 className="small-header">{this.props.tab.header}</h2>
                         <p>{this.props.tab.copy}</p>
                     </div>
                     <div className="panel-image">

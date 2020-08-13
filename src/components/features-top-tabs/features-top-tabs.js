@@ -25,7 +25,7 @@ export default function FeaturesTopTabs() {
 
     return (
         <div className="features-section collaboration max-width">
-            <h2>{data.csFeaturesMain.collaboration_section.header}</h2>
+            <h2 className="small-header">{data.csFeaturesMain.collaboration_section.header}</h2>
             <p>{data.csFeaturesMain.collaboration_section.copy}</p>
             <DesktopTabs features={data.csFeaturesMain.collaboration_section.feature_list} />
             <MobileTabs features={data.csFeaturesMain.collaboration_section.feature_list} />

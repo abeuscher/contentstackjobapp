@@ -58,7 +58,7 @@ class Tabs extends Component {
     render() {
         return (
             <div className="max-width">
-                <h2>{this.props.data.header}</h2>
+                <h2 className="small-header">{this.props.data.header}</h2>
                 <div class="buttons">
                 {this.props.data.testimonials.map((tab, idx) => {
                     let bgStyle = tab.logo.length ? { "backgroundImage": "url('" + tab.logo[0].color_logo.url + "')" } : {}

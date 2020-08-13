@@ -26,7 +26,7 @@ export default function DevLangSection() {
     return (
         <div className="developers-language-section">
             <div className="max-width">
-                <h2>{data.csDevelopersCms.language_section.header}</h2>
+                <h2 className="small-header">{data.csDevelopersCms.language_section.header}</h2>
                 <p>{data.csDevelopersCms.language_section.copy}</p>
                 <div className="icons">
                     {data.csDevelopersCms.language_section.icons.map((icon, idx) => {

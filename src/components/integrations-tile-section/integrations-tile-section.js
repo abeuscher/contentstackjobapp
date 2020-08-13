@@ -36,9 +36,7 @@ export default function IntegrationsTileSection() {
   `)
   return (
     <div className="integrations-tiles">
-      <div className="max-width">
-        <FilterGrid menuFields={data.csIntegrationsMain.filter_menu_fields} ctaLinkText={data.csIntegrationsMain.tile_cta_text} tiles={data.csIntegrationsMain.integrations_tiles} />
-      </div>
+      <FilterGrid menuFields={data.csIntegrationsMain.filter_menu_fields} ctaLinkText={data.csIntegrationsMain.tile_cta_text} tiles={data.csIntegrationsMain.integrations_tiles} />
     </div>
   )
 }
@@ -107,37 +105,46 @@ class FilterGrid extends Component {
   }
   render() {
     return (
-      <div className="integrations-grid max-width">
+      <div className="integrations-grid">
         <div className="filter-menu">
-          <input type="text" value={this.state.searchPhrase} onChange={this.searchFieldChange} placeholder={this.props.menuFields.search_placeholder_text} />
-          <span className="label sort">{this.props.menuFields.sort_menu_label}</span>
-          <Menu value={this.props.menuFields.sort_menu_options[this.state.sortIndex]} options={this.props.menuFields.sort_menu_options} onChange={this.sortChange} />
-          <span className="label sort">{this.props.menuFields.filter_menu_label}</span>
-          <Menu value={this.state.categoryList[this.state.filterIndex]} options={this.state.categoryList} onChange={this.filterChange} />
+          <div className="max-width flex">
+            <div class="col-third">
+              <input type="text" className="search-box" value={this.state.searchPhrase} onChange={this.searchFieldChange} placeholder={this.props.menuFields.search_placeholder_text} />
+            </div>
+            <div className="col-two-third sort-controls">
+              <span className="label sort">{this.props.menuFields.sort_menu_label + ": "}</span>
+              <Menu value={this.props.menuFields.sort_menu_options[this.state.sortIndex]} options={this.props.menuFields.sort_menu_options} onChange={this.sortChange} />
+              <span className="label sort">{this.props.menuFields.filter_menu_label + ": "}</span>
+              <Menu value={this.state.categoryList[this.state.filterIndex]} options={this.state.categoryList} onChange={this.filterChange} />
+            </div>
+
+          </div>
         </div>
         <div className="tile-grid">
-          {this.state.tiles.map((tile, idx) => {
-            let iconStyle = tile.logo[0].color_logo ? { "backgroundImage": "url('" + tile.logo[0].color_logo.url + "')" } : {}
-            return (
-              <a key={"integrations-tile-" + idx} className="tile" href={tile.page_link}>
-                <div className="tile-inner">
-                  <div className="card-front">
-                    <div className="inner">
-                      <h3>{tile.product_name}</h3>
-                      <div className="icon" style={iconStyle}></div>
+          <div className="max-width">
+            {this.state.tiles.map((tile, idx) => {
+              let iconStyle = tile.logo[0].color_logo ? { "backgroundImage": "url('" + tile.logo[0].color_logo.url + "')" } : {}
+              return (
+                <a key={"integrations-tile-" + idx} className="tile" href={tile.page_link}>
+                  <div className="tile-inner">
+                    <div className="card-front">
+                      <div className="inner">
+                        <h3>{tile.product_name}</h3>
+                        <div className="icon" style={iconStyle}></div>
+                      </div>
+                    </div>
+                    <div className="card-back">
+                      <div className="inner">
+                        <h3>{tile.product_name}</h3>
+                        <p>{tile.copy}</p>
+                        <p className="cta">{this.props.ctaLinkText}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="card-back">
-                    <div className="inner">
-                      <h3>{tile.product_name}</h3>
-                      <p>{tile.copy}</p>
-                      <p className="cta">{this.props.ctaLinkText}</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            )
-          })}
+                </a>
+              )
+            })}
+          </div>
         </div>
       </div>
     )

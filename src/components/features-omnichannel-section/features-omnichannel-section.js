@@ -55,7 +55,7 @@ class Carousel extends Component {
     render() {
         return (
             <div className="anim-tab-block max-width">
-                <h2>{this.props.data.header}</h2>
+                <h2 className="small-header">{this.props.data.header}</h2>
                 <p>{this.props.data.copy}</p>
                 <div className="tabs">
                     {this.props.data.tabs.map((tab, idx) => (
@@ -89,7 +89,7 @@ class Panel extends Component {
             <div className="anim-tab-panel">
                 <div className="inner">
                     <div className="panel-text">
-                        <h2>{this.props.tab.header}</h2>
+                        <h3>{this.props.tab.header}</h3>
                         <p>{this.props.tab.copy}</p>
                     </div>
                     <div className="panel-image">

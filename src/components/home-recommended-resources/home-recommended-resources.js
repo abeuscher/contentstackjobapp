@@ -43,17 +43,17 @@ export default function RRSection() {
                 <a className="ebook" href={data.csHomepage.resources_section.top_left_resource.url}>
                     <div className="image-pane" style={{ backgroundImage: "url('" + data.csHomepage.resources_section.top_left_resource.thumb.url + "')" }}></div>
                     <div className="text-pane">
-                        <h2>{data.csHomepage.resources_section.top_left_resource.title}</h2>
+                        <h2 className="small-header">{data.csHomepage.resources_section.top_left_resource.title}</h2>
                         <p>{data.csHomepage.resources_section.top_left_resource.description}</p>
                     </div>
                 </a>
                 <a className="gartner" href={data.csHomepage.resources_section.top_right_resource.url} style={{ backgroundImage: "url('" + data.csHomepage.resources_section.top_right_resource.thumb.url + "')" }}>
-                    <h2>{data.csHomepage.resources_section.top_right_resource.title}</h2>
+                    <h2 className="small-header">{data.csHomepage.resources_section.top_right_resource.title}</h2>
                 </a>
                 <a className="blog" href={data.csHomepage.resources_section.bottom_resource.url}>
                     <div className="image-pane" style={{ backgroundImage: "url('" + data.csHomepage.resources_section.bottom_resource.thumb.url + "')" }}></div>
                     <div className="text-pane">
-                        <h2>{data.csHomepage.resources_section.bottom_resource.title}</h2>
+                        <h2 className="small-header">{data.csHomepage.resources_section.bottom_resource.title}</h2>
                         <p>{data.csHomepage.resources_section.bottom_resource.description}</p>
                     </div>
                 </a>

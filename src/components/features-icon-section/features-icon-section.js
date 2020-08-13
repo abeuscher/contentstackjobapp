@@ -7,7 +7,7 @@ export default class FeaturesIconSection extends Component {
         return (
             <div className={"features-icon-section " + this.props.className}>
                 <div className="max-width">
-                    {this.props.header ? <h2>{this.props.header}</h2> : ""}
+                    {this.props.header ? <h2 className="small-header">{this.props.header}</h2> : ""}
                     {this.props.copy ? <p>{this.props.copy}</p> : ""}
                     <div className="buckets">
                         {this.props.buckets.map((bucket, idx) => {

@@ -5,6 +5,11 @@ import "./blog-roll.scss"
 export default class BlogRoll extends Component {
   render() {
     const stripHTML = /(<([^>]+)>)/ig
+    const pubDate = date => {
+      const thisDate = new Date(date)
+      const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
+      return dateTimeFormat.format(thisDate)
+    }
     return (
       <div className="blog-roll">
         <div className="max-width">
@@ -16,10 +21,11 @@ export default class BlogRoll extends Component {
                 <div className="post-info">
                   <h3>{post.node.title}</h3>
                   <cite>
-                    <span className="date">{post.node.date}</span>
+                    <span className="date">{pubDate(post.node.date) + ", "}</span>
                     <span className="author">{post.node.author[0].title}</span>
                   </cite>
-                  <div className="excerpt">{post.node.body.substring(0, 300).replace(stripHTML, "") + "..."}</div>
+                  <div className="excerpt">{post.node.body.replace(stripHTML, "").substring(0, 180) + "..."}
+                  <span className="read-link">Read More</span></div>
                 </div>
               </a>
             )
